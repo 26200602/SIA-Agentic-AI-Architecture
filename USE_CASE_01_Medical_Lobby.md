@@ -2,7 +2,7 @@
 Ref: SIA_Manifesto_41.pdf / Pillar 1-3_41.pdf
 
 > **Attribution Notice**
-> This document was structured with the help of AI, and curated by SanaM.
+> This document was structured with the help of AI, and curated by MSK.
 > 
 > *Statement:* This project framework and architecture was conceived by me, and accelerated in collaboration with Advanced AI tools for rapid prototyping and Mermaid.js visualization.
 > 
@@ -34,32 +34,24 @@ The breakdowns observed are not failures of data processing speed, but architect
 ### Re-architecting the Clinical Handshake through API Orchestration
 SIA resolves this context gap by establishing deterministic, non-intrusive logic guardrails that eliminate manual liability questionnaires entirely.
 
-```mermaid
-graph TD
-    Start([Patient Scans QR Code]) --> Auth[QR Authenticated]
-    Auth --> eHealth[Request eHealth Access]
-    
-    subgraph eHealth_Check [eHealth Record Verification]
-        eHealth --> Check{History Exists?}
-        Check -- Yes --> Known[Allergy Known]
-        Check -- No --> Unknown[Allergy Unknown]
-    end
+#### System Orchestration Workflow:
+* **Step 1:** Patient Scans QR Code $\rightarrow$ QR Authenticated $\rightarrow$ Request eHealth Access.
+* **Step 2 (eHealth Verification):** Check if History Exists.
+  * *If Yes (Allergy Known):* Bypass Manual Questionnaire $\rightarrow$ Execute Quality Audit $\rightarrow$ Process Completed.
+  * *If No (Allergy Unknown):* Initiate Asynchronous Sync.
+    * *Sync Success:* Bypass Manual Questionnaire $\rightarrow$ Execute Quality Audit $\rightarrow$ Process Completed.
+    * *Sync Fail:* Trigger Nurse Led Setup $\rightarrow$ Process Completed.
 
-    Known --> Bypass[Bypass Manual Questionnaire]
-    Unknown --> Sync[Initiate Asynchronous Sync]
-    
-    Sync -- Success --> Bypass
-    Sync -- Fail --> Human[Trigger Nurse Led Setup]
-    
-    Bypass --> Audit[Execute Quality Audit]
-    Human --> End([Process Completed])
-    Audit --> End([Process Completed])
-SIA Architectural Implementation
-Strategic Decoupling & Micro-Factoids: Instead of forcing the frontend to query over-coupled, rigid relational tables, the architecture deconstructs systemic states into isolated, atomic data points (Factoids). This ensures that critical customer information is verified without broad database exposure or noise contamination.
-Non-Intrusive Logic Topology: The framework acts as an asynchronous logical overlay, communicating via eHealth APIs to map patient states dynamically without requiring a multi-million dollar rewrite of the legacy clinic database schema.
-Deterministic Reasoning & FSM Guardrails: The entire onboarding logic is governed by a Finite State Machine (FSM). The system enforces absolute boundaries: the moment a data dependency (like an eHealth record) is missing or an anomaly is sensed, the architecture instantly flags a "Calculated Friction" state and routes a decision packet to a human-in-the-loop (Nurse_Led_Setup).
-4. The Vision (Strategic Intent)
-Building Architectures of Integrity
-Mission: Transition enterprise infrastructure from "Checkbox Compliance" to active Institutional Empathy.
-The AI Exoskeleton: AI must never operate as an unanchored black box; it functions strictly as a deterministic logic guardrail designed to safeguard human time and dignity.
-"We don't build AI to accelerate the flow; we build SIA to govern the truth."
+### SIA Architectural Implementation
+* **Strategic Decoupling & Micro-Factoids:** Instead of forcing the frontend to query over-coupled, rigid relational tables, the architecture deconstructs systemic states into isolated, atomic data points (**Factoids**). This ensures that critical customer information is verified without broad database exposure or noise contamination.
+* **Non-Intrusive Logic Topology:** The framework acts as an asynchronous logical overlay, communicating via eHealth APIs to map patient states dynamically without requiring a multi-million dollar rewrite of the legacy clinic database schema.
+* **Deterministic Reasoning & FSM Guardrails:** The entire onboarding logic is governed by a **Finite State Machine (FSM)**. The system enforces absolute boundaries: the moment a data dependency (like an eHealth record) is missing or an anomaly is sensed, the architecture instantly flags a "Calculated Friction" state and routes a decision packet to a human-in-the-loop (`Nurse_Led_Setup`).
+
+---
+
+## 4. The Vision (Strategic Intent)
+### Building Architectures of Integrity
+* **Mission:** Transition enterprise infrastructure from "Checkbox Compliance" to active Institutional Empathy.
+* **The AI Exoskeleton:** AI must never operate as an unanchored black box; it functions strictly as a deterministic logic guardrail designed to safeguard human time and dignity.
+
+> "We don't build AI to accelerate the flow; we build SIA to govern the truth."
