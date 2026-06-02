@@ -2,7 +2,7 @@
 Ref: SIA_Manifesto_41.pdf / Pillar 1-3_41.pdf
 
 > **Attribution Notice**
-> This document was structured with the help of AI, and curated by MSK.
+> This document was structured with the help of AI, and curated by SanaM.
 > 
 > *Statement:* This project framework and architecture was conceived by me, and accelerated in collaboration with Advanced AI tools for rapid prototyping and Mermaid.js visualization.
 > 
