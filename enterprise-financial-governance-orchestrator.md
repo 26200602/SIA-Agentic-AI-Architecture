@@ -1,8 +1,8 @@
 # Enterprise Financial Governance: Eliminating Organizational 'Trust Tax' via Multi-Node Expense Orchestration
-Ref: SIA_Manifesto_88.pdf / Pillar 3_88.pdf
+Ref: SIA_Manifesto_90.pdf / Pillar 3_90.pdf
 
 > **Attribution Notice**
-> This document was structured with the help of AI, and curated by MSK.
+> This document was structured with the help of AI, and curated by SanaM.
 > 
 > *Statement:* This project framework and strategic governance model was conceived by me, and accelerated in collaboration with Advanced AI tools for rapid prototyping and clean Markdown publication.
 
@@ -29,9 +29,9 @@ graph TD
         B -->|Concurrent Execution| NodeB[Node B: Operational Context Scan]
         B -->|Concurrent Execution| NodeC[Node C: Policy Compliance Engine]
         
-        NodeA MATCH[Match Merchant & Amount] --> Eval{Integrity Evaluation Loop}
-        NodeB EXTRACT[Extract Calendar & Email Triplets] --> Eval
-        NodeC AUDIT[Audit Spending Limits & Rules] --> Eval
+        NodeA -->|Match Merchant & Amount| Eval{Integrity Evaluation Loop}
+        NodeB -->|Extract Calendar & Email Triplets| Eval
+        NodeC -->|Audit Spending Limits & Rules| Eval
     end
     
     Eval -->|Context Discrepancy Found| Int[Strategic Neutral Intercept Layer]
@@ -42,7 +42,6 @@ graph TD
     
     Pack --> Manager[Manager Dashboard: Zero-Friction Approval]
 ```
-
 ## 3. The Orchestration Engine Specifications
 I. Transaction Verification Engine (Finance Node)
 Operation: Concurrently ingests real-time banking telemetry and corporate credit card APIs to verify the raw transaction parameters (exact timestamp, currency, merchant profile, and amount matched).
@@ -54,8 +53,6 @@ III. Policy Compliance Engine (Guardrail Node)
 Operation: Evaluates the transaction against static corporate policy boundaries, cross-referencing expenditure types against local tax compliance, project budgets, and employee level allowance matrices.
 Objective: Standardizes regulatory constraints before any notification is routed downstream.
 
-## 4. Operational Implementation Matrix & Fail-Safe Paths
-The system utilizes an active Neutral Intercept logic. If an anomaly is detected (e.g., a high-value Sunday dinner transaction with no scheduled meeting), the system temporarily suspends escalation loops to prevent organizational friction, routing a clean inquiry directly to the employee.
 ## 4. Operational Implementation Matrix & Fail-Safe Paths
 
 | Live Transaction State | Systemic Diagnostic Output | Actionable Resolution Path |
@@ -83,3 +80,4 @@ IF (Context_Resolved) {
     GENERATE_DECISION_PACKET(Manager_ID);
     MESSAGE: "Expense Validated. Sunday dinner confirmed with Client X (Email ref attached). Approve?";
 }
+Core Architectural Axiom: We do not seek to automate suspicion or replace the corporate auditor; we build SIA to eliminate the manual information hunt that erodes institutional velocity.
