@@ -42,6 +42,7 @@ graph TD
     
     Pack --> Manager[Manager Dashboard: Zero-Friction Approval]
 ```
+
 ## 3. The Orchestration Engine Specifications
 I. Transaction Verification Engine (Finance Node)
 Operation: Concurrently ingests real-time banking telemetry and corporate credit card APIs to verify the raw transaction parameters (exact timestamp, currency, merchant profile, and amount matched).
