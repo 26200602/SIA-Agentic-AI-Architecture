@@ -30,7 +30,7 @@ graph TD
     E -->|Nullify Event / Block Channel| G[Outbound Execution Stopped]
     F -->|Calibrated Micro-Intent Packet| H[Contextual Dialogue Triggered]
 ```
-3. The Three Pillars of SIA Brand Governance
+## 3. The Three Pillars of SIA Brand Governance
 I. Intent-Based Calibration (Context Over Content)
 Instead of tracking static historical database tables, the architecture dynamically decodes immediate human state and operational context.
 The Context Gap: Tracking individual behavior tags (e.g., "User clicked Destination X") causes severe hallucinations if the user's operational state has already shifted (e.g., "User just completed travel from Destination X").
@@ -43,7 +43,7 @@ III. Dynamic Resource Orchestration (Asset Translation)
 Shifting enterprise technology from an instrument of mass volume distribution to a precise logic engine directly optimizes bottom-funnel business conversion.
 Noise Traffic Reduction: Halting non-contextual automated output preserves critical cloud server, network bandwidth, and application-layer processing resources.
 Precision Capital Allocation: Restructuring low-logic communication models into highly restricted, deterministic, high-intent dialogues transforms scattered, fragmented enterprise data into a compounding strategic asset.
-4. Operational Implementation Matrix
+## 4. Operational Implementation Matrix
 Tactical Symptom	Root Cause (Broken Orchestration)	SIA Deterministic Correction	Strategic ROI Metric
 High-Velocity Harassment: Automated junk promotions sent to active or recently completed transaction users.	Isolated Silos: CRM database schemas and execution loops are isolated; tables cannot reason together in a shared linguistic layer.	Semantic Granularity: Deconstruct transaction and telemetry tables into sovereign factual components to verify ongoing state.	Brand Equity Protection: Immediate mitigation of customer attrition and opt-out spikes.
 Probabilistic Guessing: System tracks surface clicks but misinterprets underlying intent.	Missing Constraint Layer: Lack of active decay logic filters to invalidate stale behavioural historical logs.	Logic Topology: Overlay a flexible network graph determining relationship validity conditions (e.g., Active Travel state invalidates Offer X).	Conversion Optimization: Higher yield per dialogue instance (1 high-intent event over 1000 low-logic iterations).
