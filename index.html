@@ -73,9 +73,9 @@
 
     <div id="friction-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 max-w-md w-full text-center space-y-4">
-            <div class="w-12 h-12 rounded-full bg-emerald-900/50 border border-emerald-500 flex items-center justify-center mx-auto text-emerald-400 text-xl font-bold">✓</div>
-            <h3 class="text-xl font-bold text-gray-100">Calculated Friction Buffer</h3>
-            <p class="text-xs text-gray-400">Halting probabilistic AI execution. Engaging GraphRAG multi-hop topology matching to protect human agency truth layers...</p>
+            <div id="modal-icon" class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl font-bold"></div>
+            <h3 id="modal-title" class="text-xl font-bold text-gray-100"></h3>
+            <p id="modal-desc" class="text-xs text-gray-400"></p>
         </div>
     </div>
 
@@ -87,42 +87,82 @@
                 return;
             }
 
-            // Pillar 1 Simulation: Extracting entities dynamically from user words
+            // High-risk keywords evaluation logic
+            const highRiskKeywords = ['resign', 'leave', 'transfer', 'phishing', 'scam', 'unauthorized', 'ransom', 'hack', 'breach', 'sick'];
+            const hasRisk = highRiskKeywords.some(keyword => rawText.toLowerCase().includes(keyword));
+
+            // Pillar 1 Simulation
             const words = rawText.split(/[\s,.]+/).filter(w => w.length > 4).slice(0, 3);
             const container = document.getElementById('factoid-container');
-            
             container.innerHTML = `<span class='text-gray-400 text-[10px] w-full block text-center mb-2 animate-pulse'>Smashing data isolation...</span>`;
             
-            // FSM Shift 1
-            document.getElementById('state-flow').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-500 line-through";
-            document.getElementById('state-risk').className = "p-2 bg-yellow-950 border border-yellow-500 rounded text-yellow-400 animate-pulse";
-            
-            // Trigger Buffer
+            // FSM Reset States
+            document.getElementById('state-flow').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-400";
+            document.getElementById('state-risk').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-400";
+            document.getElementById('state-lock').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-400";
+            document.getElementById('packet-actions').classList.add('opacity-30', 'pointer-events-none');
+
+            // Set Modal Messaging Based on Risk
+            if (hasRisk) {
+                document.getElementById('modal-icon').className = "w-12 h-12 rounded-full bg-red-900/50 border border-red-500 flex items-center justify-center mx-auto text-red-400 text-xl font-bold";
+                document.getElementById('modal-icon').innerText = "⚠️";
+                document.getElementById('modal-title').innerText = "Calculated Friction Buffer Engaged";
+                document.getElementById('modal-desc').innerText = "Halting probabilistic AI execution. Engaging GraphRAG multi-hop topology matching to protect human agency truth layers...";
+                
+                document.getElementById('state-risk').className = "p-2 bg-yellow-950 border border-yellow-500 rounded text-yellow-400 animate-pulse";
+            } else {
+                document.getElementById('modal-icon').className = "w-12 h-12 rounded-full bg-emerald-900/50 border border-emerald-500 flex items-center justify-center mx-auto text-emerald-400 text-xl font-bold";
+                document.getElementById('modal-icon').innerText = "✓";
+                document.getElementById('modal-title').innerText = "Evaluating Baseline Entities";
+                document.getElementById('modal-desc').innerText = "No anomalous risk signatures detected. Verifying sovereign facts against data constraints...";
+                
+                document.getElementById('state-flow').className = "p-2 bg-emerald-950 border border-emerald-500 rounded text-emerald-400 animate-pulse";
+            }
+
             document.getElementById('friction-modal').classList.remove('hidden');
 
             setTimeout(() => {
                 document.getElementById('friction-modal').classList.add('hidden');
                 
                 // Show dynamic isolated factoids
-                container.innerHTML = words.map((w, i) => `
+                let factoidHTML = words.map((w, i) => `
                     <span class="bg-emerald-950 border border-emerald-800 text-emerald-400 px-2 py-1 rounded font-mono font-bold">[Factoid: ${w.toUpperCase()}]</span>
-                `).join('') + `<span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Systemic Threshold Breach]</span>`;
+                `).join('');
+                
+                if (hasRisk) {
+                    factoidHTML += `<span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Systemic Threshold Breach]</span>`;
+                } else {
+                    factoidHTML += `<span class="bg-emerald-950 border border-emerald-800 text-emerald-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Standard Baseline Verified]</span>`;
+                }
+                container.innerHTML = factoidHTML;
 
                 // Pillar 2 Non-intrusive Map Linkage
                 const visual = document.getElementById('topology-visual');
                 visual.classList.remove('opacity-20');
-                visual.innerHTML = `
-                    <div class="p-3 bg-emerald-950 border border-emerald-800 rounded-lg text-emerald-300 font-mono text-left">[Dynamic Node: ${words[0] || 'Event'}]<br><span class="text-[10px] text-gray-400">↳ Context Identity Layer</span></div>
-                    <div class="text-emerald-500 font-bold text-center text-xs">↑ Asynchronous Predicate Linkage ↑</div>
-                    <div class="p-3 bg-gray-950 border border-red-900 rounded-lg text-red-400 font-mono text-left">[Governance Constraint]<br><span class="text-[10px] text-gray-500">↳ Detected Anchor Disconnection</span></div>
-                `;
+                
+                if (hasRisk) {
+                    visual.innerHTML = `
+                        <div class="p-3 bg-emerald-950 border border-emerald-800 rounded-lg text-emerald-300 font-mono text-left">[Dynamic Node: ${words[0] || 'Event'}]<br><span class="text-[10px] text-gray-400">↳ Context Identity Layer</span></div>
+                        <div class="text-red-500 font-bold text-center text-xs">↑ Asynchronous Predicate Linkage (Risk Route) ↑</div>
+                        <div class="p-3 bg-gray-950 border border-red-900 rounded-lg text-red-400 font-mono text-left">[Governance Constraint]<br><span class="text-[10px] text-gray-500">↳ Detected Anchor Disconnection</span></div>
+                    `;
 
-                // FSM Shift 2: Lockdown
-                document.getElementById('state-risk').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-500 line-through";
-                document.getElementById('state-lock').className = "p-2 bg-red-950 border border-red-500 rounded text-red-400 font-black";
+                    // FSM Shift 2: Lockdown
+                    document.getElementById('state-risk').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-400 line-through";
+                    document.getElementById('state-lock').className = "p-2 bg-red-950 border border-red-500 rounded text-red-400 font-black";
+                    
+                    // Unlock Control Packet
+                    document.getElementById('packet-actions').classList.remove('opacity-30', 'pointer-events-none');
+                } else {
+                    visual.innerHTML = `
+                        <div class="p-3 bg-emerald-950 border border-emerald-800 rounded-lg text-emerald-300 font-mono text-left">[Dynamic Node: ${words[0] || 'Event'}]<br><span class="text-[10px] text-gray-400">↳ Context Identity Layer</span></div>
+                        <div class="text-emerald-500 font-bold text-center text-xs">↑ Asynchronous Predicate Linkage (Clear Route) ↑</div>
+                        <div class="p-3 bg-emerald-950 border border-emerald-800 rounded-lg text-emerald-400 font-mono text-left">[Automated Pipeline]<br><span class="text-[10px] text-emerald-500/70">↳ Frictionless Processing Approved</span></div>
+                    `;
 
-                // Unlock Control Packet
-                document.getElementById('packet-actions').classList.remove('opacity-30', 'pointer-events-none');
+                    // FSM Shift 2: Automated Safe Run
+                    document.getElementById('state-flow').className = "p-2 bg-emerald-950 border border-emerald-500 rounded text-emerald-400 font-black";
+                }
             }, 2000);
         }
 
