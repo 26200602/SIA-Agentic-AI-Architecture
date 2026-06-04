@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIA Risk Governor Dashboard</title>
+    <title>SIA Sovereign Sandbox</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans min-h-screen p-8">
 
     <header class="max-w-7xl mx-auto mb-8 border-b border-gray-800 pb-4">
-        <h1 class="text-3xl font-bold text-blue-500 tracking-wide">SIA RISK GOVERNOR</h1>
-        <p class="text-sm text-gray-400 mt-1">Sovereign Infrastructure Architecture • Deterministic Governance Simulator</p>
+        <h1 class="text-3xl font-bold text-emerald-500 tracking-wide">SIA SOVEREIGN SANDBOX</h1>
+        <p class="text-sm text-gray-400 mt-1">Strategic Intent Architecture • Dynamic Scenario Prototyping Laboratory</p>
         <p class="text-xs text-gray-500 mt-2 italic">This document was structured with the help of AI, and curated by MSK.</p>
     </header>
 
@@ -18,35 +18,31 @@
         
         <div class="space-y-6">
             <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-                <h2 class="text-lg font-semibold text-gray-200 mb-4">1. Scenario Injection</h2>
-                <div class="space-y-3">
-                    <button onclick="injectScenario('cfo')" class="w-full text-left bg-gray-800 hover:bg-gray-700 p-3 rounded-lg border border-gray-700 transition text-sm">
-                        
-                        <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Urgent Wire Request]</span>
-                        <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Requires CFO Auth]</span>
-                        <span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: CFO on Med Leave]</span>
-`;
-                    </button>
-                </div>
+                <h2 class="text-lg font-semibold text-gray-200 mb-2">1. Custom Scenario Injection</h2>
+                <p class="text-xs text-gray-400 mb-4">Type any systemic risk or operational event to test your ideas against SIA framework.</p>
+                
+                <textarea id="custom-input" class="w-full h-32 bg-gray-950 border border-gray-700 rounded-lg p-3 text-sm text-gray-300 focus:outline-none focus:border-emerald-500 font-sans" placeholder="Example: Key engineer resigned at 9 AM during a critical server migration window..."></textarea>
+                
+                <button onclick="processCustomScenario()" class="w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-lg text-sm font-bold tracking-wide transition shadow-lg shadow-emerald-900/20">
+                    ⚡ RUN SIA GOVERNANCE SCAN
+                </button>
             </div>
 
             <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
                 <h2 class="text-lg font-semibold text-gray-200 mb-2">Pillar 1: Semantic Granularity</h2>
-                <p class="text-xs text-gray-400 mb-4">Deconstructing data streams into isolated factoids.</p>
-                <div id="factoid-container" class="min-h-[100px] bg-gray-950 border border-gray-800 rounded-lg p-4 flex flex-wrap gap-2 items-center justify-center text-xs text-gray-500 italic">
-                    Inject a scenario to run Entity Isolation...
+                <p class="text-xs text-gray-400 mb-4">Deconstructing dynamic input into isolated entity factoids.</p>
+                <div id="factoid-container" class="min-h-[120px] bg-gray-950 border border-gray-800 rounded-lg p-4 flex flex-wrap gap-2 items-center justify-center text-xs text-gray-500 italic">
+                    Type a scenario and trigger the scan above...
                 </div>
             </div>
         </div>
 
         <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col">
             <h2 class="text-lg font-semibold text-gray-200 mb-2">Pillar 2: Logic Topology</h2>
-            <p class="text-xs text-gray-400 mb-4">Asynchronous predicate mapping shadowed above legacy databases.</p>
-            <div class="flex-1 bg-gray-950 border border-gray-800 rounded-lg p-4 flex flex-col justify-between min-h-[200px]">
-                <div id="topology-visual" class="space-y-3 opacity-30 text-xs text-center my-auto transition-all duration-500">
-                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-lg">Entity A (Pending Extraction)</div>
-                    <div class="text-blue-500 text-lg">↓</div>
-                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-lg">Entity B (Pending Extraction)</div>
+            <p class="text-xs text-gray-400 mb-4">Asynchronous multi-dimensional graph mapping above infrastructure layers.</p>
+            <div class="flex-1 bg-gray-950 border border-gray-800 rounded-lg p-4 flex flex-col justify-between min-h-[300px]">
+                <div id="topology-visual" class="space-y-4 opacity-20 text-xs text-center my-auto transition-all duration-500">
+                    <div class="p-3 bg-gray-900 border border-gray-800 rounded-lg border-dashed">Waiting for Dynamic Predicates...</div>
                 </div>
             </div>
         </div>
@@ -54,8 +50,8 @@
         <div class="space-y-6">
             <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
                 <h2 class="text-lg font-semibold text-gray-200 mb-2">Pillar 3: Reasoning Orchestration</h2>
-                <p class="text-xs text-gray-400 mb-4">Deterministic boundaries governed via FSM + GraphRAG.</p>
-                <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono font-bold">
+                <p class="text-xs text-gray-400 mb-4">FSM States shifting deterministically based on context thresholds.</p>
+                <div class="grid grid-cols-3 gap-2 text-center text-[10px] font-mono font-bold">
                     <div id="state-flow" class="p-2 bg-gray-800 border border-gray-700 rounded text-gray-400">AUTOMATED</div>
                     <div id="state-risk" class="p-2 bg-gray-800 border border-gray-700 rounded text-gray-400">RISK_DETECTED</div>
                     <div id="state-lock" class="p-2 bg-gray-800 border border-gray-700 rounded text-gray-400">LOCKDOWN</div>
@@ -63,10 +59,10 @@
             </div>
 
             <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-                <h2 class="text-lg font-semibold text-gray-200 mb-2">SIA Decision Packet</h2>
-                <p class="text-xs text-gray-400 mb-4">Human agency response console triggered by breach thresholds.</p>
+                <h2 class="text-lg font-semibold text-gray-200 mb-2">SIA Decision Packet Issuer</h2>
+                <p class="text-xs text-gray-400 mb-4">Sovereign action matrix unlocked via dynamic context-gap resolution.</p>
                 <div id="packet-actions" class="space-y-2 opacity-30 pointer-events-none transition-all duration-500">
-                    <button onclick="triggerAction('Reschedule')" class="w-full bg-blue-900/40 hover:bg-blue-900/60 border border-blue-700 text-blue-300 p-3 rounded-lg text-sm font-semibold flex justify-between items-center">🔄 Reschedule Protocol</button>
+                    <button onclick="triggerAction('Reschedule')" class="w-full bg-emerald-950/40 hover:bg-emerald-950/60 border border-emerald-700 text-emerald-300 p-3 rounded-lg text-sm font-semibold flex justify-between items-center">🔄 Reschedule Protocol</button>
                     <button onclick="triggerAction('Delegate')" class="w-full bg-purple-900/40 hover:bg-purple-900/60 border border-purple-700 text-purple-300 p-3 rounded-lg text-sm font-semibold flex justify-between items-center">👥 Delegation Protocol</button>
                     <button onclick="triggerAction('Takeover')" class="w-full bg-red-900/40 hover:bg-red-900/60 border border-red-700 text-red-300 p-3 rounded-lg text-sm font-semibold flex justify-between items-center">🛑 Takeover Protocol</button>
                     <button onclick="triggerAction('Override')" class="w-full bg-yellow-900/40 hover:bg-yellow-900/60 border border-yellow-700 text-yellow-300 p-3 rounded-lg text-sm font-semibold flex justify-between items-center">⚠️ Override Protocol</button>
@@ -77,42 +73,61 @@
 
     <div id="friction-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 max-w-md w-full text-center space-y-4">
-            <div class="w-12 h-12 rounded-full bg-yellow-900/50 border border-yellow-500 flex items-center justify-center mx-auto text-yellow-500 text-xl font-bold">!</div>
-            <h3 class="text-xl font-bold text-gray-100">Calculated Friction Activated</h3>
-            <p class="text-xs text-gray-400">SIA introduces strategic buffers. Processing dynamic multihop validation via GraphRAG network topology...</p>
+            <div class="w-12 h-12 rounded-full bg-emerald-900/50 border border-emerald-500 flex items-center justify-center mx-auto text-emerald-400 text-xl font-bold">✓</div>
+            <h3 class="text-xl font-bold text-gray-100">Calculated Friction Buffer</h3>
+            <p class="text-xs text-gray-400">Halting probabilistic AI execution. Engaging GraphRAG multi-hop topology matching to protect human agency truth layers...</p>
         </div>
     </div>
 
     <script>
-        function injectScenario(type) {
-            if(type !== 'cfo') return;
+        function processCustomScenario() {
+            const rawText = document.getElementById('custom-input').value.trim();
+            if(!rawText) {
+                alert("Please type a scenario first!");
+                return;
+            }
+
+            // Pillar 1 Simulation: Extracting entities dynamically from user words
+            const words = rawText.split(/[\s,.]+/).filter(w => w.length > 4).slice(0, 3);
             const container = document.getElementById('factoid-container');
-            container.innerHTML = `
-                <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Urgent Wire Request]</span>
-                <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Requires CFO Auth]</span>
-                <span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: CFO on Med Leave]</span>
-            `;
+            
+            container.innerHTML = `<span class='text-gray-400 text-[10px] w-full block text-center mb-2 animate-pulse'>Smashing data isolation...</span>`;
+            
+            // FSM Shift 1
             document.getElementById('state-flow').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-500 line-through";
             document.getElementById('state-risk').className = "p-2 bg-yellow-950 border border-yellow-500 rounded text-yellow-400 animate-pulse";
+            
+            // Trigger Buffer
             document.getElementById('friction-modal').classList.remove('hidden');
 
             setTimeout(() => {
                 document.getElementById('friction-modal').classList.add('hidden');
+                
+                // Show dynamic isolated factoids
+                container.innerHTML = words.map((w, i) => `
+                    <span class="bg-emerald-950 border border-emerald-800 text-emerald-400 px-2 py-1 rounded font-mono font-bold">[Factoid: ${w.toUpperCase()}]</span>
+                `).join('') + `<span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Systemic Threshold Breach]</span>`;
+
+                // Pillar 2 Non-intrusive Map Linkage
                 const visual = document.getElementById('topology-visual');
-                visual.classList.remove('opacity-30');
+                visual.classList.remove('opacity-20');
                 visual.innerHTML = `
-                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[Transfer Request]...</div>
-                    <div class="text-red-500 font-bold text-center text-sm">Requires Predicate Link</div>
-                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[CFO Approval Protocol]...</div>
+                    <div class="p-3 bg-emerald-950 border border-emerald-800 rounded-lg text-emerald-300 font-mono text-left">[Dynamic Node: ${words[0] || 'Event'}]<br><span class="text-[10px] text-gray-400">↳ Context Identity Layer</span></div>
+                    <div class="text-emerald-500 font-bold text-center text-xs">↑ Asynchronous Predicate Linkage ↑</div>
+                    <div class="p-3 bg-gray-950 border border-red-900 rounded-lg text-red-400 font-mono text-left">[Governance Constraint]<br><span class="text-[10px] text-gray-500">↳ Detected Anchor Disconnection</span></div>
                 `;
-               
+
+                // FSM Shift 2: Lockdown
                 document.getElementById('state-risk').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-500 line-through";
                 document.getElementById('state-lock').className = "p-2 bg-red-950 border border-red-500 rounded text-red-400 font-black";
+
+                // Unlock Control Packet
                 document.getElementById('packet-actions').classList.remove('opacity-30', 'pointer-events-none');
             }, 2000);
         }
+
         function triggerAction(action) {
-            alert(`SIA Governance Execution: [${action} Protocol] dispatched immediately with absolute audit trail logs.`);
+            alert(`SIA Sovereign Action dispatched: [${action} Protocol] executed with absolute, un-erasable digital audit trails.`);
         }
     </script>
 </body>
