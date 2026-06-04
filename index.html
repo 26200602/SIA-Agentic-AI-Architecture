@@ -21,8 +21,11 @@
                 <h2 class="text-lg font-semibold text-gray-200 mb-4">1. Scenario Injection</h2>
                 <div class="space-y-3">
                     <button onclick="injectScenario('cfo')" class="w-full text-left bg-gray-800 hover:bg-gray-700 p-3 rounded-lg border border-gray-700 transition text-sm">
-                        <span class="font-bold text-red-400 block mb-1">The CFO Phishing Scam</span>
-                        <span class="text-xs text-gray-400">High-value transfer request initiated while CFO is on medical leave.</span>
+                        
+                        <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Urgent Wire Request]</span>
+                        <span class="bg-blue-950 border border-blue-800 text-blue-400 px-2 py-1 rounded font-mono font-bold">[Factoid: Requires CFO Auth]</span>
+                        <span class="bg-red-950 border border-red-800 text-red-400 px-2 py-1 rounded font-mono font-bold">[Factoid: CFO on Med Leave]</span>
+`;
                     </button>
                 </div>
             </div>
@@ -98,10 +101,11 @@
                 const visual = document.getElementById('topology-visual');
                 visual.classList.remove('opacity-30');
                 visual.innerHTML = `
-                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[Transfer Request]<br><span class="text-[10px] text-gray-400">↳ Value: High Risk Threshold</span></div>
+                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[Transfer Request]...</div>
                     <div class="text-red-500 font-bold text-center text-sm">Requires Predicate Link</div>
-                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[CFO Approval Protocol]<br><span class="text-[10px] text-red-400">↳ Operational Conflict: Active Leave Status</span></div>
+                    <div class="p-3 bg-blue-950 border border-blue-800 rounded-lg text-blue-300 font-mono text-left">[CFO Approval Protocol]...</div>
                 `;
+               
                 document.getElementById('state-risk').className = "p-2 bg-gray-800 border border-gray-700 rounded text-gray-500 line-through";
                 document.getElementById('state-lock').className = "p-2 bg-red-950 border border-red-500 rounded text-red-400 font-black";
                 document.getElementById('packet-actions').classList.remove('opacity-30', 'pointer-events-none');
