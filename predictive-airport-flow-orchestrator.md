@@ -59,39 +59,99 @@ The ticketing infrastructure operates on a decentralized "Customs Screening" phi
 
 ## 5. Implementation Blueprint (Hardware Attestation Logic)
 # =============================================================================
-# DETACHED HARDWARE ATTESTATION ENGINE
-# Core Logic Flow for Edge Gate Validation under SIA Framework
+# SOVEREIGN INFRASTRUCTURE ARCHITECTURE (SIA) ATTESTATION ENGINE
+# Core Logic Flow for Airport-Scale Edge Gate Validation & Governance Matrix
 # =============================================================================
 
-def process_gate_ingress(device_payload, local_ledger, gate_interface):
-    """
-    Evaluates physical hardware signature against localized edge records.
-    Bypasses probabilistic network validation for deterministic edge security.
-    """
-    ticket_id = device_payload.get_ticket_id()
-    
-    # Phase 1: Cryptographic Hardware Integrity Verification
-    if not device_payload.secure_element.verify_attestation(EVENT_ID):
-        log_security_anomaly(ticket_id, "Attestation Failure: Invalid Hardware Layer")
-        return redirect_to_manual_counter(reason="UNSUPPORTED_OR_FORGED_HARDWARE")
+class SIAGateGovernanceEngine:
+    def __init__(self, edge_ledger, infrastructure_graph, human_control_matrix):
+        self.local_ledger = edge_ledger
+        self.topology_layer = infrastructure_graph  # Pillar 2: Asynchronous Logic Graph
+        self.human_matrix = human_control_matrix    # Pillar 3: Human Action Packet Router
+
+    def process_gate_ingress(self, device_payload, hardware_telemetry, gate_id):
+        """
+        Executes zero-latency edge validation. Orchestrates deterministic 
+        FSM states to isolate anomalies without causing terminal paralysis.
+        """
+        ticket_id = device_payload.get_ticket_id()
         
-    # Phase 2: Local Ledger Double-Spend Audit (Anti-Replay Loop)
-    try:
-        local_ledger.acquire_atomic_lock(ticket_id)
-        
-        if not local_ledger.is_spent(ticket_id):
-            # Safe Execution Path
-            local_ledger.mark_as_spent(ticket_id)
-            gate_interface.trigger_relay(duration_ms=500)
-            return INGRESS_STATUS_SUCCESS
-        else:
-            # Deterministic Fraud Intercept
-            trigger_system_alert(ticket_id, severity="CRITICAL", detail="Duplicate Hardware Signature Present")
-            return INGRESS_STATUS_REJECTED
+        # ---------------------------------------------------------------------
+        # PILLAR 1: SEMANTIC GRANULARITY & ENTITY ISOLATION
+        # Fracture raw environment data into immutable, detached semantic factoids.
+        # ---------------------------------------------------------------------
+        factoids = {
+            "hardware_signature": device_payload.secure_element.verify_attestation(EVENT_ID),
+            "passenger_time_window": hardware_telemetry.get_arrival_window_status(),
+            "luggage_weight_node": hardware_telemetry.get_smart_cradle_metrics(),
+            "external_city_transit": self.topology_layer.fetch_external_dependency_state("CITY_EXPRESS_TRAIN")
+        }
+
+        # ---------------------------------------------------------------------
+        # PILLAR 2: NON-INTRUSIVE LOGIC TOPOLOGY (MAP RELATIONSHIPS)
+        # Scan predicates across the graph completely detached from physical production storage rows.
+        # ---------------------------------------------------------------------
+        is_hardware_compromised = not factoids["hardware_signature"]
+        is_temporal_out_of_sequence = factoids["passenger_time_window"] == "SLOT_EXPIRED"
+        is_structural_overweight = factoids["luggage_weight_node"] == "CRADLE_THRESHOLD_BREACH"
+        is_external_system_collapsing = factoids["external_city_transit"] == "CRITICAL_BREAKDOWN"
+
+        # ---------------------------------------------------------------------
+        # PILLAR 3: REASONING ORCHESTRATION & FINITE STATE MACHINE (FSM) BOUNDARY
+        # Transition deterministically between Baseline Efficiency and Strategic Friction Buffers.
+        # ---------------------------------------------------------------------
+        try:
+            self.local_ledger.acquire_atomic_lock(ticket_id)
+
+            # --- CASE 1: FRAUD INTERCEPT (Hardware Signature Mismatch / Double-Spend) ---
+            if is_hardware_compromised or self.local_ledger.is_spent(ticket_id):
+                # Absolute boundary: Instantly trigger lockdown, prevent algorithmic guessing
+                self.trigger_fsm_state(gate_id, "🔴 STATE: LOCKDOWN")
+                control_packet = self.human_matrix.compile_decision_packet(
+                    incident="HARDWARE_SPOOF_OR_DOUBLE_SPEND",
+                    evidence=factoids,
+                    actions=["Takeover_Protocol_Freeze_Turnstile", "Override_Protocol_Manual_Visual_Audit"]
+                )
+                return self.human_matrix.dispatch_to_supervisor_console(control_packet)
+
+            # --- CASE 2: DYNAMIC MASS INTERRUPTION (City-wide Transit Failure) ---
+            elif is_external_system_collapsing:
+                # Dynamic SLA Recalibration: AI flags entropy, but human architecture sets the adaptive route
+                self.trigger_fsm_state(gate_id, "⚠️ STATE: RISK_DETECTED")
+                control_packet = self.human_matrix.compile_decision_packet(
+                    incident="EXTERNAL_INFRASTRUCTURE_COLLAPSE_CITY_TRAIN",
+                    evidence=factoids,
+                    actions=["Reschedule_Protocol_Extend_Terminal_Constraints", "Override_Protocol_Suppress_Slot_Fines"]
+                )
+                # Humans approve macro recalibration; system executes seamlessly terminal-wide
+                return self.human_matrix.execute_batch_adaptive_routing(control_packet)
+
+            # --- CASE 3: OPERATIONAL ANOMALY (Late-comer / Cargo Overweight) ---
+            elif is_temporal_out_of_sequence or is_structural_overweight:
+                # Localized isolation: Do not paralyze main flow. Re-route anomaly gracefully.
+                self.trigger_fsm_state(gate_id, "🔄 STATE: RECOVERY_ROUTING")
+                gate_interface.lock_primary_stream()
+                gate_interface.engage_localized_rerouting_indicator(target_gate="Gate_B_The_Recovery_Zone")
+                return INGRESS_STATUS_REDIRECTED
+
+            # --- CASE 4: SECURE AUTONOMOUS SESSION (Standard Baseline) ---
+            else:
+                self.trigger_fsm_state(gate_id, "🟢 STATE: AUTOMATED")
+                self.local_ledger.mark_as_spent(ticket_id)
+                
+                # Asynchronous Commercial Buffering: Inject strategic latency for optimal passenger flow
+                gate_interface.trigger_relay(duration_ms=500)
+                gate_interface.illuminate_directional_retail_funnel_indicators()
+                return INGRESS_STATUS_SUCCESS
+
+        except LedgerCollisionException as concurrency_error:
+            # Thread safety fallback: Escalate to human command layer immediately
+            return self.human_matrix.route_to_manual_station(reason="LEDGER_CONCURRENCY_LOCK")
             
-    except LedgerCollisionException as error:
-        return redirect_to_manual_counter(reason="LEDGER_CONCURRENCY_LOCK")
-    finally:
-        local_ledger.release_atomic_lock(ticket_id)
+        finally:
+            self.local_ledger.release_atomic_lock(ticket_id)
+
+    def trigger_fsm_state(self, gate_id, state_name):
+        log_deterministic_audit_trail(f"Gate {gate_id} shifted state to: {state_name}")
         #
   Core Architectural Axiom: We do not defeat automation by writing more defensive software; we defeat automation by anchoring digital truth to the inescapable financial costs of physical reality.
