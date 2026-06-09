@@ -1,5 +1,7 @@
+# case-studies/data-decoupling-framework.md
+
 # Case Study: Data Decoupling — From Firewalls to Real Risk Reduction
-Ref: SIA_Manifesto_128.pdf (The Trust Anchor Principle)
+Ref: SIA_Manifesto_130.pdf / Pillar 1-3_130.pdf
 
 > **Attribution Notice**
 > This document was structured with the help of AI, and curated by Sana.M.
@@ -39,6 +41,7 @@ graph TD
         F -->|Parallel Shadow Execution| G[Legacy Production Schema]
         G -->|Zero Operational Risk| H[Real-Time Risk Reduction Audit]
     end
+```
 
 ## 3. Core Architectural Specifications
 I. Granular Atomization & Entity Isolation
@@ -50,9 +53,11 @@ PDF
 II. Non-Intrusive Implementation Mesh
 Operation: Deploys an asynchronous logical overlay that shadows existing legacy systems without changing underlying production storage schemas.  
 PDF
-Objective: Validates parallel decoupled logic via extensive shadow testing alongside legacy environments, ensuring zero risk to live operational transactions.
+Objective: Validates parallel decoupled logic via extensive shadow testing alongside legacy environments, ensuring zero risk to live operational transactions.  
+PDF
 
 ## 4. Operational Risk & Scenario Calibration
+
 | Scenario Complexity | Architectural Pattern | Governance & Resolution Path |
 | :--- | :--- | :--- |
 | **Low-Risk Context** <br>(e.g., Internal HR FAQ, Product Manuals) | Standard RAG Pipeline | **Cost-Effective Fit:** Linear data retrieval; low compliance risk; straightforward keyword and vector matching suffices. |
