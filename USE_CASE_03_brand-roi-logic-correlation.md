@@ -1,6 +1,3 @@
-Here is the updated document. I have translated the text-based architecture and workflows into two distinct Mermaid diagrams (a flowchart for the Solution Architecture and a relationship map for the Logic Bridge).
-I also streamlined the overall layout to make it highly scannable and easy to read while keeping your exact professional wording and structure.
-------------------------------
 ## Strategic Whitepaper: The ROI of Logic — Mapping Attributes to Growth
 Ref: SIA_Manifesto_63.pdf / Pillar 1-3_63.pdf
 Attribution Notice
@@ -39,7 +36,9 @@ graph TD
     end
 
     %% Data Flow
-    A & B & C --> D
+    A --> D
+    B --> D
+    C --> D
     E --> F
     
     %% Styling
@@ -73,10 +72,12 @@ graph LR
         G[Equity Protection]
     end
 
-    A & B & C -->|Fragmented Data| D
-    D -->|Real-Time Visibility| E
-    D -->|Structured Correlation| F
-    D -->|Brand Decay Alerts| G
+    A --> D
+    B --> D
+    C --> D
+    D --> E
+    D --> F
+    D --> G
 
     style Logic_Bridge fill:#f0fbf0,stroke:#2e7d32,stroke-width:2px
 
@@ -101,12 +102,3 @@ The Core Paradigm: "Data is noise; Correlation is return." True agentic optimiza
 ## Footer
 © 2026 GitHub, Inc.
 ------------------------------
-## How to add this to your GitHub Repository:
-
-   1. Go to your repository file on GitHub.
-   2. Click the Pencil icon (Edit this file).
-   3. Select all text, delete it, and paste this entire block inside.
-   4. Click Commit changes... at the top right to save it.
-
-Would you like me to generate a similar Mermaid diagram architecture for your previous file (USE_CASE_03_brand-equity-orchestration-decay.md) to keep the visual style consistent across your portfolio?
-
