@@ -37,16 +37,19 @@ graph TD
     style E fill:#bbf,stroke:#333,stroke-width:2px
     style G fill:#ffb3b3,stroke:#333,stroke-width:2px
     style I fill:#bbf,stroke:#333,stroke-width:2px
-Phase 1: Intent Isolation via Ephemeral Shadow Maps
-When a high-risk operational intent (e.g., an unverified CFO wire-transfer instruction) hits the gateway, the engine immediately encapsulates the context. It spins up an Ephemeral Shadow Map—a transient, highly isolated memory workspace.
-Enterprise ROI: This layer operates with Zero Core Mutation. The master legacy database remains untouched and fully air-gapped during the entire evaluation cycle.
-Phase 2: Semantic Downgrade via Factoid Collision
-To eliminate the unpredictable randomness of natural language, the architecture utilizes a sandboxed Small Language Model (SLM) serving strictly as a computational compiler. The SLM strips away semantic noise and decomposes the raw text into decentralized, immutable Factoids (strongly typed Boolean data packets).
-The Interface Boundary: In this executable blueprint, the schema mapping layer is explicitly structured to demonstrate how multi-variant human intents are translated into rigid logic circuits.
-Phase 3: FSM State Collapse & Context Revocation
-These factoids are injected into an Invariant Finite State Machine (FSM) Engine. The FSM does not guess; it evaluates the facts against pre-configured, versioned organizational compliance boundaries.
-The Kill-Switch Mechanism: The exact millisecond an engineered red line is breached, the FSM triggers an immediate State Collapse. The entire transaction context is instantly revoked, the runtime API call is terminated, and the Ephemeral Shadow Map is completely flushed from memory, leaving zero residual data debt.
 ```
+
+### Phase 1: Intent Isolation via Ephemeral Shadow Maps
+When a high-risk operational intent (e.g., an unverified CFO wire-transfer instruction) hits the gateway, the engine immediately encapsulates the context. It spins up an Ephemeral Shadow Map—a transient, highly isolated memory workspace.
+**Enterprise ROI:** This layer operates with Zero Core Mutation. The master legacy database remains untouched and fully air-gapped during the entire evaluation cycle.
+
+### Phase 2: Semantic Downgrade via Factoid Collision
+To eliminate the unpredictable randomness of natural language, the architecture utilizes a sandboxed Small Language Model (SLM) serving strictly as a computational compiler. The SLM strips away semantic noise and decomposes the raw text into decentralized, immutable Factoids (strongly typed Boolean data packets).
+**The Interface Boundary:** In this executable blueprint, the schema mapping layer is explicitly structured to demonstrate how multi-variant human intents are translated into rigid logic circuits.
+
+### Phase 3: FSM State Collapse & Context Revocation
+These factoids are injected into an Invariant Finite State Machine (FSM) Engine. The FSM does not guess; it evaluates the facts against pre-configured, versioned organizational compliance boundaries.
+**The Kill-Switch Mechanism:** The exact millisecond an engineered red line is breached, the FSM triggers an immediate State Collapse. The entire transaction context is instantly revoked, the runtime API call is terminated, and the Ephemeral Shadow Map is completely flushed from memory, leaving zero residual data debt.
 
 ## 3. Codebase Alignment & Architectural Sincerity
 To maintain absolute technical honesty for architectural auditors, this repository is designed as a Universal Rigged Shell:
