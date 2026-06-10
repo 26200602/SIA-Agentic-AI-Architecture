@@ -3,7 +3,7 @@
 **Ref:** SIA_Manifesto_63.pdf / Pillar 1-3_63.pdf
 
 **Attribution Notice**  
-This document was structured with the help of AI, and curated by MSK.  
+This document was structured with the help of AI, and curated by Sana.M.  
 *Statement:* This project framework and strategic governance model was conceived by me, and accelerated in collaboration with Advanced AI tools for rapid prototyping and clean Markdown publication.
 
 **Disclaimer:** This document is for strategic study and professional portfolio presentation purposes only. The case studies, architectural diagnosis, and logic models described herein represent conceptual frameworks engineered to demonstrate Sovereign Infrastructure Architecture (SIA) principles within enterprise environments. They do not represent specific corporate disclosures or legally binding compliance audits.
