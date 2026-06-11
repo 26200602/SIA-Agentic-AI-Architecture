@@ -172,5 +172,5 @@ class SIAGateGovernanceEngine:
 Core Architectural Axiom: We do not defeat automation by writing more defensive software; we defeat automation by anchoring digital truth to the inescapable financial costs of physical reality.
 
 
-def trigger_fsm_state(self, gate_id, state_name):
+    def trigger_fsm_state(self, gate_id, state_name):
         log_deterministic_audit_trail(f"Gate {gate_id} shifted state to: {state_name}")
