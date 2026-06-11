@@ -17,7 +17,6 @@ The Sovereign Infrastructure Architect's response is to shift the security perim
 ## 2. System Architecture & Gate Telemetry Flow
 
 The architecture relies on high-speed hardware attestation coupled with an edge-computed decentralized ledger, ensuring sub-0.5 second verification loops even during total network isolation. Below is the deterministic state transition and orchestration flow mapped across the infrastructure layers:
-{content: }
 
 ```mermaid
 graph TD
