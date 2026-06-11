@@ -17,6 +17,7 @@ The Sovereign Infrastructure Architect's response is to shift the security perim
 ## 2. System Architecture & Gate Telemetry Flow
 
 The architecture relies on high-speed hardware attestation coupled with an edge-computed decentralized ledger, ensuring sub-0.5 second verification loops even during total network isolation. Below is the deterministic state transition and orchestration flow mapped across the infrastructure layers:
+{content: }
 
 ```mermaid
 graph TD
@@ -71,6 +72,7 @@ The ticketing infrastructure operates on a decentralized "Customs Screening" phi
 | **Dynamic Mass Interruption** *(City-wide Transit Failure)* | **State Detected:** Ingestion engines flag a critical breakdown in external connectivity infrastructure (e.g., city express train network outage). | **Dynamic SLA Recalibration:** The AI orchestrator suppresses standard time-slot fines, automatically extends arrival constraints terminal-wide, and instantly resynchronizes local gate ledgers to prevent terminal anxiety and gate-side bottlenecks. |
 
 ## 5. Implementation Blueprint (Hardware Attestation Logic)
+
 
 ```python
 # =============================================================================
