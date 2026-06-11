@@ -169,3 +169,8 @@ finally:
 
 def trigger_fsm_state(self, gate_id, state_name):
         log_deterministic_audit_trail(f"Gate {gate_id} shifted state to: {state_name}")
+   # Always release the database lock when done
+self.local_ledger.release_atomic_lock(ticket_id)
+
+def trigger_fsm_state(self, gate_id, state_name):
+        log_deterministic_audit_trail(f"Gate {gate_id} shifted state to: {state_name}")
