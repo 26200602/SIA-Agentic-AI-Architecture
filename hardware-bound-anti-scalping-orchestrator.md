@@ -170,3 +170,4 @@ class SIAGateGovernanceEngine:
 ```
 
 Core Architectural Axiom: We do not defeat automation by writing more defensive software; we defeat automation by anchoring digital truth to the inescapable financial costs of physical reality.
+
