@@ -30,6 +30,7 @@ graph LR
     style E fill:#fce4d6,stroke:#c0392b
     style G fill:#eceff1,stroke:#455a64
 
+
 ```
 # ✈️ Airline Operational Framework
 
@@ -68,22 +69,20 @@ graph LR
 ## 🚀 Implementation Roadmap
 The framework is structured into a phased, low-risk rollout designed to validate behavioral compliance metrics before capital expenditure on physical infrastructure occurs.
 
-```mermaid
 gantt
     title Framework Implementation Roadmap
-    dateFormat  X
+    dateFormat  YYYY-MM-DD
     axisFormat %d
     
     section Phase 1
-    Soft Launch (Digital Only) :active, p1, 0, 30
+    Soft Launch (Digital Only) :active, p1, 2026-06-01, 30d
     
     section Phase 2
-    Operational Hardening (Infrastructure) : p2, 30, 60
+    Operational Hardening (Infrastructure) : p2, after p1, 30d
     
     section Phase 3
-    Ecosystem Integration (Full Scale) : p3, 60, 90
+    Ecosystem Integration (Full Scale) : p3, after p2, 30d
 
-```
 
 # 🚀 Framework Implementation Roadmap
 
@@ -112,4 +111,4 @@ For an exhaustive breakdown of the architectural rules and semantic data structu
 
 ---
 
-📌 This document was structured with the help of AI, and curated by **MSK**.
+📌 This document was structured with the help of AI, and curated by **Sana.M**.
