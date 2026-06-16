@@ -81,7 +81,7 @@ gantt
     
     section Phase 3
     Ecosystem Integration (Full Scale) : p3, after p2, 30d
-
+```
 
 ## Phase 1: Soft Launch (Digital Only)
 - **Scope:** Deploy user interfaces for slot booking and distribute mileage/weight rewards programmatically via tokenized applications.  
