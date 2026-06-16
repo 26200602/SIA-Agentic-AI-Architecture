@@ -34,7 +34,7 @@ Consider how this applies to a tier-1 retail bank managing **1.8M traditional pa
 Smarter models offer incredible reasoning capabilities, but chasing them blindly introduces unsustainable compute costs without solving the probabilistic nature of hallucinations. True digital transformation relies on managing parameters through business-first design—ensuring that the architecture enforces safety lines that models cannot guarantee alone.
 
 ---
-📌 *This document was structured with the help of AI, and curated by MSK.*
+📌 *This document was structured with the help of AI, and curated by Sana.M.*
 
 #SIA #AIArchitecture #EnterpriseAI #DataGovernance #EnterpriseRisk #CloudBudget #TechStrategy
 
