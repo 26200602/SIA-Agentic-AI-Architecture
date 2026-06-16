@@ -1,92 +1,91 @@
-# SIA 2.0: Non-Intrusive Runtime Governance & Deterministic AI Shield
-### Executive Blueprint & Production-Grade Conceptual Logic Specification
+# Sovereign Infrastructure Architecture (SIA) 2.0: Core Governance Engine
 
-This repository contains the **Executable Blueprint** for the layer-2 execution engine of the Sovereign Infrastructure Architecture (SIA 2.0) framework. It provides a production-grade, deterministic conceptual logic implemented in JavaScript to demonstrate runtime enterprise compliance governance without incurring legacy data migration debt.
-
-**Executable Blueprint:** [https://sia-agentic-ai-architecture.vercel.app/](https://sia-agentic-ai-architecture.vercel.app/)  
-**Mind Filter (Thought Synthesis App) SimPoC:** [https://thought-synthesis-app.vercel.app/](https://thought-synthesis-app.vercel.app/)
+Enterprise AI transformations routinely fail because organizations force advanced, probabilistic intelligence into rigid, centralized legacy systems. This repository houses the conceptual and technical system architecture for **SIA 2.0**—a non-intrusive, runtime interception framework designed to decouple logical context from physical storage, enforcing absolute data sovereignty and deterministic governance without disrupting production legacy infrastructures.
 
 ---
 
-## 1. Architectural Mandate & Problem Space
+## 🏛️ Executive Summary
 
-Traditional enterprise security models fail in the AI era due to **Structural Coupling**. Blindly plugging probabilistic large language models (LLMs/SLMs) directly into centralized legacy data structures accelerates boundary failures. When a system relies solely on post-event output auditing or generic constitutional alignment, it remains highly vulnerable to semantic prompt injections and multi-variant financial fraud.
+SIA 2.0 addresses a critical vulnerability in modern digital transformation: systemic risk driven by unconstrained autonomous agents. By replacing linear script constraints with runtime state boundaries, this architecture ensures that multi-agent operations remain strictly aligned with enterprise risk mandates. 
 
-SIA 2.0 introduces an alternative paradigm: **Compliance by Design via an Invariant Runtime Interception Layer**. 
-
-This blueprint proves that you can achieve 100% deterministic mitigation of open-domain semantic risks *at birth*—before the transaction context ever mutates a permanent table in your master database core.
+The core engine operates on a zero-trust model where original enterprise data remains stationary. Instead of moving records, the system maps logical context via an abstracted metadata layer, utilizing Finite State Machines (FSM) and GraphRAG multi-hop reasoning to capture anomalies, enforce boundaries, and inject human verification before operational friction occurs.
 
 ---
 
-## 2. Core Operational Mechanics (The 3-Phase Pipeline)
+## 🔄 System Architecture & Human-Control Workflow
 
-The codebase inside this repository executes a rigid, non-intrusive compliance pipeline divided into three distinct architectural phases:
+The engine establishes a non-intrusive abstraction layer above legacy databases. It continuously monitors relational data shifts, structures raw items into isolated fact patterns, maps them into a logical mesh, and triggers deterministic governance blocks when state boundaries are crossed.
 
 ```mermaid
 graph TD
-    A[Raw Human Intent / Phishing Email] -->|Phase 1: Intercept| B(Ephemeral Shadow Map)
-    B -->|Isolate Workspace in Volatile Memory| C[Sandboxed SLM Compiler]
-    C -->|Phase 2: Semantic Downgrade| D[Structured Factoids Matrix]
-    D -->|Inject Boolean Packets| E{Invariant FSM Engine}
-    E -->|Compliance Rule Validation| F[State Transition Evaluation]
-    F -->|Red Line Breached| G[Phase 3: FSM State Collapse]
-    G -->|Instant Context Revocation| H[API Call Terminated]
-    H -->|Memory Flush Effect| I[Shadow Memory Flushed to Zero]
+    %% Data & Layer Layer
+    A[Raw Corporate Data / Legacy DB] -->|Pillar 1: Async Decoupling| B(Sovereign Factoids & Entity Isolation)
+    B -->|Pillar 2: Non-Intrusive Mapping| C(Logic Topology Layer / Knowledge Graph)
     
-    %% High-Contrast accessible styling for enterprise readability
-    style B fill:#FFF3CD,stroke:#D39E00,stroke-width:2px,color:#000000
-    style E fill:#D1ECF1,stroke:#17A2B8,stroke-width:2px,color:#000000
-    style G fill:#F8D7DA,stroke:#DC3545,stroke-width:2px,color:#000000
-    style I fill:#E2E3E5,stroke:#6C757D,stroke-width:2px,color:#000000
+    %% Engine Processing
+    C -->|Pillar 3: Dynamic Orchestration| D{SIA Engine: GraphRAG + FSM}
+    
+    %% Governance Path & Logic
+    D -->|Normal State Bounds| F[Frictionless Execution Path]
+    D -->|Anomalous State Breach| E[Runtime Invariant Interception]
+    
+    %% Human Control Nodes
+    E -->|Compile Boundary Context| G[Deterministic Decision Packet]
+    G -->|HOTL: Passive Oversight| H{Human Governance Layer}
+    G -->|HITL: Explicit Authorization| H
+    
+    %% System Resolution
+    H -->|Approved| I[Resumed Safe State Operations]
+    H -->|Rejected / Override| J[System Lockdown & Escalation Logic]
+
 ```
 
-Phase 1: Intent Isolation via Ephemeral Shadow Maps
-When a high-risk operational intent (e.g., an unverified CFO wire-transfer instruction) hits the gateway, the engine immediately encapsulates the context. It spins up an Ephemeral Shadow Map—a transient, highly isolated memory workspace.
-Enterprise ROI: This layer operates with Zero Core Mutation. The master legacy database remains untouched and fully air-gapped during the entire evaluation cycle.
-Phase 2: Semantic Downgrade via Factoid Collision
-To eliminate the unpredictable randomness of natural language, the architecture utilizes a sandboxed Small Language Model (SLM) serving strictly as a computational compiler. The SLM strips away semantic noise and decomposes the raw text into decentralized, immutable Factoids (strongly typed Boolean data packets).
-The Interface Boundary: In this executable blueprint, the schema mapping layer is explicitly structured to demonstrate how multi-variant human intents are translated into rigid logic circuits.
+# 🛠️ The 3 Core Execution Pillars
 
-Phase 3: FSM State Collapse & Context Revocation
-These factoids are injected into an Invariant Finite State Machine (FSM) Engine. The FSM does not guess; it evaluates the facts against pre-configured, versioned organizational compliance boundaries.
-The Kill-Switch Mechanism: The exact millisecond an engineered red line is breached, the FSM triggers an immediate State Collapse. The entire transaction context is instantly revoked, the runtime API call is terminated, and the Ephemeral Shadow Map is completely flushed from memory, leaving zero residual data debt.
+## Pillar 1: Strategic Decoupling (Semantic Granularity)
+**The Invariant:**  
+Physical enterprise data must never be directly exposed to probabilistic large language models.  
 
-## 3. Codebase Alignment & Architectural Sincerity
+**Mechanism:**  
+- Smashes rigid, centralized database rows into autonomous, independent units of fundamental facts ("Factoids").  
+- This isolation eliminates semantic noise, cross-contamination, and data leakage vectors directly at the physical storage layer.  
 
-To maintain absolute technical honesty for architectural auditors, this repository is designed as a Universal Rigged Shell:
-Invariant Engine, Variable Configurations: The underlying FSM core logic within the code is structurally fixed. It does not need to be rewritten for different enterprise departments or shifting regulatory landscapes.
-Decoupled Policies: Scaling the architecture from a CFO phishing mitigation scenario to a Marketing budget threshold control requires zero code modifications. It is driven purely by injecting updated, versioned JSON policy configurations directly into the invariant runtime engine.
+---
 
-## 4. Blueprint Verification & Walkthrough
+## Pillar 2: Non-Intrusive Mapping (Logic Topology)
+**The Invariant:**  
+System architecture must not alter or pollute existing legacy production schemas.  
 
-Repository Structure
-├── core/
-│   ├── fsm.js          # The invariant deterministic state transition engine.
-│   └── memory.js       # The transient ephemeral mapping abstraction layer (Shadow Memory allocation and flush routines).
-├── config/
-│   └── policies/      # Versioned JSON compliance boundaries (e.g., cfo_wire_transfer_policy.json).
-└── server.js           # The runtime pipeline orchestration layer linking intent mapping to state evaluation.
+**Mechanism:**  
+- Uses asynchronous background operations to scan isolated Factoids and construct an abstracted, multi-dimensional knowledge graph.  
+- This relational logic network shadows production environments (e.g., global logistics networks, enterprise resource databases) while maintaining zero structural impact on legacy codebases.  
 
-Auditing the Code
+---
 
-Architects and Technical Auditors are encouraged to clone this repository and review the implementation file-by-file to verify:
+## Pillar 3: Deterministic Orchestration & Human Control Boundaries
+**The Invariant:**  
+Absolute automation without a physical or human anchor creates catastrophic systemic vulnerabilities.  
 
-0.  The non-intrusive isolation properties of the runtime workspace.
-1. The crisp transition constraints of the state-machine logic.
-2. The absolute containment of the context revocation phase.
+**Mechanism:**  
+- Fuses GraphRAG multi-hop reasoning with strict Finite State Machines (FSM) to govern agent behaviors.  
+- When complex cross-boundary anomalies or high-stakes risk triggers are detected:  
+  - The engine immediately overrides linear scripts and freezes autonomous processing.  
+  - It translates complex system telemetry into a clean, auditable "Decision Packet" tailored for executive oversight.  
+  - It enforces Human-in-the-Loop (HITL) and Human-on-the-Loop (HOTL) boundaries, anchoring the system's ultimate authority to human intent rather than algorithmic guesswork.  
 
-# Clone the Executable Blueprint
-git clone [https://github.com/26200602/SIA-Agentic-AI-Architecture.git](https://github.com/26200602/SIA-Agentic-AI-Architecture.git)
+---
 
-# Install Minimal Infrastructure Dependencies
-npm install
+# 🎯 Target Audience & Strategic Alignment
+- **Chief Technology Officers (CTOs):** Deployable blueprinted frameworks for secure, cross-department multi-agent orchestration.  
+- **Chief Risk Officers (CROs) & Governance Leads:** Auditable, human-anchored guardrails that turn probabilistic risk into predictable, safe state boundaries.  
+- **Enterprise Architects:** Scalable metadata logic patterns capable of wrapping legacy applications without downtime or structural rewrites.  
 
-# Run the Deterministic Interception Simulation
-npm start
+---
 
-For high-level theoretical documentation regarding SIA Layer 1 strategy, Core Risk Bundling Critiques, and the 13-Week Trust Anchor Roadmap, please refer to the primary architectural whitepapers, including SIA_Manifesto_5.pdf and Pillar 1-3_5.pdf.
+# 🔖 Topics
+`#ai-governance` `#human-in-the-loop` `#zero-trust` `#enterprise-architecture`  
+`#finite-state-machines` `#graphrag` `#systemic-design` `#fractional-cto`
 
-This document was structured with the help of AI, and curated by Sana.Mok.
+---
 
-Repository Topics:
-#ai-governance #agentic-ai #runtime-security #finite-state-machines #zero-trust-architecture #enterprise-ai #compliance-by-design #llm-security #cto #fractional-cto #systemic-design #javascript #node-js
+📌 *This document was structured with the help of AI, and curated by Sana.M.*
