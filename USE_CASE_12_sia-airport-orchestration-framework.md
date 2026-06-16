@@ -9,26 +9,35 @@ The **SIA Framework (Sovereign Infrastructure Architecture)** shifts the paradig
 
 ## Core System Architecture
 
-The framework operates on a continuous, closed-loop cycle consisting of four distinct phases: **Prediction, Engagement, Validation, and Action**, bound together by a Zero-PII (Personally Identifiable Information) data decoupling model.
+The SIA framework coordinates real-time telemetry, probabilistic AI orchestration, and deterministic hardware enforcement without centralizing or moving core passenger datasets.
 
 ```mermaid
-graph LR
-    %% Core Flow
-    A[Prediction: AI Slot Estimation] --> B[Engagement: Behavioral Nudge]
-    B --> C{Validation: Smart Cradle Gate}
-    C -->|Compliant| D[Path A: 15-Min Express Lane]
-    C -->|Non-Compliant| E[Path B: Repack Zone & Staff Alert]
+graph TD
+    %% User Journey Path
+    subgraph Passenger_Journey [Passenger Flow]
+        A[Flight Ticket Issued] --> B[Receive Behavioral Token Nudge]
+        B --> C{Smart Cradle Edge Gate}
+        C -->|Compliant State| D[Express Token validation]
+        C -->|Non-Compliant State| E[Repack Zone & Dynamic Re-routing]
+    end
 
-    %% Data Decoupling
-    C <--> F[Operational Token Sync]
-    F -.-> G[Data Purge: 2 Hours Post-Flight]
-    
-    style A fill:#e1f5fe,stroke:#0288d1
-    style B fill:#e8f5e9,stroke:#388e3c
-    style C fill:#fff3e0,stroke:#f57c00
-    style D fill:#e8f8f5,stroke:#117a65
-    style E fill:#fce4d6,stroke:#c0392b
-    style G fill:#eceff1,stroke:#455a64
+    %% Agentic Orchestration Layer
+    subgraph Agentic_Orchestration [SIA AI Orchestration Layer]
+        B -.->|Predictive Capacity Calibration| F[Agentic AI Engine]
+        F -->|Dynamic Inventory Optimization| G[Issue Incentives: Miles / Baggage Buffers]
+        E -.->|Incident Event Trigger| H[Automated Recovery Facilitation]
+    end
+
+    %% Sovereign Data Isolation
+    subgraph Sovereign_Data [Data Isolation Framework]
+        C <-->|Ephemeral Handshake| I[Zero-PII Transaction Registry]
+        I -->|Hardcoded Purge Protocol| J[Complete Data Destruction: 2 Hours Post-Flight]
+    end
+
+    %% Connections Between Subgraphs
+    G --> B
+    H -->|Pre-Notify Counter Staff| E
+    D --> I
 
 ```
 
@@ -69,18 +78,19 @@ The framework is structured into a phased, low-risk rollout designed to validate
 
 ```mermaid
 gantt
-    title Framework Implementation Roadmap
-    dateFormat  YYYY-MM-DD
+    title Framework Implementation Roadmap (Relative Days Timeline)
+    dateFormat  X
     axisFormat %d
     
     section Phase 1
-    Soft Launch (Digital Only) :active, p1, 2026-06-01, 30d
+    Digital Soft Launch (Interface Deployment) :active, p1, 0, 30
     
     section Phase 2
-    Operational Hardening (Infrastructure) : p2, after p1, 30d
+    Operational Hardening (Edge Infrastructure) : p2, 30, 60
     
     section Phase 3
-    Ecosystem Integration (Full Scale) : p3, after p2, 30d
+    Ecosystem Integration (Retail & Commercial) : p3, 60, 90
+
 ```
 
 ## Phase 1: Soft Launch (Digital Only)
@@ -109,3 +119,4 @@ For an exhaustive breakdown of the architectural rules and semantic data structu
 ---
 
 📌 This document was structured with the help of AI, and curated by **Sana.M**.
+
