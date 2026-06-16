@@ -33,10 +33,11 @@ graph TD
     G -->|Instant Context Revocation| H[API Call Terminated]
     H -->|Memory Flush Effect| I[Shadow Memory Flushed to Zero]
     
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#ffb3b3,stroke:#333,stroke-width:2px
-    style I fill:#bbf,stroke:#333,stroke-width:2px
+    %% High-Contrast accessible styling for enterprise readability
+    style B fill:#FFF3CD,stroke:#D39E00,stroke-width:2px,color:#000000
+    style E fill:#D1ECF1,stroke:#17A2B8,stroke-width:2px,color:#000000
+    style G fill:#F8D7DA,stroke:#DC3545,stroke-width:2px,color:#000000
+    style I fill:#E2E3E5,stroke:#6C757D,stroke-width:2px,color:#000000
 ```
 
 Phase 1: Intent Isolation via Ephemeral Shadow Maps
@@ -45,6 +46,7 @@ Enterprise ROI: This layer operates with Zero Core Mutation. The master legacy d
 Phase 2: Semantic Downgrade via Factoid Collision
 To eliminate the unpredictable randomness of natural language, the architecture utilizes a sandboxed Small Language Model (SLM) serving strictly as a computational compiler. The SLM strips away semantic noise and decomposes the raw text into decentralized, immutable Factoids (strongly typed Boolean data packets).
 The Interface Boundary: In this executable blueprint, the schema mapping layer is explicitly structured to demonstrate how multi-variant human intents are translated into rigid logic circuits.
+
 Phase 3: FSM State Collapse & Context Revocation
 These factoids are injected into an Invariant Finite State Machine (FSM) Engine. The FSM does not guess; it evaluates the facts against pre-configured, versioned organizational compliance boundaries.
 The Kill-Switch Mechanism: The exact millisecond an engineered red line is breached, the FSM triggers an immediate State Collapse. The entire transaction context is instantly revoked, the runtime API call is terminated, and the Ephemeral Shadow Map is completely flushed from memory, leaving zero residual data debt.
@@ -66,10 +68,12 @@ Repository Structure
 └── server.js           # The runtime pipeline orchestration layer linking intent mapping to state evaluation.
 
 Auditing the Code
+
 Architects and Technical Auditors are encouraged to clone this repository and review the implementation file-by-file to verify:
-The non-intrusive isolation properties of the runtime workspace.
-The crisp transition constraints of the state-machine logic.
-The absolute containment of the context revocation phase.
+
+0.  The non-intrusive isolation properties of the runtime workspace.
+1. The crisp transition constraints of the state-machine logic.
+2. The absolute containment of the context revocation phase.
 
 # Clone the Executable Blueprint
 git clone [https://github.com/26200602/SIA-Agentic-AI-Architecture.git](https://github.com/26200602/SIA-Agentic-AI-Architecture.git)
@@ -80,9 +84,9 @@ npm install
 # Run the Deterministic Interception Simulation
 npm start
 
-For high-level theoretical documentation regarding SIA Layer 1 strategy, Core Risk Bundling Critiques, and the 13-Week Trust Anchor Roadmap, please refer to the primary architectural whitepapers, including SIA_Manifesto_3.pdf and Pillar 1-3_3.pdf.
+For high-level theoretical documentation regarding SIA Layer 1 strategy, Core Risk Bundling Critiques, and the 13-Week Trust Anchor Roadmap, please refer to the primary architectural whitepapers, including SIA_Manifesto_5.pdf and Pillar 1-3_5.pdf.
 
-This document was structured with the help of AI, and curated by Sana.M.
+This document was structured with the help of AI, and curated by Sana.Mok.
 
 Repository Topics:
 #ai-governance #agentic-ai #runtime-security #finite-state-machines #zero-trust-architecture #enterprise-ai #compliance-by-design #llm-security #cto #fractional-cto #systemic-design #javascript #node-js
