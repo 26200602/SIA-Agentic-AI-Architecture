@@ -2,7 +2,7 @@
 title: Why 90% of Enterprise AI Stagnates at the Edge (And the Missing Link to Core Value)
 type: Strategic Briefing
 tags: [enterprise-ai, ai-governance, slm, llm-orchestration, finite-state-machine, risk-mitigation, architectural-maturity]
-author: MSK
+author: Sana.M
 ---
 
 # Why 90% of Enterprise AI Stagnates at the Edge (And the Missing Link to Core Value)
