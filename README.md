@@ -38,7 +38,6 @@ This is where the entire decoupled architecture dynamically compiles to deliver 
 
 The following map illustrates how SIA transforms raw enterprise data into a deterministic, human-centric governance layer.
 
-```mermaid
 graph LR
     %% Style Definitions
     classDef storage fill:#2d3748,stroke:#4a5568,stroke-width:2px,color:#fff;
@@ -49,44 +48,48 @@ graph LR
 
     %% Data Source Layer
     subgraph Data_Layer [Legacy Infrastructure]
-        A[(Rigid Corporate Data)] class A storage;
-        B[(Siloed Operational Logs)] class B storage;
+        A[(Rigid Corporate Data)]
+        B[(Siloed Operational Logs)]
     end
+    class A,B storage;
 
     %% Pillar 1: Strategic Decoupling
     subgraph Pillar_1 [Pillar 1: Strategic Decoupling]
-        C[Semantic Granularity Engine] class C pillar1;
-        D[Isolated Factoids] class D pillar1;
+        C[Semantic Granularity Engine]
+        D[Isolated Factoids]
     end
+    class C,D pillar1;
     A --> C
     B --> C
     C -->|Deconstruct Data| D
 
     %% Pillar 2: Non-Intrusive Implementation
     subgraph Pillar_2 [Pillar 2: Logic Topology]
-        E[Asynchronous Extraction] class E pillar2;
-        F[Knowledge Graph Relational Mesh] class F pillar2;
+        E[Asynchronous Extraction]
+        F[Knowledge Graph Relational Mesh]
     end
+    class E,F pillar2;
     D --> E
     E -->|Map Predicates| F
 
     %% Pillar 3: Dynamic Orchestration
     subgraph Pillar_3 [Pillar 3: Reasoning & Boundary Layer]
-        G[GraphRAG Multi-Hop Reasoning] class G pillar3;
-        H[Finite State Machine Boundaries] class H pillar3;
+        G[GraphRAG Multi-Hop Reasoning]
+        H[Finite State Machine Boundaries]
     end
+    class G,H pillar3;
     F --> G
     G -->|Cross-Reference Entropy| H
 
     %% Human-Centric Governance Layer
     subgraph Governance_Layer [Human-Centric Intervention]
-        I[Frictionless Decision Packet] class I human;
-        J[Deterministic Resolution] class J human;
+        I[Frictionless Decision Packet]
+        J[Deterministic Resolution]
     end
+    class I,J human;
     H -->|Enforce Risk Threshold| I
     I -->|Human-in-the-Loop Action| J
 
-```
 
 # Strategic System Flow
 
