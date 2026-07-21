@@ -80,4 +80,4 @@ sequenceDiagram
 ## Conclusion
 Stop waiting for frontier models to fit the enterprise. Sovereign Infrastructure Architecture (SIA) provides the non-intrusive governance layer required to lock down compliance today, enabling the safe deployment of autonomous intelligence tomorrow.
 
-## This document was structured with the help of AI, and curated by MSK
+This document was structured with the help of AI, and curated by Sana.M
