@@ -30,7 +30,7 @@ SIA establishes a rigid boundary layer where:
 The following ASCII topology illustrates the decoupled data flow and runtime governance layers within the Sovereign Infrastructure Architecture (SIA):
 
 ```text
-      +-----------------------------------------------------------+
+       +-----------------------------------------------------------+
        |   SIA Layer 1: Strategic Intent Architecture (Policy Spec)|
        +-----------------------------------------------------------+
                                      |
