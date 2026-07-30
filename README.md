@@ -101,23 +101,24 @@ Layer 1 bridges human design intent and machine-enforceable policy specification
 
 Layer 2 executes real-time runtime governance over agent actions via deterministic state boundaries:
 
-| Pillar 1: Decoupling | Pillar 2: Integration | Pillar 3: FSM Circuit Breaker |
+| 🛡️ Pillar 1: Decoupling | 🔄 Pillar 2: Integration | ⚡ Pillar 3: FSM Circuit Breaker |
 | :--- | :--- | :--- |
-| • Entity Isolation<br>• Semantic Factoid Extraction<br>• Context Gap Elimination | • Asynchronous Shadowing<br>• Zero Schema Mutation<br>• Triplet Graph Formation | • Conditional Context Evaluation<br>• Deterministic FSM Lockdown<br>• Zero-Trace Sanitation |
+| • Entity Isolation <br> • Semantic Factoid Extraction <br> • Context Gap Elimination | • Asynchronous Shadowing <br> • Zero Schema Mutation <br> • Triplet Graph Formation | • Conditional Context Evaluation <br> • Deterministic FSM Lockdown <br> • Zero-Trace Sanitation |
 
 #### Operational Mechanisms
 
-1. **Strategic Decoupling (Factoid Isolation)**
-   * **Action**: Deconstructs monolithic legacy data into independent, contextual units ("Factoids").
-   * **Impact**: Successfully isolates user identity from underlying core asset access layers.
+#### 1. Strategic Decoupling (Factoid Isolation)
+* **Action**: Deconstructs monolithic legacy data into independent, contextual units ("Factoids").
+* **Impact**: Successfully isolates user identity from underlying core asset access layers.
 
-2. **Non-Intrusive Implementation (Logic Topology)**
-   * **Action**: Asynchronously shadows production databases to construct contextual knowledge graphs.
-   * **Impact**: Achieves zero-mutation deployment across existing enterprise relational schemas.
+#### 2. Non-Intrusive Implementation (Logic Topology)
+* **Action**: Asynchronously shadows production databases to construct contextual knowledge graphs.
+* **Impact**: Achieves zero-mutation deployment across existing enterprise relational schemas.
 
-3. **Reasoning Orchestration & Resource Entropy (Conditional FSM Lockdown)**
-   * **Evaluation**: Evaluates multi-hop contextual facts conditionally *only when business complexity and policy mandates require it*.
-   * **Circuit Breaker**: If anomalies, authority conflicts, or risk thresholds are breached, the FSM instantly revokes the execution token and generates a cryptographically audited **Decision Packet**.
+#### 3. Reasoning Orchestration & Resource Entropy (Conditional FSM Lockdown)
+* **Evaluation**: Evaluates multi-hop contextual facts conditionally only when business complexity and policy mandates require it (avoiding unnecessary heavy compute).
+* **Circuit Breaker**: If anomalies, authority conflicts, or risk thresholds are breached, the FSM instantly revokes the execution token and generates a cryptographically audited Decision Packet.
+
 
 ---
 
