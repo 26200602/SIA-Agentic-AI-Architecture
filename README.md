@@ -30,8 +30,7 @@ SIA establishes a rigid boundary layer where:
 The following ASCII topology illustrates the decoupled data flow and runtime governance layers within the Sovereign Infrastructure Architecture (SIA):
 
 ```text
-       +-----------------------------------------------------------+
-
+      +-----------------------------------------------------------+
        |   SIA Layer 1: Strategic Intent Architecture (Policy Spec)|
        +-----------------------------------------------------------+
                                      |
@@ -39,12 +38,11 @@ The following ASCII topology illustrates the decoupled data flow and runtime gov
                                      |
                                      v
        +-----------------------------------------------------------+
-
        |   SIA Layer 2: Sovereign Infrastructure Runtime Engine     |
        |                                                           |
        |  +--------------------+        +-----------------------+  |
-       |  |  GraphRAG Multi-   | -----> | FSM Circuit Breaker   |  |
-       |  |  Hop Reasoning     |        | (Deterministic Bounds)|  |
+       |  | Conditional Context| -----> | FSM Circuit Breaker   |  |
+       |  | Evaluation Engine  |        | (Deterministic Bounds)|  |
        |  +--------------------+        +-----------------------+  |
        |                                            |              |
        |                        [Hard Context Lockdown / Revoke]   |
@@ -57,7 +55,6 @@ The following ASCII topology illustrates the decoupled data flow and runtime gov
                        [Immutable State Hash Audit]
                                      v
        +-----------------------------------------------------------+
-
        |     Legacy Enterprise Data Schema / Production Systems     |
        |                  (100% Untouched / Stationary)            |
        +-----------------------------------------------------------+
