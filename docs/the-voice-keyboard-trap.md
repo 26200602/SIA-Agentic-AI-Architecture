@@ -57,36 +57,38 @@ Rather than flooding prompt windows with static database dumps, SIA extracts loc
 sequenceDiagram
     autonumber
     actor User
-    participant LLM as Front-End LLM / Wrapper
-    participant FSM as SIA Deterministic FSM
-    participant JIT as JIT Factoid Engine
-    participant Legacy as Core Legacy Backend
-    participant Audit as Telemetry / Audit Log
+    participant LLM as Front-End LLM
+    participant FSM as SIA FSM
+    participant JIT as JIT Engine
+    participant Legacy as Core Legacy
+    participant Audit as Audit Log
 
-    box "Legacy Voice Keyboard Pattern"
-    User->>LLM: Complex Non-Linear Request
-    LLM->>Legacy: Query Raw / Chaotic API
-    Legacy-->>LLM: Conflicting Business Rules
-    LLM-->>User: Hallucinated / Failed Response
-    User->>LLM: Fallback to Manual GUI Menu
-    LLM->>Legacy: Direct Manual Commit
-    Legacy-->>Audit: Log "Successful Session" (Telemetry Blindspot)
+    rect rgba(255, 0, 0, 0.05)
+        note over User, Audit: Legacy "Voice Keyboard" Pattern
+        User->>LLM: Complex Request
+        LLM->>Legacy: Query Raw API
+        Legacy-->>LLM: Conflicting Rules
+        LLM-->>User: Hallucinated Response
+        User->>LLM: Fallback to Manual GUI
+        LLM->>Legacy: Direct Commit
+        Legacy-->>Audit: Log "Success" (Blindspot)
     end
 
-    box "Sovereign Infrastructure Architecture (SIA)"
-    User->>FSM: Express Intent
-    FSM->>JIT: Fetch Dynamic State Factoids
-    JIT-->>FSM: Return Decoupled Minimal Context
-    
-    alt Logical Contradiction / Boundary Violation
-        FSM->>FSM: Transition State to [DETERMINISTIC_HANDOVER]
-        FSM->>Audit: Log Semantic Intent Drop-off & Root Rule ID
-        FSM-->>User: Explicit Handover / Guided Refinement
-    else Validated Intent
-        FSM->>Legacy: Execute Governed Transaction
-        FSM->>JIT: Shred Transient Factoids
-        FSM->>Audit: Commit Immutable Audit Hash
-    end
+    rect rgba(0, 255, 0, 0.05)
+        note over User, Audit: Sovereign Infrastructure Architecture (SIA)
+        User->>FSM: Express Intent
+        FSM->>JIT: Fetch State Factoids
+        JIT-->>FSM: Return Minimal Context
+        
+        alt Logical Contradiction
+            FSM->>FSM: State to [HANDOVER]
+            FSM->>Audit: Log Intent Drop-off
+            FSM-->>User: Explicit Handover
+        else Validated Intent
+            FSM->>Legacy: Execute Transaction
+            FSM->>JIT: Shred Factoids
+            FSM->>Audit: Commit Audit Hash
+        end
     end
 ```
 
@@ -96,4 +98,5 @@ sequenceDiagram
 
 If the core operational engine is systemic chaos, an LLM cannot infer logic that was never defined. Enterprise capital must pivot from subsidizing front-end illusions to enforcing backend governance.
 
-_This document was structured with the help of AI, and curated by Sana.M
+_This document was structured with the help of AI, and curated by Sana.M_
+
