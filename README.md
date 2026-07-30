@@ -170,7 +170,7 @@ Execute the core simulation suite to observe deterministic boundary enforcement 
 
 ```bash
 # Clone the specification repository
-git clone https://github.com/26200602/SIA-Agentic-AI-Architecture.git
+git clone [https://github.com/26200602/SIA-Agentic-AI-Architecture.git](https://github.com/26200602/SIA-Agentic-AI-Architecture.git)
 cd SIA-Agentic-AI-Architecture
 
 # Initialize local environment and dependencies
