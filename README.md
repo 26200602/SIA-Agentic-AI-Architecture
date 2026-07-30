@@ -15,42 +15,35 @@ Enterprise adoption of Agentic AI is fundamentally throttled by the **Intention-
 The **Sovereign Infrastructure Architecture (SIA)** is a non-intrusive, open specification and runtime governance framework designed to decouple probabilistic AI orchestration from deterministic core execution. 
 
 SIA establishes a rigid boundary layer: **LLMs operate strictly as constitutional policy parsers**, while a **Deterministic Finite State Machine (FSM)** and **Transient GraphRAG** enforce real-time circuit-breaking, zero-trust state isolation, and ephemeral memory sanitation.
-
 ```text
-+-----------------------------------------------------------+
-
-|   SIA Layer 1: Strategic Intent Architecture (Policy Spec)|
-+-----------------------------------------------------------+
-                              |
-                  [Intent-to-Policy Compiler]
-                              |
-                              v
-+-----------------------------------------------------------+
-
-|   SIA Layer 2: Sovereign Infrastructure Runtime Engine     |
-|                                                           |
-|  +--------------------+        +-----------------------+  |
-|  |  GraphRAG Multi-   | -----> | FSM Circuit Breaker   |  |
-|  |  Hop Reasoning     |        | (Deterministic Bounds)|  |
-|  +--------------------+        +-----------------------+  |
-|                                            |              |
-|                        [Hard Context Lockdown / Revoke]   |
-|                                            v              |
-|  +-----------------------------------------------------+  |
-|  | Transient Payload Processing & Ephemeral Flush       |  |
-|  +-----------------------------------------------------+  |
-+-----------------------------------------------------------+
-                              |
-                [Immutable State Hash Audit]
-                              v
-+-----------------------------------------------------------+
-
-|     Legacy Enterprise Data Schema / Production Systems     |
-|                  (100% Untouched / Stationary)            |
-+-----------------------------------------------------------+
-```
-
----
+       +-----------------------------------------------------------+
+       |   SIA Layer 1: Strategic Intent Architecture (Policy Spec)|
+       +-----------------------------------------------------------+
+                                     |
+                         [Intent-to-Policy Compiler]
+                                     |
+                                     v
+       +-----------------------------------------------------------+
+       |   SIA Layer 2: Sovereign Infrastructure Runtime Engine     |
+       |                                                           |
+       |  +--------------------+        +-----------------------+  |
+       |  |  GraphRAG Multi-   | -----> | FSM Circuit Breaker   |  |
+       |  |  Hop Reasoning     |        | (Deterministic Bounds)|  |
+       |  +--------------------+        +-----------------------+  |
+       |                                            |              |
+       |                        [Hard Context Lockdown / Revoke]   |
+       |                                            v              |
+       |  +-----------------------------------------------------+  |
+       |  | Transient Payload Processing & Ephemeral Flush       |  |
+       |  +-----------------------------------------------------+  |
+       +-----------------------------------------------------------+
+                                     |
+                       [Immutable State Hash Audit]
+                                     v
+       +-----------------------------------------------------------+
+       |     Legacy Enterprise Data Schema / Production Systems     |
+       |                  (100% Untouched / Stationary)            |
+       +-----------------------------------------------------------+
 
 ## 💡 Key Architectural Principles
 
