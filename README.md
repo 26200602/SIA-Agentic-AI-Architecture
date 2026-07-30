@@ -1,20 +1,21 @@
 # Sovereign Infrastructure Architecture (SIA)
 ### *Deterministic Governance & Sovereign Decoupling Framework for Enterprise Agentic Systems*
 
-[![License: Apache-2.0](https://shields.io)](https://opensource.org)
-[![Architecture Spec](https://shields.io)](#architecture-topology)
-[![Governance](https://shields.io)](#layer-2-sovereign-infrastructure-engine)
-[![Standards Alignment](https://shields.io)](#compliance--auditability)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Architecture Spec](https://img.shields.io/badge/Architecture-SIA_v2.0-emerald.svg)](#architecture-topology)
+[![Governance](https://img.shields.io/badge/Governance-Deterministic_FSM-red.svg)](#layer-2-sovereign-infrastructure-engine)
+[![Standards Alignment](https://img.shields.io/badge/Standard-ISO_42001_%7C_EU_AI_Act-purple.svg)](#compliance--auditability)
 
 ---
 
-## 🎯 Executive Summary
+## Executive Summary
 
 Enterprise adoption of Agentic AI is fundamentally throttled by the **Intention-Execution Gap**. Direct coupling of probabilistic Large Language Models (LLMs) to enterprise legacy data structures introduces severe operational vulnerabilities, context drift, and non-deterministic execution risks (e.g., unauthorized transactions, adversarial prompt injection, and compliance breaches).
 
-The **Sovereign Infrastructure Architecture (SIA)** is a non-intrusive, open specification and runtime governance framework designed to decouple probabilistic AI orchestration from deterministic core execution. 
+The **Sovereign Infrastructure Architecture (SIA)** is a non-intrusive, open specification and runtime governance framework designed to decouple probabilistic AI orchestration from deterministic core execution.
 
 SIA establishes a rigid boundary layer: **LLMs operate strictly as constitutional policy parsers**, while a **Deterministic Finite State Machine (FSM)** and **Transient GraphRAG** enforce real-time circuit-breaking, zero-trust state isolation, and ephemeral memory sanitation.
+
 ```text
        +-----------------------------------------------------------+
        |   SIA Layer 1: Strategic Intent Architecture (Policy Spec)|
@@ -44,8 +45,9 @@ SIA establishes a rigid boundary layer: **LLMs operate strictly as constitutiona
        |     Legacy Enterprise Data Schema / Production Systems     |
        |                  (100% Untouched / Stationary)            |
        +-----------------------------------------------------------+
+```
 
-## 💡 Key Architectural Principles
+## Key Architectural Principles
 
 1. **Deterministic State Boundaries over Output Alignment**
    Prompt engineering, system cards, and constitutional alignment at the LLM output layer are fundamentally probabilistic and vulnerable to boundary collapse. SIA moves enforcement to the infrastructure layer via hard-coded FSM state transitions.
