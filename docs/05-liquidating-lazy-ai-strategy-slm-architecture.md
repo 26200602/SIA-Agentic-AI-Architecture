@@ -14,7 +14,7 @@ When enterprises expose frontier LLMs directly to unstructured legacy backends, 
 
 ```mermaid
 flowchart TD
-    subgraph Anti-Pattern: Lazy AI Procurement
+    subgraph "Anti-Pattern: Lazy AI Procurement"
         A[Unstructured Intent / Non-Linear Request] --> B[Frontier Probabilistic LLM]
         B --> C{Direct Execution on Unstructured Legacy}
         C -->|Logic Contradiction| D[Expensive Hallucination / Token Hemorrhage]
@@ -31,6 +31,7 @@ flowchart TD
 ## SIA Strategic Architectural Shifts
 
 To achieve architectural resilience and cost efficiency, SIA enforces two fundamental operational transitions:
+
 
 ```mermaid
 sequenceDiagram
@@ -53,7 +54,7 @@ sequenceDiagram
     else Logic Violation / Constraint Breach
         FSM->>FSM: Trigger Deterministic Handover
         FSM->>Audit: Log Policy Breach
-        FSM-->>User: Return Guided Escalation
+        F-->>User: Return Guided Escalation
     end
 ```
 
