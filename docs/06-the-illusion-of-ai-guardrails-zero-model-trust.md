@@ -20,15 +20,19 @@ Big Tech’s enterprise AI security playbook relies on a self-serving loop:
 
 ```mermaid
 flowchart TD
-    subgraph "Anti-Pattern: Commercial Guardrail Architecture"
-        A[Context Injection / Malicious Payload] --> B[Closed-Source Safety API Filter]
-        B -->|Probabilistic Check Pass| C[Frontier LLM / Agentic Engine]
+    classDef danger fill:#ffe6e6,stroke:#ff4d4f,stroke-width:2px,color:#990000;
+    classDef warning fill:#fffbe6,stroke:#ffe58f,stroke-width:2px,color:#8c6b00;
+    classDef database fill:#f0f0f0,stroke:#d9d9d9,stroke-width:2px,color:#262626;
+
+    subgraph AntiPattern["Anti-Pattern: Commercial Guardrail Architecture"]
+        A["Context Injection / Malicious Payload"]:::danger --> B["Closed-Source Safety API Filter"]:::warning
+        B -->|"Probabilistic Check Pass"| C["Frontier LLM / Agentic Engine"]:::warning
         
-        C -->|1. Direct Write Execution| D[Core Enterprise Database]
-        C -->|2. Reads Unmapped Metadata| E[Covert C2 Channel via Agent Context]
+        C -->|"1. Direct Write Execution"| D[("Core Enterprise Database")]:::database
+        C -->|"2. Reads Unmapped Metadata"| E["Covert C2 Channel via Agent Context"]:::danger
         
-        E -->|3. Sandbox Escape| F[Data Exfiltration / Lateral Movement]
-        D -.->|4. Catch Bad Intent AFTER Database Mutated| B
+        E -->|"3. Sandbox Escape"| F["Data Exfiltration / Lateral Movement"]:::danger
+        D -.->|"4. Catch Bad Intent AFTER Database Mutated"| B
     end
 ```
 
