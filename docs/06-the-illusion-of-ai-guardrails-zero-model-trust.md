@@ -20,11 +20,14 @@ Big Tech’s enterprise AI security playbook relies on a self-serving loop:
 ```mermaid
 flowchart TD
     subgraph "Anti-Pattern: Commercial Guardrail Architecture"
-        A[Adversarial / Malicious Input] --> B[Closed-Source Safety API Filter]
+        A[Context Injection / Malicious Payload] --> B[Closed-Source Safety API Filter]
         B -->|Probabilistic Check Pass| C[Frontier LLM / Agentic Engine]
-        C --> D[Backend State Execution]
-        C -->|Semantic Drift / Covert C2| E[Lateral Movement / Data Exfiltration]
-        D -. Catch Bad Intent After Execution .-> B
+        
+        C -->|1. Direct Write Execution| D[Core Enterprise Database]
+        C -->|2. Reads Unmapped Metadata| E[Covert C2 Channel via Agent Context]
+        
+        E -->|3. Sandbox Escape| F[Data Exfiltration / Lateral Movement]
+        D -. 4. "Catch" Bad Intent AFTER Database Mutated .-> B
     end
 ```
 
