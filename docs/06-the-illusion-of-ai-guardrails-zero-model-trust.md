@@ -49,24 +49,28 @@ flowchart TD
 Security must move out of the model layer and into network topology under a strict **Zero Model Trust framework**.
 
 ```mermaid
+```mermaid
 sequenceDiagram
     autonumber
-    actor Attacker / Agent as Autonomous Agent / Input
+    actor Agent as Autonomous Agent
     participant Gateway as External Deterministic Gateway
     participant FSM as External FSM Control Plane
     participant LLM as Untrusted Model Layer (Data Plane)
     participant Core as Core Infrastructure / Databases
 
-    Attacker / Agent->>Gateway: Submit Request / Payload
+    Note over Gateway,FSM: Control Plane (Zero Model Trust Boundary)
+    Note over LLM: Data Plane (Isolated Reasoning Engine)
+
+    Agent->>Gateway: Submit Request / Payload
     Gateway->>LLM: Pass Isolated Payload (No Write Access)
     LLM-->>Gateway: Return Unverified Reasoning Output
     
     Gateway->>FSM: Validate Schema & State Boundaries
     alt Valid State Transition
         FSM->>Core: Execute Deterministic Mutation
-        Core-->>FSM: Confirm Execution
-        FSM->>Gateway: Flush Ephemeral Memory / Flush Context
-    else Semantic Drift / Constraint Violation
+        Core-->>FSM: Confirm Execution State
+        FSM->>Gateway: Flush Ephemeral Memory / Context
+    else Semantic Drift / Constraint Breach
         FSM->>FSM: Immediate Context Revocation
         FSM->>Gateway: Trigger Hard Human Handover (Lockdown)
         FSM->>Core: Block Core Access (0% State Contamination)
