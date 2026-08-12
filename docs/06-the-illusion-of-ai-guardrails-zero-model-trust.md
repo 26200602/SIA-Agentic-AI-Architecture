@@ -17,19 +17,18 @@ Big Tech’s enterprise AI security playbook relies on a self-serving loop:
 1. **Amplify Anxiety**: Highlight agentic vulnerabilities to convince C-suites that self-hosted architectures are too dangerous.
 2. **Monopolize the Remedy**: Sell closed-source "Safety Layers" and API filters as the sole line of defense.
 
+
 ```mermaid
 flowchart TD
-    classDef danger fill:#fff1f0,stroke:#ff4d4f,stroke-width:2px,color:#cf1322;
-    classDef warning fill:#fffbe6,stroke:#ffe58f,stroke-width:2px,color:#d4b106;
-    classDef core fill:#f5f5f5,stroke:#d9d9d9,stroke-width:2px,color:#434343;
-
-    subgraph AntiPattern["Anti-Pattern: Commercial Guardrail Failure Mode"]
-        A["Adversarial Context / Poisoned Payload"] ::: danger --> B["Closed-Source Safety API"] ::: warning
-        B -->|"Probabilistic Pass"| C["Frontier LLM / Agentic Engine"] ::: warning
-        C -->|"1. Direct Unchecked Mutation"| D[("Core Enterprise Database")] ::: core
-        C -->|"2. Exploit Shared Metadata"| E["Covert C2 Channel (Agent Context)"] ::: danger
-        E -->|"3. Sandbox Escape & Exfiltration"| F["Lateral Movement / Data Leak"] ::: danger
-        D -.-|"4. Reactive Catch (AFTER Database Mutated)"| B
+    subgraph "Anti-Pattern: Commercial Guardrail Architecture"
+        A[Context Injection / Malicious Payload] --> B[Closed-Source Safety API Filter]
+        B -->|Probabilistic Check Pass| C[Frontier LLM / Agentic Engine]
+        
+        C -->|1. Direct Write Execution| D[Core Enterprise Database]
+        C -->|2. Reads Unmapped Metadata| E[Covert C2 Channel via Agent Context]
+        
+        E -->|3. Sandbox Escape| F[Data Exfiltration / Lateral Movement]
+        D -.->|4. Catch Bad Intent AFTER Database Mutated| B
     end
 ```
 
