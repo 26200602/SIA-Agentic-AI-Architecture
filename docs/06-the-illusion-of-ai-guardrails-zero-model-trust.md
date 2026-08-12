@@ -49,7 +49,6 @@ flowchart TD
 Security must move out of the model layer and into network topology under a strict **Zero Model Trust framework**.
 
 ```mermaid
-```mermaid
 sequenceDiagram
     autonumber
     actor Agent as Autonomous Agent
