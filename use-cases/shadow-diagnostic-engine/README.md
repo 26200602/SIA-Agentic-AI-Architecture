@@ -154,16 +154,13 @@ python3 src/anonymizer_and_parser.py --input src/mock_project_logs.json
 
 ## Sample Executable Output
 
-================================================================================
 SIA SHADOW DIAGNOSTIC ENGINE v1.0 | EXECUTION REPORT
-================================================================================
+
 [INFO] Local Entity Masking Engine initialized. (Zero Cloud Telemetry)
 [INFO] Processing 142 unstructured communication artifacts...
 [INFO] Executing SLM Semantic Mapping & FSM State Alignment...
 
---------------------------------------------------------------------------------
 DIAGNOSTIC FINDINGS
---------------------------------------------------------------------------------
 Target Scenario       : Stage 0 -> Stage 1 Handover (HVAC Plant Room Layout)
 Primary Intent Drift  : Revision C (Architect) vs Revision A (Site Sub-Contractor)
 
@@ -179,11 +176,10 @@ Primary Intent Drift  : Revision C (Architect) vs Revision A (Site Sub-Contracto
 Structural Operational Debt detected in Handover Protocol. Do NOT deploy conversational
 AI assistants to frontline teams. Restructure the Push-Notification State Boundary
 within the Master Project Specification.
-================================================================================
 
 ## Repository Directory Structure
 
-/use-cases/shadow-diagnostic-engine
+use-cases/shadow-diagnostic-engine/
 ├── README.md                      <-- Architecture Specification (This Document)
 ├── docs/
 │   ├── pipeline_topology.png      <-- High-Resolution Architecture Diagram
@@ -192,5 +188,6 @@ within the Master Project Specification.
     ├── anonymizer_and_parser.py   <-- Deterministic CLI Diagnostic Script
     └── mock_project_logs.json     <-- Anonymized Multi-Stakeholder Artifacts
 
+## Enterprise Advisory & Architecture Disclaimer
 
-
+Notice: The SIA Shadow Diagnostic Engine and associated schemas are provided as an Enterprise Reference Architecture. This specification defines non-intrusive auditing patterns for unstructured data flows in high-stakes domain environments (such as AEC megaprojects, multi-tier supply chains, and legacy migrations). Implementation of these patterns must adhere to local regulatory requirements (including GDPR, ISO 42001, and local data sovereignty laws). The diagnostic metrics output by the engine are intended to identify structural operational friction and do not constitute formal legal or contractual liability assessments.
