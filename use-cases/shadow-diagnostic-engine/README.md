@@ -72,13 +72,23 @@ To diagnose structural friction without triggering organizational defense mechan
 
 ## Structural Data Schema
 
-### Factoid Triplet Definition
+The SIA Shadow Diagnostic Engine enforces deterministic state transitions by parsing unstructured data into structured **Factoid Triplets**. High-level governance is summarized below, followed by the formal JSON Schema specification.
 
-Raw unstructured conversation fragments and site logs are parsed into normalized, deterministic Factoid Triplets.
+### Executive Schema Summary
+
+| Field | Type | Business Logic & Governance Standard |
+| :--- | :--- | :--- |
+| `factoid_id` | UUIDv4 | Unique, non-traceable transaction identifier for state auditing. |
+| `timestamp_utc` | ISO 8601 | Normalized UTC timestamp to measure precise temporal Context Latency ($\Delta t$). |
+| `stakeholder_role` | Enum | Strict role boundary (`ARCHITECT`, `MEP_ENGINEER`, `MAIN_CONTRACTOR`, etc.). |
+| `canonical_state_id` | String | Immutable state identifier (e.g., `STATE_STRUCTURAL_LAYOUT_REV_B`). |
+| `constraint_signature` | Object | Standardized physical constraints (spatial clearance, drawing revision hash). |
+
+### Factoid Triplet Definition (JSON Schema)
 
 ```json
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "[https://json-schema.org/draft/2020-12/schema](https://json-schema.org/draft/2020-12/schema)",
   "title": "FactoidTriplet",
   "type": "object",
   "properties": {
@@ -95,8 +105,7 @@ Raw unstructured conversation fragments and site logs are parsed into normalized
       "enum": ["ARCHITECT", "MEP_ENGINEER", "MAIN_CONTRACTOR", "SUB_CONTRACTOR", "CLIENT"] 
     },
     "canonical_state_id": { 
-      "type": "string", 
-      "example": "STATE_STRUCTURAL_LAYOUT_REV_B" 
+      "type": "string" 
     },
     "raw_intent_summary": { 
       "type": "string" 
