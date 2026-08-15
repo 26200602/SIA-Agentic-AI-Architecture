@@ -154,40 +154,55 @@ python3 src/anonymizer_and_parser.py --input src/mock_project_logs.json
 
 ## Sample Executable Output
 
-SIA SHADOW DIAGNOSTIC ENGINE v1.0 | EXECUTION REPORT
+# SIA Shadow Diagnostic Engine v1.0
+## Execution Report
 
-[INFO] Local Entity Masking Engine initialized. (Zero Cloud Telemetry)
-[INFO] Processing 142 unstructured communication artifacts...
-[INFO] Executing SLM Semantic Mapping & FSM State Alignment...
+```ini
+[STATUS] Local Entity Masking Engine initialized. (Zero Cloud Telemetry)
+[INFO]   Processing 142 unstructured communication artifacts...
+[INFO]   Executing SLM Semantic Mapping & FSM State Alignment...
+```
 
-DIAGNOSTIC FINDINGS
-Target Scenario       : Stage 0 -> Stage 1 Handover (HVAC Plant Room Layout)
-Primary Intent Drift  : Revision C (Architect) vs Revision A (Site Sub-Contractor)
+### 🔍 Diagnostic Findings
 
-[METRIC 1] Context Latency Gap      : 96.5 Hours
-           Origin Intent Modified   : 2026-05-10T08:30:00Z (Email / Attachment)
-           Site Realization Aware   : 2026-05-14T09:00:00Z (WhatsApp / Site Photo)
+* **Target Scenario:** Stage 0 → Stage 1 Handover (HVAC Plant Room Layout)
+* **Primary Intent Drift:** Revision C (Architect) vs Revision A (Site Sub-Contractor)
 
-[METRIC 2] Semantic Disconnect Score: 64.2%
-           Root Cause Analysis      : Terminology mismatch between MEP Routing Jargon 
-                                      and Constructability Clearance Constraints.
+#### Key Metrics
 
-[RECOMMENDATION]
-Structural Operational Debt detected in Handover Protocol. Do NOT deploy conversational
-AI assistants to frontline teams. Restructure the Push-Notification State Boundary
-within the Master Project Specification.
+| Metric | Score / Delay | Details & Root Cause |
+| :--- | :--- | :--- |
+| **[METRIC 1] Context Latency Gap** | 96.5 Hours | **Origin Intent Modified:** 2026-05-10T08:30:00Z (Email / Attachment)<br>**Site Realization Aware:** 2026-05-14T09:00:00Z (WhatsApp / Site Photo) |
+| **[METRIC 2] Semantic Disconnect** | 64.2% | **Root Cause:** Terminology mismatch between MEP Routing Jargon and Constructability Clearance Constraints. |
 
-## Repository Directory Structure
+> [!WARNING]
+> **[RECOMMENDATION]**
+> Structural Operational Debt detected in Handover Protocol. **Do NOT deploy conversational AI assistants to frontline teams.** Restructure the Push-Notification State Boundary within the Master Project Specification.
 
+---
+
+## 📂 Repository Directory Structure
+
+```text
 use-cases/shadow-diagnostic-engine/
-├── README.md                      <-- Architecture Specification (This Document)
+├── README.md                      		# Architecture Specification (This Document)
 ├── docs/
-│   ├── pipeline_topology.png      <-- High-Resolution Architecture Diagram
-│   └── 1_week_audit_playbook.md   <-- Detailed C-Suite Advisory Protocol
+│   ├── pipeline_topology.png      		# High-Resolution Architecture Diagram
+│   └── 1_week_audit_playbook.md   		# Detailed C-Suite Advisory Protocol
 └── src/
-    ├── anonymizer_and_parser.py   <-- Deterministic CLI Diagnostic Script
-    └── mock_project_logs.json     <-- Anonymized Multi-Stakeholder Artifacts
+    ├── anonymizer_and_parser.py   		# Deterministic CLI Diagnostic Script
+    └── mock_project_logs.json     		# Anonymized Multi-Stakeholder Artifacts
+```
 
-## Enterprise Advisory & Architecture Disclaimer
+---
 
-Notice: The SIA Shadow Diagnostic Engine and associated schemas are provided as an Enterprise Reference Architecture. This specification defines non-intrusive auditing patterns for unstructured data flows in high-stakes domain environments (such as AEC megaprojects, multi-tier supply chains, and legacy migrations). Implementation of these patterns must adhere to local regulatory requirements (including GDPR, ISO 42001, and local data sovereignty laws). The diagnostic metrics output by the engine are intended to identify structural operational friction and do not constitute formal legal or contractual liability assessments.
+## ⚖️ Enterprise Advisory & Architecture Disclaimer
+
+> [!NOTE]
+> **Notice:** The SIA Shadow Diagnostic Engine and associated schemas are provided as an Enterprise Reference Architecture. 
+> 
+> This specification defines non-intrusive auditing patterns for unstructured data flows in high-stakes domain environments (such as AEC megaprojects, multi-tier supply chains, and legacy migrations). 
+> 
+> * **Compliance:** Implementation of these patterns must adhere to local regulatory requirements (including GDPR, ISO 42001, and local data sovereignty laws). 
+> * **Liability:** The diagnostic metrics output by the engine are intended to identify structural operational friction and do not constitute formal legal or contractual liability assessments.
+
