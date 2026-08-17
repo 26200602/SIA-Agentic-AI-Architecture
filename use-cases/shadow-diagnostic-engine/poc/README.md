@@ -17,19 +17,19 @@ The diagram below illustrates the end-to-end data pipeline from raw message inge
 
 ```mermaid
 flowchart TD
-    A["Front-line Communication Ingestion<br/>WhatsApp / Teams Jargon"] -->|@mention Trigger| B["Ephemeral SLM Ingestion Layer"]
-    B -->|Context Analysis| C["FSM State Alignment Engine"]
+    A["Front-line Communication Ingestion<br/>WhatsApp / Teams Jargon"] -->|"@mention Trigger"| B["Ephemeral SLM Ingestion Layer"]
+    B -->|"Context Analysis"| C["FSM State Alignment Engine"]
     
-    subgraph Data Sovereignty Boundary
-        B -.->|Transient Flushing<br/>Immediate Raw Text Purge| D[("Zero-Knowledge Memory Buffer")]
+    subgraph "Data Sovereignty Boundary"
+        B -.->|"Transient Flushing<br/>Immediate Raw Text Purge"| D[("Zero-Knowledge Memory Buffer")]
     end
     
-    C -->|Map to FSM ID| E["Decision Packet Generator"]
-    E -->|Structured Output| F["Audit Trail / Enterprise Ledger"]
+    C -->|"Map to FSM ID"| E["Decision Packet Generator"]
+    E -->|"Structured Output"| F["Audit Trail / Enterprise Ledger"]
     
     style B fill:#f9f,stroke:#333,stroke-width:2px
     style D fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bfb,stroke:#333,stroke-width:2px]
+    style E fill:#bfb,stroke:#333,stroke-width:2px
 
 ```
 
