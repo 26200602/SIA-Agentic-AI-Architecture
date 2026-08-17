@@ -1,0 +1,10 @@
+{
+  "packet_id": "a8f3b2e1-4c5d-4e9a-8b1c-3d2e1f0a9b8c",
+  "timestamp": "2026-08-17T07:42:15Z",
+  "fsm_state_id": "FSM_ERR_OVERRIDE_001",
+  "context_latency_ms": 142,
+  "data_sovereignty": {
+    "transient_flush_verified": true,
+    "raw_text_retained": false
+  }
+}
