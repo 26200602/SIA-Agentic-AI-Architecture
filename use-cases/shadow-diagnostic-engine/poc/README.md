@@ -67,5 +67,5 @@ To validate this PoC in a local or cloud environment:
 jsonschema -i mock-telemetry-event.json decision-packet.schema.json
 
 ```
-
-*** This document was structured with the help of AI, and curated by Sana.M ***
+---
+***This document was structured with the help of AI, and curated by Sana.M***
