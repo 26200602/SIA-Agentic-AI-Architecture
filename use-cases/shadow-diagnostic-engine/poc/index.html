@@ -3,176 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIA Architecture - Shadow Diagnostic Engine PoC</title>
+    <title>Shadow Diagnostic Engine - PoC</title>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --success-color: #22c55e;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 900px;
-        }
-        header {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-        h1 {
-            font-size: 1.75rem;
-            margin: 0 0 0.5rem 0;
-            color: var(--accent-color);
-        }
-        p.subtitle {
-            color: var(--text-muted);
-            margin: 0;
-            font-size: 0.95rem;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        h2 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            color: var(--text-main);
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        textarea, select {
-            width: 100%;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.75rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            box-sizing: border-box;
-            margin-bottom: 1rem;
-            resize: vertical;
-        }
-        button {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        button:hover {
-            opacity: 0.9;
-        }
-        pre {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 0.85rem;
-            color: var(--success-color);
-            margin: 0;
-        }
-        .footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 2rem; }
+        h1 { color: #58a6ff; font-size: 1.5rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+        .card { background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 1rem; margin-top: 1rem; }
+        button { background: #238636; color: white; border: none; padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #2ea043; }
+        pre { background: #0d1117; padding: 1rem; border-radius: 6px; overflow-x: auto; color: #7ee787; border: 1px solid #30363d; }
+        .error { color: #f85149; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <h1>Shadow Diagnostic Engine</h1>
-        <p class="subtitle">Sovereign Intelligent Architecture (SIA) - Interactive Execution PoC</p>
-    </header>
-
-    <div class="card">
-        <h2>1. Scenario Input</h2>
-        <label for="scenarioSelect">Select Preset Scenario or Type Custom Input:</label>
-        <select id="scenarioSelect" onchange="loadPreset()">
-            <option value="custom">-- Custom Input --</option>
-            <option value="A: we need to move the ventilation 1m from the door">A: we need to move the ventilation 1m from the door</option>
-            <option value="B: ok, but blueprint is old version. will you update?">B: ok, but blueprint is old version. will you update?</option>
-            <option value="Cantonese: 照口頭指示做住先，唔使改圖則">Cantonese: 照口頭指示做住先，唔使改圖則</option>
-        </select>
+    <div class="container">
+        <h1>Shadow Diagnostic Engine (PoC)</h1>
+        <p>Demonstrating non-invasive, data-at-rest telemetry evaluation via metatag middleware.</p>
         
-        <textarea id="userInput" rows="3">A: we need to move the ventilation 1m from the door</textarea>
-        <button onclick="executePoC()">Execute Deterministic Translation</button>
+        <div class="card">
+            <h3>Live Simulation Control</h3>
+            <p>Fetch and evaluate the asynchronous mock telemetry diagnostic event from the decentralized repository source.</p>
+            <button onclick="fetchDiagnosticEvent()">Fetch & Evaluate Telemetry</button>
+        </div>
+
+        <div class="card">
+            <h3>Telemetry Output Stream</h3>
+            <pre id="output">Click the button above to load mock-telemetry-event.json asynchronously...</pre>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>2. Immutable Decision Packet Output (Draft-07 Verified)</h2>
-        <pre id="outputJson">Click 'Execute Deterministic Translation' to process input...</pre>
-    </div>
-
-    <div class="footer">
-        This document was structured with the help of AI, and curated by MSK
-    </div>
-</div>
-
-<script>
-function loadPreset() {
-    const select = document.getElementById('scenarioSelect');
-    const textarea = document.getElementById('userInput');
-    if (select.value !== 'custom') {
-        textarea.value = select.value;
-    }
-}
-
-function executePoC() {
-    const inputVal = document.getElementById('userInput').value;
-    const timestamp = new Date().toISOString();
-    
-    let fsmCode = "FSM_OK_SYNC_001";
-    let riskLevel = "LOW";
-    if (inputVal.includes("口頭") || inputVal.includes("old version") || inputVal.includes("唔使改")) {
-        fsmCode = "FSM_ERR_OVERRIDE_001";
-        riskLevel = "HIGH_GOVERNANCE_BREACH";
-    }
-
-    const mockPacket = {
-        "packet_id": "pkt_" + Math.random().toString(36).substring(2, 11),
-        "timestamp": timestamp,
-        "source_input_length": inputVal.length,
-        "fsm_status_code": fsmCode,
-        "risk_assessment": riskLevel,
-        "schema_validation": "Draft-07_PASS",
-        "governance_action": riskLevel === "HIGH_GOVERNANCE_BREACH" ? "TRIGGER_DECOUPLING_REVIEW" : "AUTO_SYNC_METATAG",
-        "transient_memory_flushed": true,
-        "raw_text_retained": false
-    };
-
-    document.getElementById('outputJson').textContent = JSON.stringify(mockPacket, null, 4);
-}
-</script>
-
+    <script>
+        async function fetchDiagnosticEvent() {
+            const outputElement = document.getElementById('output');
+            outputElement.textContent = "Loading telemetry event from mock-telemetry-event.json...";
+            outputElement.className = "";
+            
+            try {
+                const response = await fetch('./mock-telemetry-event.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                outputElement.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                outputElement.className = "error";
+                outputElement.textContent = `Error loading telemetry payload: ${error.message}\nEnsure mock-telemetry-event.json is in the same directory.`;
+            }
+        }
+    </script>
 </body>
 </html>
