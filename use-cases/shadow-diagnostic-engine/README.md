@@ -1,208 +1,60 @@
-# Module: SIA Shadow Diagnostic Engine
+# Shadow Diagnostic Engine
 
-> **Path:** `use-cases/shadow-diagnostic-engine/README.md`  
-> **Classification:** Enterprise Architecture Specification & Reference Implementation  
-> **Target Audience:** C-Suite Executives, Chief Architects, & Practice Leads  
+## Executive Brief
 
----
+In enterprise digital transformation, a persistent chasm exists between official governance models and operational realities. Traditional Enterprise Resource Planning (ERP) systems and Standard Operating Procedures (SOPs) represent the **"Dream Path"**—an idealized, top-down workflow that rarely reflects how mission-critical operations actually unfold. 
 
-## Executive Overview
+In practice, over 90% of critical decision-making, exception handling, and cross-functional orchestration occur within unstructured, decentralized edge communication channels (e.g., WeChat, WhatsApp, Line). Forcing rigid, traditional SOPs onto these frontline workflows breeds operational defiance and leaves executive leadership in a perpetual data blind spot.
 
-High-value enterprise transformations and megaprojects rarely fail due to technical deficiencies or individual execution errors. They collapse under the weight of **Context Latency**—the temporal gap between strategic intent modification and operational field awareness.
+The **Shadow Diagnostic Engine** bridges this chasm. Rather than disrupting frontline communication habits or imposing heavy compliance burdens, this engine leverages edge-native architectures to convert chaotic instant messaging into structured, verifiable telemetry—without compromising data sovereignty or employee trust.
 
-In complex, multi-stakeholder ecosystems (such as AEC megaprojects, supply chain shifts, or cross-departmental legacy migrations), communication channels naturally diverge:
+## System Architecture
 
-* **Strategic Intent Modifications** occur in formal channels (RFIs, formal drawing releases, contract addendums).
-* **Operational Execution Realities** occur in informal, high-velocity channels (WhatsApp, site memos, physical printed PDFs).
-
-This divergence creates a critical operational bottleneck: frontline teams execute work based on stale spatial or operational assumptions while formal change orders trickle through administrative layers.
-
-Traditional project management tools attempt to solve this by imposing central dashboards or strict reporting workflows. This creates two critical failure modes:
-
-1. **Adoption Friction & Silo Resistance:** Frontline teams bypass rigid portals and default to unstructured channels.
-2. **Terminology Loss:** Architects, MEP Engineers, and Site Contractors speak mutually unintelligible domain dialects ("Design Intent" vs. "Load Clearance" vs. "Constructability").
-
-The **SIA Shadow Diagnostic Engine** provides a zero-risk, non-intrusive diagnostic mechanism. Operating entirely as a **SIA Layer 2 Shadow**, it passively ingests unstructured communication artifacts, applies local entity masking, aligns multi-stakeholder semantics using a Small Language Model (SLM), and deterministically maps temporal gaps using a Finite State Machine (FSM).
-
----
-
-## Architectural Topology
-
-The engine operates on a non-intrusive, asynchronous pipeline that shadow-reads production artifacts without modifying legacy databases or interfering with active frontline workflows.
-
-### Pipeline Flowchart
+The following diagram illustrates the end-to-end telemetry pipeline, detailing how unstructured edge communications are securely processed and transformed into deterministic operational records.
 
 ```mermaid
-flowchart TD
-    subgraph Ingestion_Layer ["Layer 2: Non-Intrusive Ingestion"]
-        A1["Unstructured Communication<br/>WhatsApp Logs / Emails"] --> B1["Local Entity Masking Engine<br/>Presidio / Regex Anonymizer"]
-        A2["Physical Artifact Metadata<br/>Drawing Revision Hashes"] --> B1
+graph TD
+    subgraph Edge Channels [Edge Communication Channels]
+        A1[WeChat / WhatsApp / Line]
     end
 
-    subgraph Semantic_Alignment ["SIA Semantic Extraction Layer"]
-        B1 -->|"Anonymized Streams"| C1["Local SLM Policy Parser<br/>Domain Lexicon Alignment"]
-        C1 -->|"Factoid Extraction"| D1["Factoid Triplets<br/>Timestamp | Role | Operational Intent"]
+    subgraph Edge Governance Layer [Edge Governance Middleware]
+        A1 -->|Explicit Trigger @mention| B1[Ephemeral Ingestion]
+        B1 -->|Context Payload| C1[Semantic Translator: Local SLM + KG]
+        C1 -->|Jargon-to-FSM Alignment| D1[FSM-Verified Decision Packet]
+        D1 -->|Immediate Wipe after Filing| E1[Transient Stream Flushing]
     end
 
-    subgraph Deterministic_Audit ["FSM Temporal Alignment Engine"]
-        D1 --> E1["State Transition Evaluator"]
-        E1 --> F1{"Context Latency Gap > Threshold?"}
-        F1 -->|"Yes"| G1["Log Structural Friction Point"]
-        F1 -->|"No"| G2["State Synchronized"]
+    subgraph Core Enterprise Backend [Deterministic Storage]
+        D1 -->|Structured Data Only| F1[Backend Audit Trail / Folder]
     end
 
-    subgraph C_Suite_Reporting ["Executive Output Layer"]
-        G1 --> H1["Information Disconnect Score"]
-        G1 --> H2["Context Latency Time-to-Value Lag"]
-    end
+    style Edge Channels fill:#f9f,stroke:#333,stroke-width:2px
+    style Edge Governance Layer fill:#bbf,stroke:#333,stroke-width:2px
+    style Core Enterprise Backend fill:#bfb,stroke:#333,stroke-width:2px
 ```
+## Core Diagnostic Mechanisms & Data Sovereignty
 
-## The 1-Week Zero-Risk Shadow Audit Protocol
+To bridge the gap between human-centric operational reality and strict enterprise governance, the engine relies on three core pillars:
 
-To diagnose structural friction without triggering organizational defense mechanisms or security reviews, the engine follows a strict 5-day execution protocol.
+1. **Explicit Trigger & Ephemeral Ingestion**: 
+   The system remains entirely passive until explicitly invoked via an `@mention` (e.g., `@AIPM`). Upon invocation, it performs a transient capture of the specific conversational context without continuous background surveillance, ensuring total employee trust.
 
-### Execution Protocol Summary
+2. **Semantic Translator (Local SLM + Knowledge Graph)**: 
+   Frontline teams communicate using natural, unstructured operational jargons. A localized Small Language Model (SLM) integrated with an Enterprise Knowledge Graph automatically translates and maps these variations into standardized **Finite State Machine (FSM) State IDs** without forcing workflow changes.
 
-| Phase | Duration | Scope of Work | Operational Safeguards |
-| :--- | :--- | :--- | :--- |
-| **Phase 1: Ingestion Setup** | Day 1 | Define target project boundaries (e.g., Stage 0 to Stage 1 Handover). Establish passive ingestion endpoints for export logs. | Read-only access. Zero production schema mutations. |
-| **Phase 2: Entity Isolation** | Day 2 | Run local sanitization scripts to strip PII, commercial contract values, and proprietary naming. | 100% on-premises execution. Zero cloud telemetry leakage. |
-| **Phase 3: Semantic Extraction** | Day 3–4 | Process anonymized text through the local SLM to extract standardized Factoid Triplets and normalize domain jargon. | Immutable State Hash Logging for auditability. |
-| **Phase 4: Latency Analysis** | Day 5 | Execute the FSM state evaluator to cross-reference intent revisions against physical execution logs. | Output generated as quantitative structural metrics. |
+3. **Deterministic Filing & Transient Flushing**: 
+   Once the FSM-verified Decision Packet is securely routed to the core backend or designated audit folder, raw conversational logs are instantly flushed from the memory stream. This guarantees **Zero Data Leakage** while maintaining 100% traceability.
 
-## Structural Data Schema
+### Data Sovereignty & Compliance Matrix
 
-The SIA Shadow Diagnostic Engine enforces deterministic state transitions by parsing unstructured data into structured **Factoid Triplets**. High-level governance is summarized below, followed by the formal JSON Schema specification.
-
-### Executive Schema Summary
-
-| Field | Type | Business Logic & Governance Standard |
+| Dimension | Traditional Approach | Shadow Diagnostic Engine |
 | :--- | :--- | :--- |
-| `factoid_id` | UUIDv4 | Unique, non-traceable transaction identifier for state auditing. |
-| `timestamp_utc` | ISO 8601 | Normalized UTC timestamp to measure precise temporal Context Latency ($\Delta t$). |
-| `stakeholder_role` | Enum | Strict role boundary (`ARCHITECT`, `MEP_ENGINEER`, `MAIN_CONTRACTOR`, etc.). |
-| `canonical_state_id` | String | Immutable state identifier (e.g., `STATE_STRUCTURAL_LAYOUT_REV_B`). |
-| `constraint_signature` | Object | Standardized physical constraints (spatial clearance, drawing revision hash). |
-
-### Factoid Triplet Definition (JSON Schema)
-
-```json
-{
-  "$schema": "[https://json-schema.org/draft/2020-12/schema](https://json-schema.org/draft/2020-12/schema)",
-  "title": "FactoidTriplet",
-  "type": "object",
-  "properties": {
-    "factoid_id": { 
-      "type": "string", 
-      "format": "uuid" 
-    },
-    "timestamp_utc": { 
-      "type": "string", 
-      "format": "date-time" 
-    },
-    "stakeholder_role": { 
-      "type": "string", 
-      "enum": ["ARCHITECT", "MEP_ENGINEER", "MAIN_CONTRACTOR", "SUB_CONTRACTOR", "CLIENT"] 
-    },
-    "canonical_state_id": { 
-      "type": "string" 
-    },
-    "raw_intent_summary": { 
-      "type": "string" 
-    },
-    "constraint_signature": {
-      "type": "object",
-      "properties": {
-        "spatial_clearance_mm": { 
-          "type": "integer" 
-        },
-        "drawing_reference_hash": { 
-          "type": "string" 
-        }
-      }
-    }
-  },
-  "required": ["factoid_id", "timestamp_utc", "stakeholder_role", "canonical_state_id"]
-}
-```
-
-### Context Latency & Disconnect Metrics
-
-The FSM engine continuously evaluates two primary structural indicators to quantify operational risk and information degradation:
-
-1. **Context Latency Gap ($\Delta t$)**: Measures the temporal lag between formal intent modifications and operational awareness in the field.
-
-$$\text{Context Latency } (\Delta t) = T_{\text{Realized Execution}} - T_{\text{Intent Revision}}$$
-
-2. **Semantic Disconnect Score (SDS)**: Measures the percentage of unaligned domain assertions across cross-functional stakeholder boundaries.
-
-$$\text{Semantic Disconnect Score (SDS)} = \left( 1 - \frac{\text{Shared Canonical Factoids}}{\text{Total Domain Assertions}} \right) \times 100$$
-
-## Reference Implementation & Execution Setup
-
-A zero-dependency reference CLI diagnostic script (`anonymizer_and_parser.py`) and mock dataset (`mock_project_logs.json`) are provided in the `/src` directory to demonstrate local entity masking, factoid extraction, and deterministic context latency computation.
-
-```bash
-# Clone the repository
-git clone [https://github.com/26200602/SIA-Agentic-AI-Architecture.git](https://github.com/26200602/SIA-Agentic-AI-Architecture.git)
-cd SIA-Agentic-AI-Architecture/use-cases/shadow-diagnostic-engine
-
-# Execute the zero-dependency diagnostic CLI
-python3 src/anonymizer_and_parser.py --input src/mock_project_logs.json
-
-```
-
-## Sample Executable Output
-
-# SIA Shadow Diagnostic Engine v1.0
-## Execution Report
-
-```ini
-[STATUS] Local Entity Masking Engine initialized. (Zero Cloud Telemetry)
-[INFO]   Processing 142 unstructured communication artifacts...
-[INFO]   Executing SLM Semantic Mapping & FSM State Alignment...
-```
-
-### 🔍 Diagnostic Findings
-
-* **Target Scenario:** Stage 0 → Stage 1 Handover (HVAC Plant Room Layout)
-* **Primary Intent Drift:** Revision C (Architect) vs Revision A (Site Sub-Contractor)
-
-#### Key Metrics
-
-| Metric | Score / Delay | Details & Root Cause |
-| :--- | :--- | :--- |
-| **[METRIC 1] Context Latency Gap** | 96.5 Hours | **Origin Intent Modified:** 2026-05-10T08:30:00Z (Email / Attachment)<br>**Site Realization Aware:** 2026-05-14T09:00:00Z (WhatsApp / Site Photo) |
-| **[METRIC 2] Semantic Disconnect** | 64.2% | **Root Cause:** Terminology mismatch between MEP Routing Jargon and Constructability Clearance Constraints. |
-
-> [!WARNING]
-> **[RECOMMENDATION]**
-> Structural Operational Debt detected in Handover Protocol. **Do NOT deploy conversational AI assistants to frontline teams.** Restructure the Push-Notification State Boundary within the Master Project Specification.
+| **Frontline Experience** | Rigid SOPs / Heavy Compliance | Natural IM workflows (WeChat, WhatsApp, Line) |
+| **Data Retention** | Massive unstructured chat logs | Transient ingestion + FSM-verified packets |
+| **Traceability** | Low / Fragmented audit trail | High / Deterministic FSM State tracking |
+| **Risk Profile** | High Data Leakage & Surveillance | Zero-Knowledge architecture / High compliance |
 
 ---
 
-## 📂 Repository Directory Structure
-
-```text
-use-cases/shadow-diagnostic-engine/
-├── README.md                      		# Architecture Specification (This Document)
-├── docs/
-│   ├── pipeline_topology.png      		# High-Resolution Architecture Diagram
-│   └── 1_week_audit_playbook.md   		# Detailed C-Suite Advisory Protocol
-└── src/
-    ├── anonymizer_and_parser.py   		# Deterministic CLI Diagnostic Script
-    └── mock_project_logs.json     		# Anonymized Multi-Stakeholder Artifacts
-```
-
----
-
-## ⚖️ Enterprise Advisory & Architecture Disclaimer
-
-> [!NOTE]
-> **Notice:** The SIA Shadow Diagnostic Engine and associated schemas are provided as an Enterprise Reference Architecture. 
-> 
-> This specification defines non-intrusive auditing patterns for unstructured data flows in high-stakes domain environments (such as AEC megaprojects, multi-tier supply chains, and legacy migrations). 
-> 
-> * **Compliance:** Implementation of these patterns must adhere to local regulatory requirements (including GDPR, ISO 42001, and local data sovereignty laws). 
-> * **Liability:** The diagnostic metrics output by the engine are intended to identify structural operational friction and do not constitute formal legal or contractual liability assessments.
-
+This document was structured with the help of AI, and curated by Sana.M
