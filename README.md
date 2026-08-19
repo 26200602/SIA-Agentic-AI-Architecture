@@ -59,6 +59,7 @@ To guarantee absolute data sovereignty, all execution payloads are strictly tran
 ---
 
 ## Repository Structure & SimPoC Implementation
+```text
 .
 ├── docs/
 │   ├── SIA_WHITE_PAPER.md        # Complete C-Suite Strategic Architecture Paper
@@ -68,6 +69,8 @@ To guarantee absolute data sovereignty, all execution payloads are strictly tran
 │   ├── slm_runtime_cage.py       # Quantized Local SLM Execution Engine
 │   └── transient_memory.py       # Memory Flush & Cryptographic Hash Logger
 └── README.md                     # Executive Portal
+```
+
 
 ## Governance & Compliance Standard
 SIA provides structural immunity against Adversarial Context Injection and Prompt Injection. By isolating the probabilistic text generation within an externally controlled, deterministic sandbox, enterprise intent is maintained regardless of input anomalies.
