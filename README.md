@@ -25,12 +25,12 @@ SIA strictly separates **Strategic Reasoning (Offline/High-Reasoning Layer)** fr
 graph TD
     subgraph OfflineReasoningLayer ["Layer 1: Strategic Intent (Policy & Governance)"]
         Policy[Enterprise Policies & ISO Standards] -->|Policy Parsing| LLM[Frontier LLM / Constitution]
-        LLM -->|Generate State Rules| Rules Engine
+        LLM -->|Generate State Rules| RulesEngine[Rules Engine]
     end
 
     subgraph RuntimeExecutionLayer ["Layer 2: Sovereign Infrastructure (SIA Runtime)"]
         Input[Transient Payload Input] -->|Sanitization| SLM[Quantized Edge SLM / Local Court]
-        Rules Engine -.->|Immutable Rule Injection| FSM
+        RulesEngine -.->|Immutable Rule Injection| FSM
         SLM -->|State Transition Draft| FSM[Finite State Machine / Circuit Breaker]
         
         FSM -->|Validation Passed| Exec[Decision Packet Output]
@@ -40,6 +40,7 @@ graph TD
     subgraph LegacyCore ["Centralized Legacy Infrastructure"]
         Exec -.->|Non-Intrusive Query via Factoids| ShadowDB[(Legacy Data Schema / Mainframe)]
     end
+
 ```
 
 ## Core Architectural Pillars
