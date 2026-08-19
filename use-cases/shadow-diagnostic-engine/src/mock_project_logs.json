@@ -1,0 +1,35 @@
+[
+  {
+    "artifact_id": "MSG-20260510-001",
+    "timestamp_utc": "2026-05-10T08:30:00Z",
+    "channel": "EMAIL_ATTACHMENT",
+    "source_stakeholder": "ARCHITECT",
+    "raw_payload": "Issued Structural Rev_C for HVAC Plant Room clearance. Minimum height adjusted to 2800mm per Structural Addendum #4. Contact Chief Engineer David Chan at david.chan@megabuild.com / +852-9123-4567 for clarifications.",
+    "metadata": {
+      "drawing_hash": "a8f3b2e910c4",
+      "revision": "REV_C"
+    }
+  },
+  {
+    "artifact_id": "MSG-20260511-042",
+    "timestamp_utc": "2026-05-11T10:15:00Z",
+    "channel": "WHATSAPP_LOG",
+    "source_stakeholder": "MEP_ENGINEER",
+    "raw_payload": "Site Notice: Pipe routing for B2 ducting confirmed with Sub-contractor Ah Wah (+852-6888-9999). Proceeding using legacy layout drawing Rev_A.",
+    "metadata": {
+      "drawing_hash": "f1d2e3c456b7",
+      "revision": "REV_A"
+    }
+  },
+  {
+    "artifact_id": "MSG-20260514-089",
+    "timestamp_utc": "2026-05-14T09:00:00Z",
+    "channel": "SITE_MEMO_PHOTO",
+    "source_stakeholder": "SUB_CONTRACTOR",
+    "raw_payload": "Site team reported ducting clearance collision at grid B2-C4. Main trunking clashes with ceiling beam at 2500mm height. Halting installation.",
+    "metadata": {
+      "drawing_hash": "f1d2e3c456b7",
+      "revision": "REV_A"
+    }
+  }
+]
