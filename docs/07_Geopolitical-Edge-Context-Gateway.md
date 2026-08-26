@@ -91,7 +91,7 @@ Boundary transit and model calls must be governed by an external deterministic g
 ## 🗺️ Deployment & Verification Roadmap
 
 - [ ] **Policy Matrix Definition:** Map regional regulatory restrictions against enterprise data classifications.
-- [ ] **Gateway Schema Design:** Implement OpenAPI / gRPC interfaces for the Deterministic Sovereignty Gateway.
+- [ ] **Gateway Schema Design:** Implement [OpenAPI Specification](07_gateway-schema.yaml) for the Deterministic Sovereignty Gateway.
 - [ ] **Session Re-hydration Test:** Simulate cross-border payload transitions ensuring continuous context retrieval without local state retention.
 
 ---
