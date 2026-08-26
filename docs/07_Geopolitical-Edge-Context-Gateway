@@ -27,17 +27,17 @@ graph TD
         A2 -->|Stores Vector State| A3[Local NPU / Device Storage]
     end
 
-    A1 -->|Crosses Border| Region B
+    A1 -->|Crosses Border| B1
 
     subgraph Region B [Region B: Sovereign Jurisdiction]
-        Region B -->|Trigger| B1[Silent OS Split-Brain Switch]
-        B1 -->|Wipes Unmapped State| B2[Hard Session Flush]
+        B1[Silent OS Split-Brain Switch] -->|Wipes Unmapped State| B2[Hard Session Flush]
         B2 -->|Fallback| B3[Localized Regional Model]
-        B3 -->|Result| B4["'Hello! How can I help you today?'\n(Context Wiped / Operational Failure)"]
     end
+    B3 -->|Result| B4["'Hello! How can I help you today?'\n(Context Wiped / Operational Failure)"]
 
     style B2 fill:#ff9999,stroke:#333,stroke-width:2px
     style B4 fill:#ff9999,stroke:#333,stroke-width:2px
+```
 
 ## SIA Sovereign Gateway Architecture: Decoupled & Ephemeral State
 
@@ -62,6 +62,8 @@ graph TD
     style S2 fill:#99ccff,stroke:#333,stroke-width:2px
     style E3 fill:#99ff99,stroke:#333,stroke-width:2px
 ```
+
+---
 
 # Project Architecture & Deployment Roadmap
 
@@ -92,5 +94,4 @@ Boundary transit and model calls must be governed by an external deterministic g
 
 ---
 
-> 📝 *** This document was structured with the help of AI, and curated by **Sana.M**.***
-
+> 📝 ***This document was structured with the help of AI, and curated by **Sana.M**.***
