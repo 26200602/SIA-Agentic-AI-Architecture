@@ -35,8 +35,9 @@ graph TD
     end
     B3 -->|Result| B4["'Hello! How can I help you today?'\n(Context Wiped / Operational Failure)"]
 
-    style B2 fill:#ff9999,stroke:#333,stroke-width:2px
-    style B4 fill:#ff9999,stroke:#333,stroke-width:2px
+    style B2 fill:#ff9999,stroke:#333,stroke-width:2px,color:#000
+    style B4 fill:#ff9999,stroke:#333,stroke-width:2px,color:#000
+
 ```
 
 ## SIA Sovereign Gateway Architecture: Decoupled & Ephemeral State
@@ -58,9 +59,10 @@ graph TD
     E1 -->|Process Ephemeral Task| E2[Regional Local Model Execution]
     E2 -->|Post-Transaction| E3[Zero-Residue Flush]
 
-    style S1 fill:#99ccff,stroke:#333,stroke-width:2px
-    style S2 fill:#99ccff,stroke:#333,stroke-width:2px
-    style E3 fill:#99ff99,stroke:#333,stroke-width:2px
+    style S1 fill:#99ccff,stroke:#333,stroke-width:2px,color:#000
+    style S2 fill:#99ccff,stroke:#333,stroke-width:2px,color:#000
+    style E3 fill:#99ff99,stroke:#333,stroke-width:2px,color:#000
+
 ```
 
 ---
