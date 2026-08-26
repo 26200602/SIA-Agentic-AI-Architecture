@@ -1,41 +1,98 @@
 openapi: 3.0.3
 info:
   title: Deterministic Sovereignty Gateway API
-  description: Specification for managing cross-border active session context snapshots and executing ephemeral flushes.
+  description: Specification for managing cross-border active session context snapshots, verifying data sovereignty compliance, and executing zero-residue ephemeral flushes.
   version: 1.0.0
-
 paths:
   /gateway/transit:
     post:
       summary: Border Transition Event
-      description: Triggered when an executive edge device crosses into a new sovereign jurisdiction.
+      description: Triggered when an executive edge device crosses into a sovereign jurisdiction to decouple state and enforce regional compliance.
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                executive_id:
-                  type: string
-                  example: "MSK-001"
-                source_region:
-                  type: string
-                  example: "Region-A"
-                destination_region:
-                  type: string
-                  example: "Region-B"
+              $ref: '#/components/schemas/TransitRequest'
       responses:
         '200':
-          description: Context state successfully decoupled and ephemeral execution payload injected.
+          description: Context state successfully decoupled and compliance policy evaluated.
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  action_required:
-                    type: string
-                    example: "ZERO_RESIDUE_FLUSH"
-                  session_snapshot_id:
-                    type: string
-                    example: "snap_2026_x99"
+                $ref: '#/components/schemas/TransitResponse'
+        '403':
+          description: Data Sovereignty Policy Violation. Execution terminated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    TransitRequest:
+      type: object
+      required:
+        - executive_id
+        - source_region
+        - destination_region
+        - device_signature
+        - timestamp
+      properties:
+        executive_id:
+          type: string
+          example: "MSK-001"
+        source_region:
+          type: string
+          example: "Region-A-US"
+        destination_region:
+          type: string
+          example: "Region-B-CN"
+        device_signature:
+          type: string
+          example: "sig_sec256k1_98a7b6c5"
+        timestamp:
+          type: integer
+          format: int64
+          example: 1787671848
+
+    TransitResponse:
+      type: object
+      required:
+        - action_required
+        - session_snapshot_id
+        - sovereignty_compliance_status
+        - authorized_regional_endpoint
+      properties:
+        action_required:
+          type: string
+          enum:
+            - ZERO_RESIDUE_FLUSH
+            - EPHEMERAL_PAYLOAD_INJECT
+            - TERMINATE_SESSION
+          example: "ZERO_RESIDUE_FLUSH"
+        session_snapshot_id:
+          type: string
+          example: "snap_2026_x99_sec"
+        sovereignty_compliance_status:
+          type: string
+          enum:
+            - COMPLIANT_EPHEMERAL_ONLY
+            - FULL_SOVEREIGN_RESTRICTION
+            - UNRESTRICTED
+          example: "COMPLIANT_EPHEMERAL_ONLY"
+        authorized_regional_endpoint:
+          type: string
+          example: "https://gateway.region-b.sovereign.internal/v1"
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: "ERR_SOVEREIGNTY_VIOLATION"
+        message:
+          type: string
+          example: "Payload processing unauthorized in destination jurisdiction."
+
+*** This document was structured with the help of AI, and curated by Sana.M ***
