@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info:
+  title: Deterministic Sovereignty Gateway API
+  description: Specification for managing cross-border active session context snapshots and executing ephemeral flushes.
+  version: 1.0.0
+
+paths:
+  /gateway/transit:
+    post:
+      summary: Border Transition Event
+      description: Triggered when an executive edge device crosses into a new sovereign jurisdiction.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                executive_id:
+                  type: string
+                  example: "MSK-001"
+                source_region:
+                  type: string
+                  example: "Region-A"
+                destination_region:
+                  type: string
+                  example: "Region-B"
+      responses:
+        '200':
+          description: Context state successfully decoupled and ephemeral execution payload injected.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  action_required:
+                    type: string
+                    example: "ZERO_RESIDUE_FLUSH"
+                  session_snapshot_id:
+                    type: string
+                    example: "snap_2026_x99"
