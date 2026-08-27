@@ -1,6 +1,16 @@
 # Vertical Reference Architecture: Human-Centric Field Operations Gateway
 
+> **SIA Pillar 2 Reference Implementation**: Non-Intrusive Event Shadowing & Anti-Surveillance Gatekeeping for Cross-Enterprise Operations.
+> 
+> **Core Repositories & Execution Anchors**:
+> * 📄 **Declarative State Machine Policy**: [`fsm_policy.json`](../../fsm_policy.json)
+> * ⚡ **Deterministic Circuit Breaker Executable**: [`sim_poc.py`](../../sim_poc.py)
+> * 📐 **Core Architecture Blueprint**: [`README.md`](../../README.md)
+
+---
+
 ## Executive Summary
+
 Current enterprise AI deployments in field operations (e.g., Construction EPC, Industrial Maintenance, Supply Chain Logistics) suffer from a fundamental architectural fallacy: **The Illusion of Ambient Surveillance**. Legacy vendors attempt to impose full-screen keylogging, 24/7 video monitoring, or rigid, intrusive mobile apps onto field teams and external contractors. 
 
 This approach fails at the operational edge. Frontline engineers, site managers, and third-party vendors operate in high-friction environments where speed is critical. Mandatory form-filling leads to operational paralysis, while continuous surveillance triggers aggressive passive resistance and breeds dangerous Shadow IT (e.g., unmonitored consumer messaging apps).
@@ -12,34 +22,36 @@ The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive para
 ## Architectural Topology
 
 [ Frontline Channels ]         [ Asynchronous Shadowing Gateway ]           [ Sovereign Core ]
-(WhatsApp / WeChat / Voice) --> [ Read-Only Ingestion Buffer ]
-│
-▼
-[ Ephemeral Parser (Local SLM) ]
-│ (3-Tag Extraction)
-▼
-[ Deterministic FSM Engine ] ──(Violation)──> [ Circuit Breaker ]
-│                                 (Event Intercept)
-(State Transition)
-│
-▼
-[ Transient Factoid Payload ]
-│
-▼
-[ Cryptographic Hash Logger ] ──(Audit Log)─> [ Ledger / ERP ]
-│
-▼
-[ Memory Purge (memset_s) ]
+(WhatsApp / WeChat / Voice) --> [ Read-Only Ingestion Buffer ] 
+                                            │
+                                            ▼
+                               [ Ephemeral Parser (Local SLM) ] 
+                                            │ (3-Tag Extraction)
+                                            ▼
+                               [ Deterministic FSM Engine ] ──(Violation)──> [ Circuit Breaker ]
+                                            │                                 (Event Intercept)
+                                    (State Transition)
+                                            │
+                                            ▼
+                               [ Transient Factoid Payload ]
+                                            │
+                                            ▼
+                               [ Cryptographic Hash Logger ] ──(Audit Log)─> [ Ledger / ERP ]
+                                            │
+                                            ▼
+                                [ Memory Purge (memset_s) ]
 
 ---
 
-## Strategic Pillars & Systemic Mechanics
+---
+
+## Strategic Mechanics & Operational Pillars
 
 ### 1. Anti-Surveillance & Event-Driven Activation
-Unlike consumer-grade AI agents that demand full-desktop monitoring or persistent video streams, the Shadow Diagnostic Engine is strictly **Event-Driven and On-Demand**.
+Unlike consumer-grade AI agents that demand full-desktop keylogging or persistent video streams, the Shadow Diagnostic Engine is strictly **Event-Driven and On-Demand**.
 * **Zero Ambient Surveillance:** The engine does not record ambient audio, track idle screen time, or inspect private personal traffic.
 * **Bounded Interception:** Processing is triggered only when specific operational risk vectors or system keywords (e.g., `Material Substitution`, `Structural Modification`, `Safety Boundary`) are detected in the communication buffer.
-* **Privacy Boundary:** Irrelevant dialogue is instantly discarded at the buffer stage prior to semantic evaluation.
+* **Privacy Boundary:** Irrelevant dialogue is instantly discarded at the memory buffer stage prior to semantic evaluation.
 
 ### 2. Cross-Enterprise Boundary Isolation (Internal vs. External)
 Field operations inherently span multiple legal entities: Asset Owners, EPC Contractors, and Sub-Contractors. 
@@ -62,24 +74,16 @@ To eliminate model hallucination in safety-critical operations, execution logic 
 
 ---
 
-## Technical Specifications & Repository Structure
+## Repository Structure & Verification Anchors
 
-# Project Directory Structure
-
+```text
 shadow-diagnostic-engine/
 ├── README.md                           # Architecture Specification (This File)
-├── configs/
-│   └── fsm_construction_policy.json    # Declarative State Boundary & Transition Rules
-├── core/
-│   ├── event_shadow_gateway.py         # Asynchronous Read-Only Channel Buffer
-│   ├── slm_factoid_parser.py           # Localized 4-bit SLM Context Extractor
-│   └── fsm_circuit_breaker.py          # Deterministic Boundary Evaluator
-├── tests/
-│   └── sim_site_overrides.py           # Verification Script for Boundary Interrupts
-└── docs/
-    └── SECURITY_PRIVACY_SPEC.md        # Cryptographic Audit & Memory Purge Validation
+├── fsm_policy.json                     # Declarative State Boundary & Circuit Breaker Rules
+└── sim_poc.py                          # Deterministic FSM Interceptor Executable
+```
 
-### Core Configuration Logic (`configs/fsm_construction_policy.json`)
+### Declarative Policy Logic (fsm_policy.json)
 ```json
 {
   "DOMAIN": "FIELD_OPERATIONS_CONSTRUCTION",
@@ -98,21 +102,14 @@ shadow-diagnostic-engine/
   }
 }
 ```
-# Verification & Deployment Strategy
+## Verification & Deployment Strategy
 
-## Local Edge Execution
-The **lightweight SLM parsing layer** runs on localized edge hardware (e.g., **T4 GPU** or **local NPU**) to achieve specific operational goals:
-* **Minimize latency** (<20ms).
-* **Prevent raw data egress** to external public clouds.
+### Local Edge Execution
+The lightweight SLM parsing layer runs on localized edge hardware (e.g., T4 GPU or local NPU) to minimize latency (<20ms) and prevent raw data egress to external public clouds.
 
-## Audit Verification
-Execute the following verification script from the project root to test how the **FSM interceptor** halts out-of-boundary site modification requests in real time:
-```bash
-python -m tests.sim_site_overrides
-```
+### Audit Verification
+Execute the verification script to test how the FSM interceptor halts out-of-boundary site modification requests in real time:
+`python sim_poc.py`
 
-## NLNet Open Standard Alignment
-Designed in compliance with **NGI (Next Generation Internet) European Digital Sovereignty** standards, ensuring:
-* **Non-authorial AI governance**.
-* **Full auditability**.
-* **Absolute user privacy preservation**.
+### NLNet Open Standard Alignment
+Designed in compliance with NGI (Next Generation Internet) European Digital Sovereignty standards, ensuring non-authorial AI governance, full auditability, and absolute user privacy preservation.
