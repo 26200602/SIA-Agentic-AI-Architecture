@@ -119,7 +119,6 @@ To evaluate how the FSM interceptor halts out-of-boundary site modification requ
 python use-cases/shadow-diagnostic-engine/src/anonymizer_and_parser.py
 ```
 
-
 ### NLNet Open Standard Alignment
 Designed in compliance with NGI (Next Generation Internet) European Digital Sovereignty standards, ensuring non-authorial AI governance, full auditability, and absolute user privacy preservation.
 
