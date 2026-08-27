@@ -20,25 +20,44 @@ The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive para
 
 ## Architectural Topology
 
-[ Frontline Channels ]         [ Asynchronous Shadowing Gateway ]           [ Sovereign Core ]
-(WhatsApp / Voice / Chat)  -->  [ Read-Only Ingestion Buffer ] 
-                                            │
-                                            ▼
-                               [ Ephemeral Parser (Local SLM) ] 
-                                            │ (3-Tag Extraction)
-                                            ▼
-                               [ Deterministic FSM Engine ] ──(Violation)──> [ Circuit Breaker ]
-                                            │                                 (Event Intercept)
-                                    (State Transition)
-                                            │
-                                            ▼
-                               [ Transient Factoid Payload ]
-                                            │
-                                            ▼
-                               [ Cryptographic Hash Logger ] ──(Audit Log)─> [ Ledger / ERP ]
-                                            │
-                                            ▼
-                                [ Memory Purge (memset_s) ]
+```mermaid
+graph TD
+    %% 定義三個主要架構區域 (Subgraphs)
+    subgraph Frontline ["Frontline Channels"]
+        FC["WhatsApp / Voice / Chat"]
+    end
+
+    subgraph Gateway ["Asynchronous Shadowing Gateway"]
+        IB["Read-Only Ingestion Buffer"]
+        EP["Ephemeral Parser (Local SLM)"]
+        FSM["Deterministic FSM Engine"]
+        CB["Circuit Breaker"]
+    end
+
+    subgraph Core ["Sovereign Core"]
+        TFP["Transient Factoid Payload"]
+        CHL["Cryptographic Hash Logger"]
+        ERP["Ledger / ERP"]
+        MP["Memory Purge (memset_s)"]
+    end
+
+    %% 連接同埋流程邏輯
+    FC -->|Data Ingestion| IB
+    IB --> EP
+    EP -->|3-Tag Extraction| FSM
+    FSM -->|Violation / Event Intercept| CB
+    FSM -->|State Transition| TFP
+    TFP --> CHL
+    CHL -->|Audit Log| ERP
+    CHL --> MP
+
+    %% 樣式美化
+    style Frontline fill:#f9f9f9,stroke:#333,stroke-width:1px
+    style Gateway fill:#f5f7ff,stroke:#0052cc,stroke-width:1px
+    style Core fill:#fff5f5,stroke:#cc0000,stroke-width:1px
+    style CB fill:#ffebee,stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5
+```
+
 ---
 
 ---
