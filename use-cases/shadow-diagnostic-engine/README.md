@@ -21,7 +21,7 @@ The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive para
 ## Architectural Topology
 
 [ Frontline Channels ]         [ Asynchronous Shadowing Gateway ]           [ Sovereign Core ]
-(WhatsApp / WeChat / Voice) --> [ Read-Only Ingestion Buffer ] 
+(WhatsApp / Voice / Chat)  -->  [ Read-Only Ingestion Buffer ] 
                                             │
                                             ▼
                                [ Ephemeral Parser (Local SLM) ] 
