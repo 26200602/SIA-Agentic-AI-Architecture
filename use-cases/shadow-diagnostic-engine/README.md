@@ -112,14 +112,12 @@ shadow-diagnostic-engine/
 The lightweight SLM parsing layer runs on localized edge hardware (e.g., T4 GPU or local NPU) to minimize latency (<20ms) and prevent raw data egress to external public clouds.
 
 ### Audit Verification
+To evaluate how the FSM interceptor halts out-of-boundary site modification requests in real time using deterministic rule enforcement, execute the sovereign audit script located in the repository:
 
-Execute the verification script to test how the system context parser and anonymizer functions in real time: 
-
-bash
-
-python src/anonymizer_and_parser.py
-
-Use code with caution.
+```bash
+# Clone the repository and execute the sovereign FSM simulation
+python use-cases/shadow-diagnostic-engine/sim_poc.py
+```
 
 ### NLNet Open Standard Alignment
 Designed in compliance with NGI (Next Generation Internet) European Digital Sovereignty standards, ensuring non-authorial AI governance, full auditability, and absolute user privacy preservation.
