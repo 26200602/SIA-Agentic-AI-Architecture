@@ -2,10 +2,11 @@
 
 > **SIA Pillar 2 Reference Implementation**: Non-Intrusive Event Shadowing & Anti-Surveillance Gatekeeping for Cross-Enterprise Operations.
 > 
-> **Core Repositories & Execution Anchors**:
-> * 📄 **Declarative State Machine Policy**: [fsm_policy.json](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/fsm_policy.json)
-> * ⚡ **Deterministic Circuit Breaker Executable**: [sim_poc.py](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/sim_poc.py)
-> * 📐 **Core Architecture Blueprint**: [README.md](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/README.md)
+**Core Repositories & Execution Anchors**: 
+
+* 📄 **Anonymizer & Context Parser Layer**: [anonymizer_and_parser.py](/goto?url=CAESpQEB6zswFYCzhwHhT6G9Cf2aA4Z0ZJDG2_-fy7rENbTuyqkc_QNDgVx0UgLdhQZAP-00ous1dDoNIVbbMLCqzTJ8XS_5a7fg9IMa4qL3cKw_i4Hoo6OJJ0Egp61ZZyM-Jxy7Z1XRmKSD_eGd_7PLir6ca9QNEtm-wHaTLjr5FtOGfxmhzmEfMC0mYY5v_2mikln79XNMFkQRVkp2vQ-7gqX-DVCVPrI)
+* 📊 **Mock Project System Logs**: [mock_project_logs.json](/goto?url=CAESogEB6zswFcp7Qav5bJZWWEniMxpGhbDF3dbCaw_bj1EtC_7PczWEasPFES7XRuv9gCkxdxBnR5vbeKGgA3WVcrSkzvHbw3l3r18iyNgk6sLy1FwfxZKXNke2gNDVkUVhIi9HpUsxM3gOQnRxiq673rgE6cEqMhEHbLxfyiP4WHpVkdWBvcNAL-1yWU20nbDQwe6QuSU2FozHuszD9tmVBCa5iRk)
+* 📐 **Core Architecture Blueprint**: [README.md](/goto?url=CAESkQEB6zswFWvRqtKQj_goSdf4Jx210QxoisrpCRAkb_SGF48SgWsDBnZyQN8mtWPsgs2tRUAdGDmXx9ksWZv3jm611CZ4knZG14XFnh4mtrLi3s06QdcejcODN9dgHTBRKBbKfWJSKGYChmjirmhDMY4j11K9yv5pFPABNb7F3W1PXj04iW8Ho4F5u-krRIas1Tvv)
 
 ---
 
