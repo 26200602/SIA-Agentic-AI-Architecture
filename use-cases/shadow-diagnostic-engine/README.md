@@ -3,10 +3,9 @@
 > **SIA Pillar 2 Reference Implementation**: Non-Intrusive Event Shadowing & Anti-Surveillance Gatekeeping for Cross-Enterprise Operations.
 > 
 > **Core Repositories & Execution Anchors**:
-> * 📄 **Declarative State Machine Policy**: [`fsm_policy.json`](../../fsm_policy.json)
-> * ⚡ **Deterministic Circuit Breaker Executable**: [`sim_poc.py`](../../sim_poc.py)
-> * 📐 **Core Architecture Blueprint**: [`README.md`](../../README.md)
-
+> * 📄 **Declarative State Machine Policy**: [fsm_policy.json](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/fsm_policy.json)
+> * ⚡ **Deterministic Circuit Breaker Executable**: [sim_poc.py](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/sim_poc.py)
+> * 📐 **Core Architecture Blueprint**: [README.md](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/README.md)
 ---
 
 ## Executive Summary
@@ -40,7 +39,6 @@ The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive para
                                             │
                                             ▼
                                 [ Memory Purge (memset_s) ]
-
 ---
 
 ---
