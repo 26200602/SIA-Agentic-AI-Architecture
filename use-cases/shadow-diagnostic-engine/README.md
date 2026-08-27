@@ -1,4 +1,4 @@
-# Vertical Reference Architecture: Human-Centric Field Operations Gateway
+# Shadow Diagnostic Engine (Field Operations Reference Case)
 
 > **SIA Pillar 2 Reference Implementation**: Non-Intrusive Event Shadowing & Anti-Surveillance Gatekeeping for Cross-Enterprise Operations.
 > 
@@ -6,15 +6,14 @@
 > * 📄 **Declarative State Machine Policy**: [fsm_policy.json](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/fsm_policy.json)
 > * ⚡ **Deterministic Circuit Breaker Executable**: [sim_poc.py](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/sim_poc.py)
 > * 📐 **Core Architecture Blueprint**: [README.md](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/README.md)
+
 ---
 
 ## Executive Summary
 
-Current enterprise AI deployments in field operations (e.g., Construction EPC, Industrial Maintenance, Supply Chain Logistics) suffer from a fundamental architectural fallacy: **The Illusion of Ambient Surveillance**. Legacy vendors attempt to impose full-screen keylogging, 24/7 video monitoring, or rigid, intrusive mobile apps onto field teams and external contractors. 
+Enterprise field operations (construction, maritime, and large-scale engineering) are chronically bottlenecked by "Legacy Data Debt" and communication friction across multiple external stakeholders (Asset Owners, EPCs, Sub-contractors). Traditional generative AI solutions fail in these environments because they demand invasive ambient monitoring, violate cross-enterprise privacy boundaries, and introduce probabilistic hallucinations into safety-critical workflows.
 
-This approach fails at the operational edge. Frontline engineers, site managers, and third-party vendors operate in high-friction environments where speed is critical. Mandatory form-filling leads to operational paralysis, while continuous surveillance triggers aggressive passive resistance and breeds dangerous Shadow IT (e.g., unmonitored consumer messaging apps).
-
-The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive paradigm. It acts as an asynchronous, read-only event gateway that shadows existing messaging channels (WhatsApp, WeChat, Signal) without altering legacy workflows, requiring app installations, or conducting ambient surveillance. By deploying a **Deterministic Finite State Machine (FSM)** alongside localized **Small Language Models (SLMs)**, the engine captures unstructured site dialogue on-demand, extracts auditable decision factoids, and enforces governance across enterprise boundaries—leaving zero permanent raw text footprints.
+The **Shadow Diagnostic Engine** implements SIA Pillar 2 (Non-Intrusive Implementation & Boundary Isolation). It operates as a read-only, event-driven gateway that intercepts unstructured frontline communications, extracts discrete "Factoids" via localized SLMs, and enforces hard safety limits using a deterministic Finite State Machine (FSM) circuit breaker—ensuring zero raw data egress and absolute auditability.
 
 ---
 
@@ -22,43 +21,30 @@ The **SIA Shadow Diagnostic Engine** provides an alternative, non-intrusive para
 
 ```mermaid
 graph TD
-    %% 定義三個主要架構區域 (Subgraphs)
-    subgraph Frontline ["Frontline Channels"]
-        FC["WhatsApp / Voice / Chat"]
+    subgraph Ingestion ["Frontline Channel Shadowing (Non-Intrusive)"]
+        A[Frontline Channels: WhatsApp / Voice / Chat] -->|Unstructured Stream| B[Read-Only Ingestion Buffer]
     end
 
-    subgraph Gateway ["Asynchronous Shadowing Gateway"]
-        IB["Read-Only Ingestion Buffer"]
-        EP["Ephemeral Parser (Local SLM)"]
-        FSM["Deterministic FSM Engine"]
-        CB["Circuit Breaker"]
+    subgraph Execution ["Sovereign Edge Node (T4 / Local NPU)"]
+        B --> C[Ephemeral Parser: Local SLM]
+        C -->|3-Tag Extraction: Entity, Factoid, State| D{Deterministic FSM Engine}
+        
+        D -->|Violation: Out-of-Boundary| E[Circuit Breaker Intercept\nSECURITY_VIOLATION_0x88]
+        
+        D -->|Valid Transition| F[Transient Factoid Payload]
+        F --> G[Cryptographic Hash Logger]
+        G --> H[Memory Purge: memset_s]
     end
 
-    subgraph Core ["Sovereign Core"]
-        TFP["Transient Factoid Payload"]
-        CHL["Cryptographic Hash Logger"]
-        ERP["Ledger / ERP"]
-        MP["Memory Purge (memset_s)"]
+    subgraph Immutable ["Enterprise Core"]
+        G -->|SHA-256 Audit Hash| I[(Immutable Ledger / ERP)]
     end
 
-    %% 連接同埋流程邏輯
-    FC -->|Data Ingestion| IB
-    IB --> EP
-    EP -->|3-Tag Extraction| FSM
-    FSM -->|Violation / Event Intercept| CB
-    FSM -->|State Transition| TFP
-    TFP --> CHL
-    CHL -->|Audit Log| ERP
-    CHL --> MP
-
-    %% 樣式美化
-    style Frontline fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style Gateway fill:#f5f7ff,stroke:#0052cc,stroke-width:1px
-    style Core fill:#fff5f5,stroke:#cc0000,stroke-width:1px
-    style CB fill:#ffebee,stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5
+    classDef danger fill:#ffdddd,stroke:#990000,stroke-width:2px,color:#990000;
+    classDef success fill:#ddffdd,stroke:#009900,stroke-width:2px,color:#006600;
+    class E danger;
+    class H success;
 ```
-
----
 
 ---
 
