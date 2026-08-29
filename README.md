@@ -1,11 +1,12 @@
-# SIA Agentic AI Architecture
+# Sovereign Infrastructure Architecture (SIA) Engine
+> **Deterministic Zero-Trust Middleware for Agentic AI & Enterprise Governance**
 
-[![Architecture: SIA Layer 1/2](https://img.shields.io/badge/Architecture-SIA%20Layer%201%2F2-blue.svg)](#)
-[![Compliance: ISO 42001 / GDPR](https://img.shields.io/badge/Compliance-ISO%2042001%20%2F%20GDPR-brightgreen.svg)](#)
-[![Runtime: SLM + FSM Circuit Breaker](https://img.shields.io/badge/Runtime-SLM%20%2B%20FSM%20Circuit%20Breaker-orange.svg)](#)
+[![SimPoC Sandbox](https://img.shields.io/badge/SimPoC-Working_Sandbox-007ACC?style=for-the-badge&logo=github)](https://github.com/26200602/SIA-Agentic-AI-Architecture/tree/main)
+[![ISO 42001 & EU AI Act](https://img.shields.io/badge/Compliance-ISO_42001_%7C_EU_AI_Act-10B981?style=for-the-badge&logo=shieldsdotio)](https://github.com/26200602/SIA-Agentic-AI-Architecture)
+[![SLM / FSM Cage](https://img.shields.io/badge/Architecture-SLM_%2F_FSM_Cage-F97316?style=for-the-badge&logo=diagramsdotnet)](https://github.com/26200602/SIA-Agentic-AI-Architecture)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
 
-> **Sovereign Infrastructure Architecture (SIA)**: Enterprise-grade, Non-Intrusive Governance Layer for Decoupled AI Operations & Deterministic Boundary Control.
-
+---
 ---
 
 ## Executive Summary
