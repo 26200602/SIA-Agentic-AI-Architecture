@@ -1,10 +1,10 @@
-# Sovereign Infrastructure Architecture (SIA) Engine
+[# Sovereign Infrastructure Architecture (SIA) Engine
 > **Deterministic Zero-Trust Middleware for Agentic AI & Enterprise Governance**
 
 [![SimPoC Sandbox](https://img.shields.io/badge/SimPoC-Working_Sandbox-007ACC?style=for-the-badge&logo=github)](#simpoc-working-sandbox)
 [![ISO 42001 & EU AI Act](https://img.shields.io/badge/Compliance-ISO_42001_%7C_EU_AI_Act-10B981?style=for-the-badge&logo=shieldsdotio)](#compliance--regulatory-alignment)
 [![SLM / FSM Cage](https://img.shields.io/badge/Architecture-SLM_%2F_FSM_Cage-F97316?style=for-the-badge&logo=diagramsdotnet)](#core-architecture-slmfsm-deterministic-cage)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)](https://github.com/26200602/SIA-Agentic-AI-Architecture/tree/main/use-cases/shadow-diagnostic-engine)
 
 ---
 
