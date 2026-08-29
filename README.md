@@ -1,9 +1,13 @@
-# Strategic Intent Architecture (SIA) Framework
-> **Deterministic Execution & Sovereign Data Governance for Enterprise AI**
+# SIA Agentic AI Architecture
 
-![Architecture Protocol](https://img.shields.io/badge/Architecture-SIA--Layer%201%2F2-blue)
-![Governance Standard](https://img.shields.io/badge/Compliance-ISO%2042001%20%7C%20GDPR-green)
-![Execution Engine](https://img.shields.io/badge/Runtime-SLM%20%2B%20FSM%20Circuit%20Breaker-orange)
+> **Sovereign Infrastructure Architecture (SIA)**: Enterprise-grade, Non-Intrusive Governance Layer for Decoupled AI Operations & Deterministic Boundary Control.
+
+### 🎯 Core Execution Anchors (Shadow Diagnostic Engine)
+* 📄 **Declarative FSM State Policy**: [`fsm_policy.json`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/fsm_policy.json)
+* ⚡ **Deterministic Circuit Breaker Executable**: [`sim_poc.py`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/sim_poc.py)
+* 📐 **Field Operations Reference Case**: [`Shadow Diagnostic Engine README`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/README.md)
+
+---
 
 ## Executive Summary
 
