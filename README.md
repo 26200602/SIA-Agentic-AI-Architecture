@@ -1,11 +1,10 @@
 # SIA Agentic AI Architecture
 
-> **Sovereign Infrastructure Architecture (SIA)**: Enterprise-grade, Non-Intrusive Governance Layer for Decoupled AI Operations & Deterministic Boundary Control.
+[![Architecture: SIA Layer 1/2](https://img.shields.io/badge/Architecture-SIA%20Layer%201%2F2-blue.svg)](#)
+[![Compliance: ISO 42001 / GDPR](https://img.shields.io/badge/Compliance-ISO%2042001%20%2F%20GDPR-brightgreen.svg)](#)
+[![Runtime: SLM + FSM Circuit Breaker](https://img.shields.io/badge/Runtime-SLM%20%2B%20FSM%20Circuit%20Breaker-orange.svg)](#)
 
-### 🎯 Core Execution Anchors (Shadow Diagnostic Engine)
-* 📄 **Declarative FSM State Policy**: [`fsm_policy.json`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/fsm_policy.json)
-* ⚡ **Deterministic Circuit Breaker Executable**: [`sim_poc.py`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/sim_poc.py)
-* 📐 **Field Operations Reference Case**: [`Shadow Diagnostic Engine README`](https://github.com/26200602/SIA-Agentic-AI-Architecture/blob/main/use-cases/shadow-diagnostic-engine/README.md)
+> **Sovereign Infrastructure Architecture (SIA)**: Enterprise-grade, Non-Intrusive Governance Layer for Decoupled AI Operations & Deterministic Boundary Control.
 
 ---
 
