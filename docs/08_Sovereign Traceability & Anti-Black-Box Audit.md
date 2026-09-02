@@ -57,19 +57,19 @@ sequenceDiagram
     GW-->>Client: 9. Deliver Verified Sovereign Output
 ```
 
-## Core Capabilities
+### Core Capabilities
 
-### 1. Vendor-Agnostic Context Isolation
-* **定義**: Decouples deterministic business logic and sensitive context from external probabilistic models.
-* **保障**: Ensures model providers never ingest unencrypted organizational state.
+* **Vendor-Agnostic Context Isolation**
+  * Decouples deterministic business logic and sensitive context from external probabilistic models.
+  * Ensures model providers never ingest unencrypted organizational state.
 
-### 2. Ephemeral Payload Processing
-* **定義**: Enforces real-time memory purging.
-* **機制**: All transactional payloads and intermediate context states are sanitized and flushed post-execution, eliminating permanent text trails.
+* **Ephemeral Payload Processing**
+  * Enforces real-time memory purging.
+  * Sanitizes and flushes all transactional payloads and intermediate context states post-execution, eliminating permanent text trails.
 
-### 3. Cryptographic State Auditing
-* **功能**: Generates deterministic, immutable execution hashes for automated model decisions.
-* **優勢**: Achieved without exposing underlying sensitive text payloads to third-party auditors.
+* **Cryptographic State Auditing**
+  * Generates deterministic, immutable execution hashes for automated model decisions.
+  * Verifies compliance without exposing underlying sensitive text payloads to third-party auditors.
 
 ---
 
@@ -78,8 +78,9 @@ sequenceDiagram
 ### Ephemeral Payload Processing Specification
 The engine sanitizes context payloads prior to external transmission. Below is a representative JSON configuration enforcing zero-footprint memory flushing.
 
+```json
 {
-  "$schema": "[https://json-schema.org/draft/2020-12/schema](https://json-schema.org/draft/2020-12/schema)",
+  "\$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "EphemeralPayloadConfig",
   "type": "object",
   "properties": {
@@ -124,6 +125,7 @@ The engine sanitizes context payloads prior to external transmission. Below is a
     "cryptographicAudit"
   ]
 }
+```
 
 ## Implementation Roadmap
 
