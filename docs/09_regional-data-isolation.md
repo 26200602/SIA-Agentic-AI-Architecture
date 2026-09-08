@@ -1,6 +1,6 @@
 # Architectural Brief: The Fragmentation of Global Platform Rails and Sovereign Containment
 
-**Document ID:** ARCH-2026-09-01  
+**Document ID:** ARCH-SIA-09  
 **Target Audience:** C-Suite, Enterprise Architects, VPs of Engineering  
 **Scope:** Regional Data Isolation, AI Crawling Mitigations, Cross-Border Compliance  
 
@@ -17,6 +17,8 @@ For enterprise systems, this architectural containment introduces critical opera
 
 This brief outlines the technical drivers behind this migration and provides an architectural mitigation model to maintain dynamic, sovereign cross-border operations.
 
+---
+
 ## 2. Technical Drivers & Operational Risks
 
 ### 2.1 The AI Scraping Arms Race & Resource Entropy Control
@@ -24,16 +26,13 @@ Automated crawler bots and commercial data brokers continuously scrape relationa
 
 ```mermaid
 graph LR
-    A[Unfiltered Web] -- Automated Crawlers --> B[External Data Brokers / LLM Pipelines]
-    A -. Asset Exfiltration .-> C[ ]
-    style C fill:none,stroke:none
+    A[Unfiltered Web] -->|Asset Exfiltration| B[Automated Crawlers]
+    B --> C[External Data Brokers / LLM Pipelines]
 ```
-To counter this, platform engineering teams enforce **regional isolation**—a brute-force pattern of *Resource Entropy Control*. By locking search indices into regional sub-domains, platforms:
-* Exponentially increase scraping compute costs.
-* Establish clear sovereign boundaries.
+To counter this, platform engineering teams enforce regional isolation—a brute-force pattern of Resource Entropy Control. By locking search indices into regional sub-domains, platforms exponentially increase scraping compute costs and establish clear sovereign boundaries.
 
 ### 2.2 Cross-Border Liability & Regulatory Shifting
-Dynamic compliance mandates (such as the *EU AI Act*) make cross-border candidate profiling without local data governance a severe legal vector. 
+Dynamic compliance mandates (such as the EU AI Act) make cross-border candidate profiling without local data governance a severe legal vector.
 
 * **Legacy Monolith Limitations:** Centralized platform architectures cannot execute real-time, dynamic compliance policy evaluation across conflicting jurisdiction rules.
 * **Corporate Risk Delegation:** Platforms respond by restricting global visibility behind enterprise-grade gates. The legal risk and audit burdens are offloaded directly onto corporate subscribers.
@@ -43,6 +42,8 @@ When platform architectures enforce hard regional boundaries, functional busines
 
 * **Operational Friction:** Data isolation eliminates historical and cross-functional context during international talent searches and executive workflows.
 * **Brand Degradation:** Cross-border stakeholders experience systemic delays and fragmented interfaces, damaging corporate reputational capital.
+
+## 3. System Architecture Diagram
 
 ```mermaid
 graph TD
@@ -95,15 +96,17 @@ graph LR
 * **Zero-Knowledge Attestation:** Validate user qualifications, compliance states, and system attributes across sovereign boundaries without transferring sensitive raw profile data.
 * **Dynamic Policy Evaluation Engines:** Utilize runtime policy engines (e.g., Open Policy Agent) to dynamically allow or sanitize data fields based on originating and destination jurisdiction rules.
 
----
-
 ## 5. Implementation Roadmap
 
-* **Phase 1 (Days 1–30):** Audit existing cross-border platform dependencies and map data flow vulnerabilities across regional boundaries.
-* **Phase 2 (Days 31–60):** Implement localized metadata abstraction and zero-trust proxy layers for cross-border query pathways.
-* **Phase 3 (Days 61–90):** Deploy federated policy evaluation engines to dynamically enforce cross-border compliance rules in real time.
+* **Phase 1: Discovery & Dependency Mapping**
+  Audit existing cross-border platform dependencies, assess regulatory exposure, and map data flow vulnerabilities across regional boundaries.
+
+* **Phase 2: Edge Isolation & Abstraction**
+  Implement localized metadata abstraction and zero-trust proxy layers to secure cross-border query pathways and protect primary assets.
+
+* **Phase 3: Federated Orchestration**
+  Deploy dynamic policy evaluation engines to enforce cross-border compliance rules in real time and establish federated context integration.
 
 ---
 
-*This document was structured with the help of AI, and curated by **Sana.M**.*
-
+This document was structured with the help of AI, and curated by Sana.M
