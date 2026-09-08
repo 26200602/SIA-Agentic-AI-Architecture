@@ -22,14 +22,21 @@ This brief outlines the technical drivers behind this migration and provides an 
 ## 2. Technical Drivers & Operational Risks
 
 ### 2.1 The AI Scraping Arms Race & Resource Entropy Control
-Automated crawler bots and commercial data brokers continuously scrape relational graph data to supply underlying LLM training sets. Beyond basic network traffic, this represents systematic asset exfiltration.
+
+Automated crawler bots and commercial data brokers continuously scrape relational graph data to supply underlying LLM training sets. Rather than a linear pipeline, this represents an active, adversarial loop of systemic asset exfiltration and platform defense.
 
 ```mermaid
-graph LR
-    A[Unfiltered Web] -->|Asset Exfiltration| B[Automated Crawlers]
-    B --> C[External Data Brokers / LLM Pipelines]
+graph TD
+    A[Public Talent Graph & Relational Data] -->|Unsanctioned Scraping| B[Automated Crawlers & AI Bots]
+    B -->|Exfiltrate Core IP| C[LLM Training Datasets & Commercial Brokers]
+    C -->|Monetize Synthetic Services| D[Market Displacement Risk]
+    
+    D -->|Triggers Defense| E[Platform Engineering & Policy]
+    E -->|Enforces Regional Isolation & Rate Limits| F[Resource Entropy Control]
+    F -->|Increases Compute Cost & Latency| B
+    F -.->|Creates Side Effect| G[Context Evaporation for Enterprise Users]
 ```
-To counter this, platform engineering teams enforce regional isolation—a brute-force pattern of Resource Entropy Control. By locking search indices into regional sub-domains, platforms exponentially increase scraping compute costs and establish clear sovereign boundaries.
+To counter persistent scraping, platform engineering teams enforce regional isolation as a pattern of Resource Entropy Control. By locking search indices into localized sub-domains, platforms exponentially increase scraping compute costs while inadvertently fracturing cross-border enterprise workflows.
 
 ### 2.2 Cross-Border Liability & Regulatory Shifting
 Dynamic compliance mandates (such as the EU AI Act) make cross-border candidate profiling without local data governance a severe legal vector.
@@ -47,7 +54,7 @@ When platform architectures enforce hard regional boundaries, functional busines
 
 ```mermaid
 graph TD
-    subgraph Legacy Centralized Isolation
+    subgraph Current_State [Current State: Legacy Centralized Isolation]
         A1[Global User Query] -->|Blocked at Boundary| B1[Regional Sandbox EU]
         A1 -.->|Blocked at Boundary| B2[Regional Sandbox US]
         A1 -.->|Blocked at Boundary| B3[Regional Sandbox APAC]
@@ -56,7 +63,7 @@ graph TD
         B3 --- C3[(Isolated Data)]
     end
 
-    subgraph Dynamic Sovereign Middleware Architecture
+    subgraph Target_State [Target Architecture: Dynamic Sovereign Middleware]
         A2[Cross-Border Request] --> B2GW[Zero-Trust Sovereign Gateway]
         B2GW --> C2POL{Policy & Compliance Engine<br/>EU AI Act / Local Frameworks}
         
@@ -74,6 +81,8 @@ graph TD
         
         F --> G[Unified Operational Context]
     end
+
+    Current_State ==>|Transformation Path| Target_State
 ```
 
 ## 4. Strategic Architectural Mitigations
