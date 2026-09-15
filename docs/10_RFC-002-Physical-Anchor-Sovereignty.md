@@ -98,7 +98,7 @@ To maintain **Zero-Trust compliance** under **ISO/IEC 42001** and **GDPR** audit
 * **Offline Hardware Bus**: 
   The channel connecting the *FSM Circuit Breaker* to the *Local Hardware Trust Layer (HSM/Secure Enclave)* must operate via a dedicated, air-gapped, or strictly controlled hardware bus. Remote cloud API invocations for anchor bolding are strictly prohibited.
 
-  ***This document was structured with the help of AI, and curated by **Sana.M***
-
 * **Cryptographic Receipt Auditability**: 
   Legal and compliance teams must verify non-repudiation solely through the deterministic settlement proofs emitted by the *Hardware Trust Layer*, independent of LLM telemetry logs.
+
+  ***This document was structured with the help of AI, and curated by **Sana.M***
