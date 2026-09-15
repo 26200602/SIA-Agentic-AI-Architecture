@@ -38,6 +38,24 @@ The operational runtime of DPAS is governed by a strict deterministic boundary. 
 ### Sequence Topology Diagram
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#2b3945',
+      'primaryTextColor': '#ffffff',
+      'primaryBorderColor': '#455a64',
+      'lineColor': '#37474f',
+      'secondaryColor': '#eceff1',
+      'tertiaryColor': '#ffffff',
+      'noteBkgColor': '#fff9c4',
+      'noteTextColor': '#37474f',
+      'actorBkg': '#1e2830',
+      'actorTextColor': '#ffffff',
+      'actorLineColor': '#37474f'
+    }
+  }
+}%%
 sequenceDiagram
     autonumber
     participant App as Enterprise Application Core
@@ -49,7 +67,7 @@ sequenceDiagram
     App->>LLM: Ingest Unstructured Context & Prompt Payload
     LLM-->>FSM: Return Probabilistic Intent & Generated State
     
-    rect rgb(240, 240, 240)
+    rect rgb(38, 50, 56)
         note over FSM: Boundary Validation & Transient Termination
         FSM->>FSM: Evaluate Policy Constraints & State Integrity
         alt Policy Violation / Out-of-Bounds
