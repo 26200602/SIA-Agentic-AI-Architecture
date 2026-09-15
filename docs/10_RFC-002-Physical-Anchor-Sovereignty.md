@@ -37,6 +37,7 @@ The Dynamic Anchor Selection mechanism bridges volatile digital processing state
 ### Dynamic Anchor Binding Workflow
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'rectBorderColor': '#30363d', 'actorBkg': '#161b22', 'actorTextColor': '#c9d1d9', 'actorBorder': '#30363d', 'signalColor': '#8b949e', 'signalTextColor': '#c9d1d9', 'labelBoxBkgColor': '#161b22', 'labelBoxBorderColor': '#30363d', 'labelTextColor': '#c9d1d9'}}}%%
 sequenceDiagram
     autonumber
     actor User as Enterprise Client
@@ -49,8 +50,8 @@ sequenceDiagram
     Agent->>Engine: Execute Probabilistic Inference Path
     Engine-->>Agent: Output Proposed State Change (Volatile)
     
-    rect rgb(240, 248, 255)
-        note over Agent, HSM: Dynamic Anchor Selection
+    rect rgba(56, 139, 253, 0.15)
+        note over Agent, HSM: Dynamic Anchor Selection Boundary
         Agent->>HSM: Request State Binding (Hash + Metadata)
         HSM->>HSM: Sign Payload via Non-Exportable Private Key
         HSM-->>Agent: Return Signed Hardware Proof (Non-Repudiable)
@@ -115,4 +116,4 @@ graph TD
 
 ---
 
-This document was structured with the help of AI, and curated by Sana.M
+*This document was structured with the help of AI, and curated by **Sana.M***
