@@ -45,9 +45,9 @@ SIA Layer 1 establishes a direct, verifiable mapping between system operations a
 
 Layer 1 operationalizes the governance mental model: **"LLM as the Constitution, Quantized SLM as the Local Courts, FSM as the Deterministic Circuit Breaker."**
 
-### 🔎 [Enterprise Governance / EU Regulations]
 
 ```text
+[Enterprise Governance / EU Regulations]
        │
        ▼
 ┌───────────────────────────────────┐
