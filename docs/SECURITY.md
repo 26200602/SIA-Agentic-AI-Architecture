@@ -17,7 +17,7 @@ The Sovereign Intent Architecture (SIA) operates as an asynchronous, non-intrusi
 | **Out-of-Scope** | Physical Host & Kernel Security | * Malicious Hypervisor / Root Compromise<br>* Physical Hardware Tampering<br>* OS-Level Vulnerabilities |
 | **In-Scope** | SIA Deterministic Cage | * Adversarial Prompt Injection<br>* Semantic Data Exposure ("Bundles of Risk")<br>* Model Logic Drift & Unchecked State Transitions<br>* Transient Memory Residual Reconstruction |
 
-# 1.2 In-Scope Threat Mitigation Matrix
+### 1.2 In-Scope Threat Mitigation Matrix
 
 | Threat Vector | Attack Mechanism | SIA Layer Enforcement | Mitigation Primitive |
 | :--- | :--- | :--- | :--- |
