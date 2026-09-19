@@ -10,17 +10,14 @@
 
 The Sovereign Intent Architecture (SIA) operates as an asynchronous, non-intrusive governance layer above legacy enterprise infrastructure. SIA is specifically engineered to mitigate **probabilistic boundary failures, hallucination drift, and unauthorized data exposure** inherent in Large Language Model (LLM) deployment.
 
-+-------------------------------------------------+---------------------------------------------------+
-|               OUT-OF-SCOPE                      |        IN-SCOPE: SIA DETERMINISTIC CAGE           |
-|      (Physical Host / Kernel Security)          | (Prompt Injection / State Poisoning / Memory Leak)|
-+-------------------------------------------------+---------------------------------------------------+
-| * Malicious Hypervisor                          | * Adversarial Prompt Injection                    |
-| * OS-Level Root Compromise                      | * Semantic Data Exposure ("Bundles of Risk")      |
-| * Physical Hardware Tampering                   | * Model Logic Drift & Unchecked State Transitions |
-|                                                 | * Transient Memory Residual Reconstruction        |
-+-------------------------------------------------+---------------------------------------------------+
+### 1.1 Scope & Threat Boundary Classification
 
-# 1.1 In-Scope Threat Mitigation Matrix
+| Category | Boundary Scope | Typical Threat Vectors |
+| :--- | :--- | :--- |
+| **Out-of-Scope** | Physical Host & Kernel Security | * Malicious Hypervisor / Root Compromise<br>* Physical Hardware Tampering<br>* OS-Level Vulnerabilities |
+| **In-Scope** | SIA Deterministic Cage | * Adversarial Prompt Injection<br>* Semantic Data Exposure ("Bundles of Risk")<br>* Model Logic Drift & Unchecked State Transitions<br>* Transient Memory Residual Reconstruction |
+
+# 1.2 In-Scope Threat Mitigation Matrix
 
 | Threat Vector | Attack Mechanism | SIA Layer Enforcement | Mitigation Primitive |
 | :--- | :--- | :--- | :--- |
@@ -29,7 +26,7 @@ The Sovereign Intent Architecture (SIA) operates as an asynchronous, non-intrusi
 | **Transient Memory Reconstruction** | Cold-boot memory dumping or heap scanning of active SLM buffers. | Layer 2 (Memory Protocol) | C11 Just-In-Time zeroization via `memset_s()` clearing RAM to `0x00` immediately upon transaction exit. |
 | **Unlawful Automated Decisioning** | Autonomous model execution bypassing human governance. | Layer 1 (Governance) | Non-Authorial AI Doctrine; models act strictly as linguistic parsers, FSM enforces human-authored invariants. |
 
-### 1.2 Out-of-Scope Security Dependencies
+### 1.3 Out-of-Scope Security Dependencies
 
 SIA relies on the underlying Host Environment for the following security guarantees:
 * **Host OS & Kernel Integrity:** Physical host hardening, Linux Kernel vulnerability patching, and OS access controls.
