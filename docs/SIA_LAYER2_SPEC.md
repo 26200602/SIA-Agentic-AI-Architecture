@@ -71,6 +71,7 @@ pub struct DecoupledContextFrame {
     pub factoid: FactoidTag,
     pub state: StateTag,
 }
+```
 
 ### 3. GraphRAG Multi-Hop Reasoning & Traversal Constraints
 
@@ -87,6 +88,7 @@ Layer 2 utilizes a lightweight, local GraphRAG topology for contextual knowledge
 Probabilistic Small Language Models (SLMs) operating at the edge are isolated within a deterministic Finite State Machine (FSM) cage. The SLM is permitted only to suggest state transitions; final state authorization is governed by the FSM transition table.
 
 #### 4.1 State Machine Enumeration
+```
 typedef enum {
     SIA_STATE_IDLE          = 0x00,
     SIA_STATE_PARSING       = 0x01,
@@ -94,6 +96,7 @@ typedef enum {
     SIA_STATE_COMMITTED     = 0x03,
     SECURITY_VIOLATION_0x88 = 0x88  // Deterministic Circuit Breaker Activation
 } sia_fsm_state_t;
+```
 
 #### 4.2 Violation Trigger Mechanics (`SECURITY_VIOLATION_0x88`)
 
@@ -106,6 +109,7 @@ If the edge SLM generates an output that violates Layer 1 policy constraints, at
 Upon activation of `SECURITY_VIOLATION_0x88` or successful transaction completion, all transient RAM buffers housing context frames or SLM key-value caches must undergo Just-In-Time (JIT) secure erasure.
 
 #### 5.1 C Memory Erasure Primitive
+```
 #define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 #include <stdlib.h>
@@ -120,11 +124,13 @@ void sia_purge_transient_buffer(void *buffer, size_t buffer_size) {
         pabort("CRITICAL: Transient memory zeroization failed.");
     }
 }
+```
 
 ###. 6. Non-Text Error Frame Observability (Option B)
 To maintain high enterprise observability without compromising the zero-trace privacy model, Layer 2 returns a deterministic, zero-raw-text error payload to the enterprise gateway upon violation.
 
 #### 6.1 Payload Structural Specification
+```
 {
   "protocol_version": "SIA-2.0",
   "execution_status": "SECURITY_VIOLATION_0x88",
@@ -133,6 +139,7 @@ To maintain high enterprise observability without compromising the zero-trace pr
   "state_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "timestamp_epoch": 1787130018
 }
+```
 
 Data Exposure Guarantee: The payload contains zero dynamic raw text, zero user payload content, and zero PII. Operational teams can isolate failing logic nodes via fault_node_id without exposing enterprise secrets.
 
