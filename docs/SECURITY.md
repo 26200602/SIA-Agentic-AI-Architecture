@@ -1,7 +1,7 @@
 # Security Policy & Threat Model Specification
 
 **Project:** Sovereign Intent Architecture (SIA)  
-**Document Status:** Formal Security & Vulnerability Policy  
+**Document Status:** Formal Security & Vulnerability Policy (PoC / Grant Phase)  
 **Target Standard:** Open Source Security Foundation (OSSF) & NLNet NGI Restack Hygiene Standards  
 
 ---
@@ -10,18 +10,17 @@
 
 The Sovereign Intent Architecture (SIA) operates as an asynchronous, non-intrusive governance layer above legacy enterprise infrastructure. SIA is specifically engineered to mitigate **probabilistic boundary failures, hallucination drift, and unauthorized data exposure** inherent in Large Language Model (LLM) deployment.
 
-# Scope Classification
++-------------------------------------------------+---------------------------------------------------+
+|               OUT-OF-SCOPE                      |        IN-SCOPE: SIA DETERMINISTIC CAGE           |
+|      (Physical Host / Kernel Security)          | (Prompt Injection / State Poisoning / Memory Leak)|
++-------------------------------------------------+---------------------------------------------------+
+| * Malicious Hypervisor                          | * Adversarial Prompt Injection                    |
+| * OS-Level Root Compromise                      | * Semantic Data Exposure ("Bundles of Risk")      |
+| * Physical Hardware Tampering                   | * Model Logic Drift & Unchecked State Transitions |
+|                                                 | * Transient Memory Residual Reconstruction        |
++-------------------------------------------------+---------------------------------------------------+
 
-[ OUT-OF-SCOPE ]                                    [ IN-SCOPE: SIA DETERMINISTIC CAGE ]
-Physical Host / Kernel Security                     Prompt Injection / State Poisoning / Memory Leakage
-┌─────────────────────────────────┐                 ┌─────────────────────────────────────────────────┐
-│ • Malicious Hypervisor          │                 │ • Adversarial Prompt Injection                  │
-│ • OS-Level Root Compromise      │                 │ • Semantic Data Exposure ("Bundles of Risk")    │
-│ • Physical Hardware Tampering   │                 │ • Model Logic Drift & Unchecked State Transitions│
-└─────────────────────────────────┘                 │ • Transient Memory Residual Reconstruction      │
-                                                    └─────────────────────────────────────────────────┘
-
-### 1.1 In-Scope Threat Mitigation Matrix
+# 1.1 In-Scope Threat Mitigation Matrix
 
 | Threat Vector | Attack Mechanism | SIA Layer Enforcement | Mitigation Primitive |
 | :--- | :--- | :--- | :--- |
@@ -33,50 +32,54 @@ Physical Host / Kernel Security                     Prompt Injection / State Poi
 ### 1.2 Out-of-Scope Security Dependencies
 
 SIA relies on the underlying Host Environment for the following security guarantees:
-* **Host OS & Kernel Integrity:** Physical host hardening, Linux Kernel vulnerability patching, and access controls.
+* **Host OS & Kernel Integrity:** Physical host hardening, Linux Kernel vulnerability patching, and OS access controls.
 * **Network Enclave Isolation:** TLS 1.3 encryption for local edge IPC (Inter-Process Communication) channels.
 * **Storage Encryption:** Hardware-level AES-256 encryption for underlying legacy datastores.
 
----
+## 2. Responsible Vulnerability Disclosure
 
-## 2. Reporting a Vulnerability (Responsible Disclosure)
+The SIA Core Engineering Team values security research from the open-source community. As an active Proof-of-Concept (PoC) research initiative under the NLNet NGI Restack framework, vulnerability reporting is governed by reasonable, best-effort operational parameters.
 
-The SIA Core Engineering Team welcomes vulnerability reports from security researchers, auditors, and the open-source community.
+### 2.1 Disclosure Protocol
 
-### 2.1 Disclosure Guidelines
+To report a suspected security flaw or FSM logic bypass:
+* **Private Reporting Channel:** Do **NOT** open public GitHub issues for security vulnerabilities or exploit vectors.
+* **Preferred Method:** Use GitHub's native **Private Vulnerability Reporting** feature directly within this repository. This guarantees encrypted end-to-end communication without exposing infrastructure maintainers.
+* **Operational SLA:** Acknowledgment and initial triage are provided on a **best-effort basis**. As an open-source research PoC, fixed response or remediation timelines are explicitly disclaimed.
 
-To maintain responsible disclosure standards:
-* **Private Reporting:** Do **NOT** create public GitHub Issues for suspected security vulnerabilities, zero-day exploits, or logic flaws.
-* **Response Window:** The SIA Core Team will acknowledge receipt of security disclosures within **48 hours** and provide a primary triage assessment within **7 business days**.
+### 2.2 In-Scope Vulnerability Criteria
 
-### 2.2 Reporting Procedure
-
-Please submit vulnerability reports via encrypted email:
-
-* **Primary Security Contact:** `security@sovereignintent.org` (or directly via designated repository maintainer key)
-* **Encrypted Communication:** Secure reports using our PGP Key (Key ID / Hash embedded in commit signatures).
-
-### 2.3 Report Contents
-
-When submitting a report, please include:
-1. **Vulnerability Type:** (e.g., FSM State Bypass, Memory Zeroization Bypass, 3-Tag Hash Collision).
-2. **Proof-of-Concept (PoC):** Step-by-step reproduction code or execution trace.
-3. **Impact Assessment:** Potential scope of execution boundary compromise.
+Reports are strictly prioritized for failures within the SIA Deterministic Cage:
+1. **FSM Circuit Breaker Bypass:** Methods that bypass `SECURITY_VIOLATION_0x88` during active state drift.
+2. **Memory Purge Incompleteness:** Failure of C11 `memset_s()` primitives to fully zeroize ephemeral RAM buffers on exit.
+3. **3-Tag Hash Collisions:** Structural flaws in entity/factoid isolation leading to raw text leakage across domain boundaries.
 
 ---
 
 ## 3. Cryptographic Verification & Auditability
 
-All official release tags, protocol specs, and core C/Rust FSM execution binaries in this repository are cryptographically signed using GPG keys linked to the primary system architecture maintainers.
+To maintain supply chain security and code integrity against tampering:
+* **Commit & Tag Verification:** Official protocol releases and specification commits are cryptographically signed using GPG keys bound to repository maintainers.
+* **Immutable State Audit:** Operational logs emit zero raw text payloads, consisting solely of deterministic SHA-256 state hashes and explicit FSM transition codes.
 
 ```bash
-# Verify release tag signature
+# Verify official release signatures
 git tag -v v2.0.0-sia-core
-
 ```
 
-### 4. Security Audit & Compliance Status
+## 4. Compliance Mapping & Legal Disclaimer
 
-NLNet NGI Restack Alignment: Fully compliant with Open Digital Sovereignty and Minimal Data Exposure mandates.
-EU AI Act Alignment: Configured for Article 14 (Human Oversight) and Article 15 (Cybersecurity & Robustness) auditability.
-GDPR Compliance: Technical compliance with Article 17 (Right to Erasure) via deterministic memset_s JIT RAM purging.
+### 4.1 Regulatory Alignment Matrix
+
+| Regulatory Framework | Article / Mandate | SIA Technical Compliance Mechanism |
+| :--- | :--- | :--- |
+| **EU AI Act** | Article 14 (Human Oversight) | Non-Authorial AI Governance; deterministic FSM overrides probabilistic SLM suggestions. |
+| **EU AI Act** | Article 15 (Cybersecurity & Robustness) | Hard circuit breaking (`SECURITY_VIOLATION_0x88`) preventing logic drift and injection attacks. |
+| **GDPR** | Article 17 (Right to Erasure / "To be Forgotten") | JIT transient RAM zeroization using C11 `memset_s()` primitives; zero residual storage. |
+| **ISO 42001** | AI Management System (Traceability) | Auditability via immutable SHA-256 state hashes without raw text log exposure. |
+
+### 4.2 Proof-of-Concept Disclaimer & Express Exclusion of Warranty
+
+* **Research & Grant Scope:** This repository houses proof-of-concept specifications and prototype code developed under the NLNet NGI Restack research initiative. 
+* **No Warranty:** THE SOFTWARE AND SPECIFICATIONS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. 
+* **Operational Liability:** IN NO EVENT SHALL THE AUTHORS, ARCHITECTS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
