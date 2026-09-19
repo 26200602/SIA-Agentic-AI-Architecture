@@ -82,6 +82,7 @@ Layer 1 mandates that every transaction processed through the SIA topology yield
   3. `Compliance_Hash`: SHA-256 hash validating that the execution stayed within Layer 1 policy boundaries.
   4. `Execution_Status`: Success flag or explicit error code (e.g., `SECURITY_VIOLATION_0x88`).
 
+> **Zero-Trace Assurance:** Decision Packets contain strictly zero raw text payloads. Operational data is retained purely as transient state vectors during edge processing and is subject to immediate C/Rust memory zeroization (`memset_s`).
 ---
 
 ## 6. Document Revision & Governance Control
