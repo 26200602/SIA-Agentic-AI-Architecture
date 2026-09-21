@@ -68,6 +68,20 @@ Layer 1 operationalizes the governance mental model: **"LLM as the Constitution,
 1. **Policy Ingestion:** High-level enterprise policies, compliance mandates, and operational guidelines are parsed by the Layer 1 Policy Engine during offline configuration.
 2. **Constraint Formulation:** Policies are compiled into explicit, non-authorial JSON schema constraints defining permitted state transitions, maximum execution hop limits, and mandatory entity isolation tags.
 3. **Intent Boundary Distribution:** The compiled constraint schema is injected into the local runtime environment (Layer 2) as an immutable execution boundary, guaranteeing that runtime models operate within pre-defined safe harbors.
+4. **Enterprise System Triage & Blast Radius Control** To prevent architectural over-engineering while enforcing absolute risk boundaries, SIA defines a strict three-tier classification matrix for enterprise AI integration. Implementations MUST execute triage based on Data Classification, Failure Impact, and Mutation Authority.
+
+| Decision Vector | Tier 1: Air-Gapped Surface Layer | Tier 2: Departmental Sandbox | Tier 3: Core Enterprise Operations |
+| :--- | :--- | :--- | :--- |
+| **Architectural Pattern** | Standard RAG / Outer Guardrails | Lightweight API Gateway + RBAC | **SIA Deterministic Substrate** |
+| **Representative Use Cases** | Internal FAQ search, marketing copy generation, public knowledge base lookup. | Internal code-gen sandboxes, single-department SQL analytics. | Core banking settlement, mainframe read/write, credit scoring, cross-border PII handling. |
+| **Data Classification** | Public / Internal Non-Sensitive | Confidential (Departmental) | **Highly Restricted / PII / Financial Ledger** |
+| **Failure Impact & Threat Model** | Low (Hallucinations cause minor UI/UX friction or typos). | Moderate (Internal analytical errors, recoverable via human re-check). | **Catastrophic (Data breach, regulatory non-compliance, system state poisoning).** |
+| **Mutation Authority** | Read-Only (Zero write access to core system states). | Local Read-Only / Ephemeral Local Write. | **State Mutation / Core Backend API Execution.** |
+| **Mandatory Security Primitives** | System Prompts, Rate Limiting, Vector Distance Thresholds. | Role-Based Access Control (RBAC), Standard API Logs. | **3-Tag PII Decoupling, Edge SLM Parsing, <15ms FSM Circuit Breaker (`0x88`), JIT Memory Zeroization (`memset_s`).** |
+
+#### Governance Rule: Blast Radius Containment
+1. **Tier 1 & Tier 2 Exemption**: Systems operating strictly within Tier 1 or Tier 2 parameters ARE NOT required to deploy the SIA Layer 2 FSM Circuit Breaker, avoiding unnecessary token consumption and operational latency.
+2. **Tier 3 Mandate**: Any AI agent or interface possessing **Mutation Authority** over Core Enterprise States or handling **Highly Restricted PII** MUST be sandboxed within the SIA Deterministic Cage. Direct, unmediated API access from probabilistic models to Tier 3 backends is strictly prohibited under SIA compliance standards.
 
 ---
 
