@@ -68,7 +68,7 @@ Layer 1 operationalizes the governance mental model: **"LLM as the Constitution,
 1. **Policy Ingestion:** High-level enterprise policies, compliance mandates, and operational guidelines are parsed by the Layer 1 Policy Engine during offline configuration.
 2. **Constraint Formulation:** Policies are compiled into explicit, non-authorial JSON schema constraints defining permitted state transitions, maximum execution hop limits, and mandatory entity isolation tags.
 3. **Intent Boundary Distribution:** The compiled constraint schema is injected into the local runtime environment (Layer 2) as an immutable execution boundary, guaranteeing that runtime models operate within pre-defined safe harbors.
-4. **Enterprise System Triage & Blast Radius Control** To prevent architectural over-engineering while enforcing absolute risk boundaries, SIA defines a strict three-tier classification matrix for enterprise AI integration. Implementations MUST execute triage based on Data Classification, Failure Impact, and Mutation Authority.
+4. **Enterprise System Triage & Blast Radius Control:** To prevent architectural over-engineering while enforcing absolute risk boundaries, SIA defines a strict three-tier classification matrix for enterprise AI integration. Implementations MUST execute triage based on Data Classification, Failure Impact, and Mutation Authority.
 
 | Decision Vector | Tier 1: Air-Gapped Surface Layer | Tier 2: Departmental Sandbox | Tier 3: Core Enterprise Operations |
 | :--- | :--- | :--- | :--- |
