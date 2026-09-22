@@ -104,12 +104,12 @@ sequenceDiagram
     %% Legitimate Hardware-Bound Scenario
     Note over User, Service: Scenario B: Hardware-Bound Cryptographic Request
     User->>Gateway: POST /v1/transaction (Initiate Request)
-    Gateway-->>User: 200 Challenge (Cryptographic Nonce)
+    Gateway-->>User: 401 Unauthorized / Challenge (Cryptographic Nonce)
     User->>User: Sign Nonce via Secure Enclave (Private Key)
     User->>Gateway: POST /v1/transaction (Payload + Signature + Public Key ID)
     Gateway->>Gateway: Verify Nonce, Origin & Hardware Signature
     Gateway->>Service: Forward Authenticated Context
-    Service-->>User: 200 Success (Transaction Executed)
+    Service-->>User: 200 OK (Transaction Executed)
 ```
 
 *** This document was structured with the help of AI, and curated by ***Sana.M***
