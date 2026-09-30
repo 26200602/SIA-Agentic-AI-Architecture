@@ -8,6 +8,14 @@
 
 ---
 
+## Governance & Architecture Documentation
+
+| Section | Document Link | Focus Area |
+| :--- | :--- | :--- |
+| **Enterprise Governance** | [`docs/governance/enterprise-boundary-governance.md`](docs/governance/enterprise-boundary-governance.md) | Deterministic Control & FSM Circuit Breaker Architecture |
+
+---
+
 ## 🎯 SimPoC Working Sandbox
 The SIA framework decouples non-deterministic generative reasoning from core enterprise assets. By implementing an asynchronous state-mapping layer, all transient payloads are verified prior to system state mutation.
 
