@@ -15,27 +15,6 @@ Current enterprise agent deployments suffer from **Probabilistic Handoff Debt**.
 ```mermaid
 graph TD
     subgraph AntiPattern [Anti-Pattern: Unbounded Probabilistic Orchestration]
-        A[User Request] --> B[Frontier Model / Orchestration]
-        B -->|Probabilistic State Transfer| C[Domain Agent A]
-        C -->|Uncertain Output / Drift| D[Domain Agent B]
-        D -->|Boundary Failure| E[Manual Debugging / Prompt Patching]
-        E -->|High-Cost Human-in-the-Loop| B
-    end
-
-    subgraph SIA [SIA Pattern: Deterministic Execution Boundary]
-        F[User Request] --> G[Probabilistic Semantic Layer]
-        G -->|Intent & Schema| H{Deterministic Compliance Gateway}
-        H -->|Validated Execution Graph| I[State Machine / Business Logic]
-        H -->|Validation Error| J[Deterministic Exception Handler]
-        I --> K[System Action / Audit Log]
-    end
-
-    style AntiPattern fill:#fff0f0,stroke:#d9534f,stroke-width:2px
-    style SIA fill:#f0fff0,stroke:#5cb85c,stroke-width:2px
-```
-```mermaid
-graph TD
-    subgraph AntiPattern [Anti-Pattern: Unbounded Probabilistic Orchestration]
         A[User Request]
         B[Frontier Model / Orchestration]
         C[Domain Agent A]
