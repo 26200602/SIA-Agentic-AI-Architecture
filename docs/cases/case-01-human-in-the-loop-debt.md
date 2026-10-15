@@ -33,6 +33,40 @@ graph TD
     style AntiPattern fill:#fff0f0,stroke:#d9534f,stroke-width:2px
     style SIA fill:#f0fff0,stroke:#5cb85c,stroke-width:2px
 ```
+```mermaid
+graph TD
+    subgraph AntiPattern [Anti-Pattern: Unbounded Probabilistic Orchestration]
+        A[User Request]
+        B[Frontier Model / Orchestration]
+        C[Domain Agent A]
+        D[Domain Agent B]
+        E[Manual Debugging / Prompt Patching]
+    end
+
+    A --> B
+    B -->|Probabilistic State Transfer| C
+    C -->|Uncertain Output / Drift| D
+    D -->|Boundary Failure| E
+    E -->|High-Cost Human-in-the-Loop| B
+
+    subgraph SIA [SIA Pattern: Deterministic Execution Boundary]
+        F[User Request]
+        G[Probabilistic Semantic Layer]
+        H{Deterministic Compliance Gateway}
+        I[State Machine / Business Logic]
+        J[Deterministic Exception Handler]
+        K[System Action / Audit Log]
+    end
+
+    F --> G
+    G -->|Intent & Schema| H
+    H -->|Validated Execution Graph| I
+    H -->|Validation Error| J
+    I --> K
+
+    style AntiPattern fill:#fff0f0,stroke:#d9534f,stroke-width:2px
+    style SIA fill:#f0fff0,stroke:#5cb85c,stroke-width:2px
+```
 
 ## Key Structural Failure Modes
 Rebranded Orchestration Debt: Pushing systemic boundary resolution into prompt context turns operational risk into perpetual API consumption and expert toil.
